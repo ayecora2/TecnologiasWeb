@@ -19,7 +19,7 @@ public class ProductoController {
 	@RequestMapping("Producto")
 	public ModelAndView darProductos()
 	{
-		List<Producto> listProductos = Market_BL.ProductosBL.darProductos();
+		List<Producto> listProductos = Market_BL.ProductosBL.darProductos(null);
 		ModelAndView MV = new ModelAndView("ProductosView");
 		MV.addObject("listProductos", listProductos);
 //		MV.setViewName();
