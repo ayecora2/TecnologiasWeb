@@ -1,0 +1,17 @@
+TAREAS	RESPONSABLE	DURACION(días)
+Revisar las clases(DO) y crear métodos públicos para asignar u obtener los atributos del objeto. Los atributos como privados		0,5
+Entrar con un Usuario y dejar el usuario ya en Session	JUAN PABLO	1
+Crear un formulario con Bootstrap para crear usuarios		1
+Funcionalidad en controller para crear usuario(Controller/BL/DA)		1
+Realizar función de filtro: categorías, marca, puntuación(Controller/BL/DA)		1
+Función para obtener datos de un producto por ID(BL/DA)		0,5
+Ofertas: Crear ofertas / Mostrar ofertas. Estas está relacionadas con los productos(INNER JOIN)		
+Obtener el listado de Servicios (ServiciosController/BL/DA)		
+Funcionalidad para puntuar(ProductosController/BL/DA) Puntuacion+IDPRODUCTO		
+Funcionalidad compras por usuario( crear una pantalla donde visualizar las compras por usuario)		1
+Informes de compras por tienda(consultas de las reservas por tienda)		1
+Electrodomésticos(Mantenimiento) TiendaController/BL/DA		
+		
+		
+PARA LAS VISTAS ESTOY USANDO BOOTSTRAP es un framework para pintar o maquetar HTML		
+Recordar siempre antes de hacer cambios, coger la ultima versión del GIT para no sobrescribir lo que antes EXITE		
