@@ -6,6 +6,7 @@ import java.util.*;
  * La clase producto identifica y describe a un producto
  * en concreto, además de almecenar sus características peculiares.
  * @author silverio
+ * @version 201905271605
  */
 public class Producto {
 	
@@ -29,10 +30,9 @@ public class Producto {
 	 * @param descripcion descripción del producto
 	 * @param cantidad número de items que hay del producto
 	 * @param precio precio de cada unidad de producto
-	 * @param productoPuntuacion lista de puntuaciones del producto.
 	 */
 	public Producto(int id, int categoria_Id, int marca_Id, int tienda_Id, String imagen, String descripcion,
-			int cantidad, double precio, List<ProductoPuntuacion> productoPuntuacion) {
+			int cantidad, double precio) {
 		super();
 		this.id = id;
 		this.categoria_Id = categoria_Id;
@@ -42,13 +42,13 @@ public class Producto {
 		this.descripcion = descripcion;
 		this.cantidad = cantidad;
 		this.precio = precio;
-		this.productoPuntuacion = productoPuntuacion;
+		//this.productoPuntuacion = productoPuntuacion;
 	}
 	/**
 	 * Constructor sin parámetros que hereda de la superclase sus atributos.
 	 * Luego mediante los setters se pueden configurar sus campos.
 	 */
-	public Producto() {	super();}
+//	public Producto() {	super();}
 	
 	/**
 	 * @return the id
@@ -57,7 +57,7 @@ public class Producto {
 	/**
 	 * @param id the id to set
 	 */
-	public void setId(int id) {this.id = id;}
+//	public void setId(int id) {this.id = id;}
 	/**
 	 * @return the categoria_Id
 	 */
@@ -65,7 +65,7 @@ public class Producto {
 	/**
 	 * @param categoria_Id the categoria_Id to set
 	 */
-	public void setCategoria_Id(int categoria_Id) {this.categoria_Id = categoria_Id;}
+//	public void setCategoria_Id(int categoria_Id) {this.categoria_Id = categoria_Id;}
 	/**
 	 * @return the marca_Id
 	 */
@@ -73,7 +73,7 @@ public class Producto {
 	/**
 	 * @param marca_Id the marca_Id to set
 	 */
-	public void setMarca_Id(int marca_Id) {this.marca_Id = marca_Id;}
+//	public void setMarca_Id(int marca_Id) {this.marca_Id = marca_Id;}
 	/**
 	 * @return the tienda_Id
 	 */
