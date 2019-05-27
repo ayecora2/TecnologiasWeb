@@ -16,39 +16,39 @@
 
 	<div id="containerProductos"
 		class="container-fluid text-center bg-grey">
-		<h4>Nuestras Tiendas</h4>
+		<h4>Nuestros Productos Destacados</h4>
 		<br>
 		<div class="row text-center container-fluid">
 			<div class="col-md-3">
 				<div class="thumbnail">
-					<img src="content/Images/Tiendas/Mapa_Madrid.jpg" alt="Madrid" width="400"
+					<img src="content/Images/Productos/Freidoras.jpg" alt="Freidoras" width="400"
 						height="300">
 					<p>
-						<strong>Madrid</strong>
+						<strong>Freidoras</strong>
 					</p>
 				</div>
 			</div>
 			<div class="col-md-3">
 				<div class="thumbnail">
-					<img src="content/Images/Tiendas/Mapa_Barcelona.jpg" alt="Barcelona" width="400" height="300">
+					<img src="content/Images/Productos/Exprimidoras.jpg" alt="Exprimidoras" width="400" height="300">
 					<p>
-						<strong>Barcelona</strong>
+						<strong>Exprimidoras</strong>
 					</p>
 				</div>
 			</div>
 			<div class="col-md-3">
 				<div class="thumbnail">
-					<img src="content/Images/Tiendas/Mapa_Logroño.jpg" alt="Logroño" width="400" height="300">
+					<img src="content/Images/Productos/Microondas.jpg" alt="Microondas" width="400" height="300">
 					<p>
-						<strong>Logroño</strong>
+						<strong>Microondas</strong>
 					</p>
 				</div>
 			</div>
 			<div class="col-md-3">
 				<div class="thumbnail">
-					<img src="content/Images/Tiendas/Mapa_Leon.gif" alt="León" width="400" height="300">
+					<img src="content/Images/Productos/Batidoras.jpg" alt="Batidoras" width="400" height="300">
 					<p>
-						<strong>León</strong>
+						<strong>Batidoras</strong>
 					</p>
 				</div>
 			</div>
