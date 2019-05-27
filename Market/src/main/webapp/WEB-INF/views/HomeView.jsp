@@ -21,7 +21,7 @@
 		<div class="row text-center container-fluid">
 			<div class="col-md-3">
 				<div class="thumbnail">
-					<img src="content/Images/Mapa_Madrid.jpg" alt="Madrid" width="400"
+					<img src="content/Images/Tiendas/Mapa_Madrid.jpg" alt="Madrid" width="400"
 						height="300">
 					<p>
 						<strong>Madrid</strong>
@@ -30,7 +30,7 @@
 			</div>
 			<div class="col-md-3">
 				<div class="thumbnail">
-					<img src="content/Images/Mapa_Barcelona.jpg" alt="Barcelona" width="400" height="300">
+					<img src="content/Images/Tiendas/Mapa_Barcelona.jpg" alt="Barcelona" width="400" height="300">
 					<p>
 						<strong>Barcelona</strong>
 					</p>
@@ -38,7 +38,15 @@
 			</div>
 			<div class="col-md-3">
 				<div class="thumbnail">
-					<img src="content/Images/Mapa_Leon.gif" alt="León" width="400" height="300">
+					<img src="content/Images/Tiendas/Mapa_Logroño.jpg" alt="Logroño" width="400" height="300">
+					<p>
+						<strong>Logroño</strong>
+					</p>
+				</div>
+			</div>
+			<div class="col-md-3">
+				<div class="thumbnail">
+					<img src="content/Images/Tiendas/Mapa_Leon.gif" alt="León" width="400" height="300">
 					<p>
 						<strong>León</strong>
 					</p>

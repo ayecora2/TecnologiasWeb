@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html title="Electro JP">
     <head>
-        <title>Electro JP</title>
+        <title>Electro Market</title>
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" ></script>
         <script src="bootstrap/js/bootstrap.min.js"></script>
         <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">	
@@ -19,9 +19,9 @@
             <div class="row text-center container-fluid">
             <div class="col-md-3">
                 <div class="thumbnail">
-                <img src="content/Images/1.jpg" alt="Paris" width="400" height="300">
-                <p><strong>Paris</strong></p>
-                <p>Yes, we built Paris</p>
+                <img src="content/Images/Productos/Batidoras.jpg" alt="Batidoras" width="400" height="300">
+                <p><strong>Batidorass</strong></p>
+                <p>Nuestra gama de batidoras</p>
                 </div>
             </div>
             <div class="col-md-3">
