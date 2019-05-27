@@ -63,9 +63,9 @@ public class DataAccessCore {
 			 
 			 try {
 				 statement
-				   .executeUpdate("INSERT INTO USERS VALUES(1,'Juan Pablo', 'jvaquero41@alumno.uned.es', '123','Palma de Mallorca','07015',1);");
+				   .executeUpdate("INSERT INTO USERS VALUES(1,'Silverio Rosales', 'srosales2@alumno.uned.es', '123','Mallorca','07015',1);");
 				 statement
-				   .executeUpdate("INSERT INTO USERS VALUES(2,'Comprador', 'jvaquero41@alumno.uned.es', '1234','Palma de Mallorca','07015',2);");
+				   .executeUpdate("INSERT INTO USERS VALUES(2,'Comprador', 'srosales2@alumno.uned.es', '1234','Mallorca','07015',2);");
 			} catch (Exception e) {
 				// TODO: handle exception
 			}
@@ -80,7 +80,7 @@ public class DataAccessCore {
 			 
 			 try {
 				 statement
-				   .executeUpdate("INSERT INTO SERVICIOS VALUES(1,'Entrada para minusv·lidos');");
+				   .executeUpdate("INSERT INTO SERVICIOS VALUES(1,'Entrada para minusv√∫lidos');");
 				 statement
 				   .executeUpdate("INSERT INTO SERVICIOS VALUES(2,'Parking gratuito para clientes durante 2 horas');");
 				 statement
@@ -164,11 +164,11 @@ public class DataAccessCore {
 				 statement
 				   .executeUpdate("INSERT INTO CATEGORIAS VALUES(1,'Videojuegos,');");
 				 statement
-				   .executeUpdate("INSERT INTO CATEGORIAS VALUES(2,'ElectrodomÈsticos,');");
+				   .executeUpdate("INSERT INTO CATEGORIAS VALUES(2,'Electrodom√©sticos,');");
 				 statement
-				   .executeUpdate("INSERT INTO CATEGORIAS VALUES(3,'Inform·tica,');");
+				   .executeUpdate("INSERT INTO CATEGORIAS VALUES(3,'Inform√°tica,');");
 				 statement
-				   .executeUpdate("INSERT INTO CATEGORIAS VALUES(4,'TelefonÌa,');");
+				   .executeUpdate("INSERT INTO CATEGORIAS VALUES(4,'Telefon√≠a,');");
 			} catch (Exception e) {
 				// TODO: handle exception
 			}
@@ -192,13 +192,13 @@ public class DataAccessCore {
 				 statement
 				   .executeUpdate("INSERT INTO PRODUCTOS VALUES(1, 1, 3, 1, 'diablo2.jpg', 'Juego de Rol', 5, 50);");  
 				 statement
-				   .executeUpdate("INSERT INTO PRODUCTOS VALUES(2, 1, 3, 2, 'CommandAndConquer.jpg', 'Juego de estretegÌa', 5, 45);");
+				   .executeUpdate("INSERT INTO PRODUCTOS VALUES(2, 1, 3, 2, 'CommandAndConquer.jpg', 'Juego de estreteg√≠a', 5, 45);");
 				 statement
 				   .executeUpdate("INSERT INTO PRODUCTOS VALUES(3, 2, 2, 1, '1.jpg', 'Cocina completa', 5, 250);");
 				 statement
 				   .executeUpdate("INSERT INTO PRODUCTOS VALUES(4, 2, 1, 1, '2.jpg', 'Microondas', 5, 24);");
 				 statement
-				   .executeUpdate("INSERT INTO PRODUCTOS VALUES(5, 2, 1, 1, '3.jpg', 'Tostadora m·quina coser', 5, 80);");
+				   .executeUpdate("INSERT INTO PRODUCTOS VALUES(5, 2, 1, 1, '3.jpg', 'Tostadora m√°quina coser', 5, 80);");
 				 statement
 				   .executeUpdate("INSERT INTO PRODUCTOS VALUES(6, 2, 1, 1, '4.jpg', 'Batidora', 5, 35);");
 				 statement

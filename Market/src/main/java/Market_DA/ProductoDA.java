@@ -8,10 +8,8 @@ public class ProductoDA extends DataAccessCore{
 	public static ResultSet darProductos()
 	{
 		try{	
-			
 			resultSet = statement.executeQuery("SELECT * FROM PRODUCTOS");  
 			return resultSet;
-			
 		} catch (Exception ex) {
 			ex.printStackTrace();
 			return null;
