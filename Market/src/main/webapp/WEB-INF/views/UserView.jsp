@@ -26,51 +26,51 @@
             </div>
             <div class="col-md-3">
                 <div class="thumbnail">
-                <img src="resources/1.jpg" alt="New York" width="400" height="300">
-                <p><strong>New York</strong></p>
-                <p>We built New York</p>
+                <img src="content/Images/Productos/Freidoras.jpg" alt="Freidoras" width="400" height="300">
+                <p><strong>Freidoras</strong></p>
+                <p>Nuestra gama de Freidoras</p>
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="thumbnail">
-                <img src="content/Images/3.jpg" alt="San Francisco" width="400" height="300">
-                <p><strong>San Francisco</strong></p>
-                <p>Yes, San Fran is ours</p>
+                <img src="content/Images/Productos/Microondas.jpg" alt="Microondas" width="400" height="300">
+                <p><strong>Microondas</strong></p>
+                <p>Nuestra gama de Microondas</p>
                 </div>
             </div>
 			<div class="col-md-3">
                 <div class="thumbnail">
-                <img src="content/Images/3.jpg" alt="San Francisco" width="400" height="300">
-                <p><strong>San Francisco</strong></p>
-                <p>Yes, San Fran is ours</p>
+                <img src="content/Images/Productos/Exprimidoras" alt="Exprimidoras" width="400" height="300">
+                <p><strong>Exprimidoras</strong></p>
+                <p>Nuestra gama de Exprimidoras</p>
                 </div>
             </div>
             <div class="col-md-3">
 				<div class="thumbnail">
-				<img src="content/Images/4.jpg" alt="Paris" width="400" height="300">
-				<p><strong>Paris</strong></p>
-				<p>Yes, we built Paris</p>
+				<img src="content/Images/Productos/Electrodomesticos%de%cocina.jpg" alt="Electrodomesticos de cocina" width="400" height="300">
+				<p><strong>Electrodomésticos de cocina</strong></p>
+				<p>Nuestra gama de cocina</p>
 				</div>
 			</div>
 			<div class="col-md-3">
 				<div class="thumbnail">
-				<img src="content/Images/5.jpg" alt="New York" width="400" height="300">
-				<p><strong>New York</strong></p>
-				<p>We built New York</p>
+				<img src="content/Images/Productos/Tostadora%20y%20máquina%20de%20coser.jpg" alt="Tostadora y máquina de coser" width="400" height="300">
+				<p><strong>Tostadora y máquina de coserk</strong></p>
+				<p>Nuestro dúo mágico</p>
 				</div>
 			</div>
 			<div class="col-md-3">
 				<div class="thumbnail">
-				<img src="content/Images/6.jpg" alt="San Francisco" width="400" height="300">
-				<p><strong>San Francisco</strong></p>
-				<p>Yes, San Fran is ours</p>
+				<img src="content/Images/Productos/CommandAndConquer.jpg" alt="Command & Conquer" width="400" height="300">
+				<p><strong>Command And Conquer</strong></p>
+				<p>Nuestros Juegos</p>
 				</div>
 			</div>
 			<div class="col-md-3">
                 <div class="thumbnail">
-                <img src="content/Images/3.jpg" alt="San Francisco" width="400" height="300">
-                <p><strong>San Francisco</strong></p>
-                <p>Yes, San Fran is ours</p>
+                <img src="ontent/Images/Productos/diablo2.jpg" alt="Diablo II" width="400" height="300">
+				<p><strong>Diablo II</strong></p>
+				<p>Nuestros Juegos</p>
                 </div>
             </div>
             </div><br>
