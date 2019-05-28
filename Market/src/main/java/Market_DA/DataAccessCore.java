@@ -194,17 +194,17 @@ public class DataAccessCore {
 				 statement
 				   .executeUpdate("INSERT INTO PRODUCTOS VALUES(2, 1, 3, 2, 'CommandAndConquer.jpg', 'Juego de estretegía', 5, 45);");
 				 statement
-				   .executeUpdate("INSERT INTO PRODUCTOS VALUES(3, 2, 2, 1, '1.jpg', 'Cocina completa', 5, 250);");
+				   .executeUpdate("INSERT INTO PRODUCTOS VALUES(3, 2, 2, 1, 'ElectrodomesticosDeCocina.jpg', 'Cocina completa', 5, 250);");
 				 statement
-				   .executeUpdate("INSERT INTO PRODUCTOS VALUES(4, 2, 1, 1, '2.jpg', 'Microondas', 5, 24);");
+				   .executeUpdate("INSERT INTO PRODUCTOS VALUES(4, 2, 1, 1, 'Microondas.jpg', 'Microondas', 5, 24);");
 				 statement
-				   .executeUpdate("INSERT INTO PRODUCTOS VALUES(5, 2, 1, 1, '3.jpg', 'Tostadora máquina coser', 5, 80);");
+				   .executeUpdate("INSERT INTO PRODUCTOS VALUES(5, 2, 1, 1, 'tostadorayMaquinaDeCoser.jpg', 'Tostadora máquina coser', 5, 80);");
 				 statement
-				   .executeUpdate("INSERT INTO PRODUCTOS VALUES(6, 2, 1, 1, '4.jpg', 'Batidora', 5, 35);");
+				   .executeUpdate("INSERT INTO PRODUCTOS VALUES(6, 2, 1, 1, 'Batidoras.jpg', 'Batidora', 5, 35);");
 				 statement
-				   .executeUpdate("INSERT INTO PRODUCTOS VALUES(7, 2, 1, 1, '5.jpg', 'Exprimidor', 5, 15);");
+				   .executeUpdate("INSERT INTO PRODUCTOS VALUES(7, 2, 1, 1, 'Exprimidoras.jpg', 'Exprimidor', 5, 15);");
 				 statement
-				   .executeUpdate("INSERT INTO PRODUCTOS VALUES(8, 2, 1, 1, '6.jpg', 'Freidora', 5, 26);");
+				   .executeUpdate("INSERT INTO PRODUCTOS VALUES(8, 2, 1, 1, 'Freidoras.jpg', 'Freidora', 5, 26);");
 			} catch (Exception e) {
 				// TODO: handle exception
 			}
