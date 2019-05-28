@@ -9,6 +9,7 @@ package Market_DO;
  * @author silverio
  */
 public class User {
+	
 
     private int Id;
     private String Nombre;
@@ -16,13 +17,24 @@ public class User {
     private String Pass;
     private String Ciudad;
     private String CP;
-    private UserType UserType;
+    private int UserType_Id;
     
 	/**
 	 * Crea un nuevo usuario, no requiere parámetros a priori.
 	 * Se configuran a posteriori.
 	 */
-	public User(){}
+
+	public User(int Id, String Nombre, String Email, String Pass, String Ciudad, String CP, int UserType) {
+		// TODO Auto-generated constructor stub
+		this.Id =Id;
+		this.Nombre =Nombre;
+		this.Email =Email;
+		this.Pass =Pass;
+		this.Ciudad =Ciudad;
+		this.CP =CP;
+		this.UserType_Id =UserType;
+		
+	}
 
 	/**
 	 * @return the id
@@ -75,6 +87,8 @@ public class User {
 	public void setCiudad(String ciudad) {Ciudad = ciudad;}
 
 	/**
+	 * @param string 
+	 * @param string 
 	 * @return the cP
 	 */
 	public String getCP() {return CP;}
@@ -87,11 +101,10 @@ public class User {
 	/**
 	 * @return the userType
 	 */
-	public UserType getUserType() {return UserType;}
+	public int getUserType() {return UserType_Id;}
 
 	/**
 	 * @param userType the userType to set
-	 */
-	public void setUserType(UserType userType) {UserType = userType;}
-
+	*/
+	public void setUserType(int userType) {UserType_Id = userType;}
 }
