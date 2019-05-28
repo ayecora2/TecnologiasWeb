@@ -4,7 +4,11 @@
 <!DOCTYPE html>
 <html title="Electro Market">
     <head>
+<<<<<<< HEAD
         <title>Electro Market</title>
+=======
+        <title>Electro SA</title>
+>>>>>>> refs/remotes/origin/master
         <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
         <script src="bootstrap/js/bootstrap.min.js"></script>
         <script src="bootstrap/js/Myjs.js"></script>
@@ -20,7 +24,7 @@
             <c:forEach var="produc" items="${listProductos}" varStatus="tagStatus">
 			    <div class="col-md-3">
                 <div class="thumbnail">
-                <img src="content/Images/${produc.getImagen()}" alt="diablo" width="400" height="300">
+                <img src="content/Images/Productos/${produc.getImagen()}" alt="diablo" width="400" height="300">
                  <p><strong>${produc.getDescripcion()}</strong></p> 
                 <p>${produc.getPrecio()} &#8364;</p>
                 </div>
