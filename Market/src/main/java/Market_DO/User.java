@@ -25,7 +25,6 @@ public class User {
 	 */
 
 	public User(int Id, String Nombre, String Email, String Pass, String Ciudad, String CP, int UserType) {
-		// TODO Auto-generated constructor stub
 		this.Id =Id;
 		this.Nombre =Nombre;
 		this.Email =Email;

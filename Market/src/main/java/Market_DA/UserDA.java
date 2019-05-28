@@ -27,7 +27,7 @@ public class UserDA extends DataAccessCore{
 			   .executeUpdate("INSERT INTO USERS VALUES("+usuario.getId()+","+usuario.getNombre()+","+usuario.getEmail()+","+usuario.getPass()+","+usuario.getCiudad()+","+usuario.getCP()+",1);");
 			
 		} catch (Exception e) {
-			// TODO: handle exception
+			e.printStackTrace();
 		}
 	}
 
