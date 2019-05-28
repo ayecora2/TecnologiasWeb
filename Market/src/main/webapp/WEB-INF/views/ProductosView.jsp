@@ -20,7 +20,7 @@
             <c:forEach var="produc" items="${listProductos}" varStatus="tagStatus">
 			    <div class="col-md-3">
                 <div class="thumbnail">
-                <img src="content/Images/${produc.getImagen()}" alt="diablo" width="400" height="300">
+                <img src="content/Images/Productos/${produc.getImagen()}" alt="diablo" width="400" height="300">
                  <p><strong>${produc.getDescripcion()}</strong></p> 
                 <p>${produc.getPrecio()} &#8364;</p>
                 </div>
