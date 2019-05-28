@@ -90,7 +90,8 @@ public class DataAccessCore {
 		// Creación tabla de Servicios
 		try {
 			statement.executeUpdate("CREATE TABLE IF NOT EXISTS SERVICIOS(\r\n"
-					+ "    ID integer identity PRIMARY KEY,\r\n" + "    NOMBRE varchar(50) UNIQUE\r\n" + ");");
+					+ "    ID integer identity PRIMARY KEY,\r\n"
+					+ "    NOMBRE varchar(50) UNIQUE\r\n" + ");");
 		} catch (SQLException e1) {e1.printStackTrace();} //Impresión de la traza de error
 		//Introducción de servicios básicos.
 		try { 
@@ -110,7 +111,8 @@ public class DataAccessCore {
 		//Creación tabla de tiendas.
 		try {
 			statement.executeUpdate("CREATE TABLE IF NOT EXISTS TIENDAS(\r\n"
-					+ "    ID integer identity PRIMARY KEY,\r\n" + "    NOMBRE varchar(50) UNIQUE\r\n" + ");");
+					+ "    ID integer identity PRIMARY KEY,\r\n"
+					+ "    NOMBRE varchar(50) UNIQUE\r\n" + ");");
 		} catch (SQLException e1) {e1.printStackTrace();}
 
 		try {statement.executeUpdate("INSERT INTO TIENDAS VALUES(1,'ElectroMarket');");
@@ -118,8 +120,10 @@ public class DataAccessCore {
 		
 		//Creación de la tabla y los servicios adjuntos a la tienda
 		try {
-			statement.executeUpdate("CREATE TABLE IF NOT EXISTS TIENDA_SERVICIOS(\r\n" + "    TIENDA_ID integer ,\r\n"
-					+ "    SERVICIO_ID integer ,\r\n" + "	CONSTRAINT PK_TS primary key (TIENDA_ID, SERVICIO_ID) ,\r\n"
+			statement.executeUpdate("CREATE TABLE IF NOT EXISTS TIENDA_SERVICIOS(\r\n"
+					+ "    TIENDA_ID integer ,\r\n"
+					+ "    SERVICIO_ID integer ,\r\n"
+					+ "	CONSTRAINT PK_TS primary key (TIENDA_ID, SERVICIO_ID) ,\r\n"
 					+ "    CONSTRAINT FK_TS_TID foreign key (TIENDA_ID) references TIENDAS(ID),\r\n"
 					+ "    CONSTRAINT FK_TS_SID foreign key (SERVICIO_ID) references SERVICIOS(ID)\r\n" + ");");
 		} catch (SQLException e1) {e1.printStackTrace();}
@@ -139,7 +143,8 @@ public class DataAccessCore {
 		//Creación de la tabla MARCAS
 		try {
 			statement.executeUpdate("CREATE TABLE IF NOT EXISTS MARCAS(\r\n"
-					+ "    ID integer identity PRIMARY KEY,\r\n" + "    NOMBRE varchar(50) UNIQUE\r\n" + ");");
+					+ "    ID integer identity PRIMARY KEY,\r\n"
+					+ "    NOMBRE varchar(50) UNIQUE\r\n" + ");");
 		} catch (SQLException e1) {e1.printStackTrace();} //Imprime la traza
 		//Introducción de unas cuantas Marcas de base.
 		try {
@@ -160,7 +165,8 @@ public class DataAccessCore {
 		//Creación de la tabla
 		try {
 			statement.executeUpdate("CREATE TABLE IF NOT EXISTS CATEGORIAS(\r\n"
-					+ "    ID integer identity PRIMARY KEY,\r\n" + "    NOMBRE varchar(50) UNIQUE\r\n" + ");");
+					+ "    ID integer identity PRIMARY KEY,\r\n"
+					+ "    NOMBRE varchar(50) UNIQUE\r\n" + ");");
 		} catch (SQLException e1) {e1.printStackTrace();}
 		//Insercción de varias categorías.
 		try {
@@ -259,7 +265,8 @@ public class DataAccessCore {
 		//Creación de la tabla
 		try {
 			statement.executeUpdate("CREATE TABLE IF NOT EXISTS COMPRAS_ESTADOS(\r\n"
-					+ "    ID integer identity PRIMARY KEY,\r\n" + "    ESTADO varchar(30)\r\n" + ");"); //Cambiado NOMBRE por ESTADO
+					+ "    ID integer identity PRIMARY KEY,\r\n"
+					+ "    ESTADO varchar(30)\r\n" + ");"); //Cambiado NOMBRE por ESTADO
 		} catch (SQLException e1) {e1.printStackTrace();}
 		//Insercción de los posibles estados
 		try {
