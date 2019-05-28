@@ -17,8 +17,7 @@ public class DataAccessCore {
 
 			//Driver
 			Class.forName("org.hsqldb.jdbc.JDBCDriver");
-			//Connection
-			//connection = DriverManager.getConnection("jdbc:hsqldb:hsql://localhost/", "sa", "");
+			//Connexión con la base de datos en local dentro del paquete
 			connection = DriverManager.getConnection("jdbc:hsqldb:file:src/main/resources/mydb", "sa", "");
 			//Iniciar valores BBDD
 			iniciarBBDD();
