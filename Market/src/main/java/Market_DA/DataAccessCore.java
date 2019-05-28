@@ -192,9 +192,9 @@ public class DataAccessCore {
 				 statement
 				   .executeUpdate("INSERT INTO PRODUCTOS VALUES(1, 1, 3, 1, 'diablo2.jpg', 'Juego de Rol', 5, 50);");  
 				 statement
-				   .executeUpdate("INSERT INTO PRODUCTOS VALUES(2, 1, 3, 2, 'CommandAndConquer.jpg', 'Juego de estretegía', 5, 45);");
+				   .executeUpdate("UPDATE INTO PRODUCTOS VALUES(2, 1, 3, 2, 'CommandAndConquer.jpg', 'Juego de estretegía', 5, 45);");
 				 statement
-				   .executeUpdate("INSERT INTO PRODUCTOS VALUES(3, 2, 2, 1, 'ElectrodomesticosDeCocina.jpg', 'Cocina completa', 5, 250);");
+				   .executeUpdate("UPDATE INTO PRODUCTOS VALUES(3, 2, 2, 1, 'ElectrodomesticosDeCocina.jpg', 'Cocina completa', 5, 250);");
 				 statement
 				   .executeUpdate("INSERT INTO PRODUCTOS VALUES(4, 2, 1, 1, 'Microondas.jpg', 'Microondas', 5, 24);");
 				 statement
