@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html title="Electro JP">
     <head>
-        <title>Electro JP</title>
+        <title>Electro SA</title>
         <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
         <script src="bootstrap/js/bootstrap.min.js"></script>
         <script src="bootstrap/js/Myjs.js"></script>
