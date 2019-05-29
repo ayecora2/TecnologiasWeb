@@ -28,7 +28,7 @@ public class DataAccessCore {
 			// Carga el Driver
 			Class.forName("org.hsqldb.jdbc.JDBCDriver");
 			// Establece la conexión
-			connection = DriverManager.getConnection("jdbc:hsqldb:file:mydb", "sa", "");
+			connection = DriverManager.getConnection("jdbc:hsqldb:mem:memoriadb", "sa", "");
 			// Iniciar valores BBDD
 			iniciarBBDD();
 		} catch (Exception ex) {

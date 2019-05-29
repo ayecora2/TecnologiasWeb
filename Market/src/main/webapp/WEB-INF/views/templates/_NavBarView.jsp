@@ -14,6 +14,9 @@
         <li class="nav-item">
             <a class="nav-link" href="Producto">Productos</a>
         </li>
+        <li class="nav-item">
+            <a class="nav-link" href="User">Usuarios</a>
+        </li>
         <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Dropdown
