@@ -43,7 +43,7 @@ public class UserBL {
 						resultSet.getString("Ciudad"),
 						resultSet.getString("Direccion"),
 						resultSet.getString("CP"),
-						resultSet.getInt("UserType_Id"))
+						resultSet.getInt("User_Type_Id"))
 				);
 			}
 			return listUsers; // Devuelve la lista de usuarios
