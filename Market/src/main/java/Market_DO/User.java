@@ -10,7 +10,6 @@ package Market_DO;
  * @version 201929051557
  */
 public class User {
-<<<<<<< HEAD
 	//Campos privados que definen a una instancia.
     private int id;
     private String nombre;
@@ -20,18 +19,6 @@ public class User {
     private String pass;
     private String ciudad;
     private String direccion;
-=======
-	
-
-    private int Id;
-    private String Nombre;
-    private String Apellido;
-    private String Email;
-    private String Telefono;
-    private String Pass;
-    private String Ciudad;
-    private String Direccion;
->>>>>>> branch 'master' of https://github.com/ayecora2/TecnologiasWeb.git
     private String CP;
     private int userType_Id;
 
@@ -65,27 +52,8 @@ public class User {
 	 * Crea un nuevo usuario, no requiere parámetros a priori.
 	 * Se configuran a posteriori.
 	 */
-<<<<<<< HEAD
 	public User() {super();	}
-=======
-    
-	public User(int Id, String Nombre, String Apellido, String Email, String Telefono, String Pass, String Ciudad, String Direccion, String CP, int UserType) {
-		this.Id =Id;
-		this.Nombre =Nombre;
-		this.Apellido=Apellido;
-		this.Email =Email;
-		this.Telefono=Telefono;
-		this.Pass =Pass;
-		this.Ciudad =Ciudad;
-		this.Direccion=Direccion;
-		this.CP =CP;
-		this.UserType_Id =UserType;
-		
-	}
->>>>>>> branch 'master' of https://github.com/ayecora2/TecnologiasWeb.git
-
-
-
+	
 	/**
 	 * @return the id
 	 */
@@ -137,8 +105,6 @@ public class User {
 	public void setCiudad(String ciudad) {this.ciudad = ciudad;}
 
 	/**
-	 * @param string 
-	 * @param string 
 	 * @return the cP
 	 */
 	public String getCP() {return CP;}
@@ -156,7 +122,6 @@ public class User {
 	/**
 	 * @param userType the userType to set
 	*/
-<<<<<<< HEAD
 	public void setUserType(int userType) {userType_Id = userType;}
 
 	/**
@@ -189,31 +154,5 @@ public class User {
 	 * @param direccion the direccion to set
 	 */
 	public void setDireccion(String direccion) {this.direccion = direccion;}
-=======
-	public void setUserType(int userType) {UserType_Id = userType;}
 
-	public String getApellido() {
-		return Apellido;
-	}
-
-	public void setApellido(String apellido) {
-		Apellido = apellido;
-	}
-
-	public String getTelefono() {
-		return Telefono;
-	}
-
-	public void setTelefono(String telefono) {
-		Telefono = telefono;
-	}
-
-	public String getDireccion() {
-		return Direccion;
-	}
-
-	public void setDireccion(String direccion) {
-		Direccion = direccion;
-	}
->>>>>>> branch 'master' of https://github.com/ayecora2/TecnologiasWeb.git
 }
