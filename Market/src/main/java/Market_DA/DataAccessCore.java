@@ -28,7 +28,7 @@ public class DataAccessCore {
 			// Carga el Driver
 			Class.forName("org.hsqldb.jdbc.JDBCDriver");
 			// Establece la conexión
-			connection = DriverManager.getConnection("jdbc:hsqldb:hsql:mydb2", "sa", "");
+			connection = DriverManager.getConnection("jdbc:hsqldb:file:mydb", "sa", "");
 			// Iniciar valores BBDD
 			iniciarBBDD();
 		} catch (Exception ex) {
@@ -206,12 +206,12 @@ public class DataAccessCore {
 		try {
 			statement.executeUpdate("INSERT INTO PRODUCTOS VALUES(1,1,1,3,'Diablo II','Rol','diablo2.jpg','Juego de Rol',5,50);");
 			statement.executeUpdate("INSERT INTO PRODUCTOS VALUES(2,1,1,2,'Comamand And Conquer','Estrategia','CommandAndConquer.jpg','Juego de estretegía', 5, 45);");
-			statement.executeUpdate("INSERT INTO PRODUCTOS VALUES(3,2,1,3,'Set de Cocina','Blanco California','ElectrodomesticosDeCocina.jpg','Cocina completa',5,260);");
+			statement.executeUpdate("INSERT INTO PRODUCTOS VALUES(3,2,1,3,'Set de Cocina','Blanco California','ElectrodomesticosDeCocina.jpg','Cocina completa',5,270);");
 			statement.executeUpdate("INSERT INTO PRODUCTOS VALUES(4,2,1,1,'Microondas','700Wattios','Microondas.jpg','Microondas',5,24);");
 			statement.executeUpdate("INSERT INTO PRODUCTOS VALUES(5,2,1,3,'Set Imprescindible','Africa People','tostadorayMaquinaDeCoser.jpg', 'Tostadora máquina coser', 5, 80);");
 			statement.executeUpdate("INSERT INTO PRODUCTOS VALUES(6,2,1,4,'Picadilly','Destrozadora','Batidoras.jpg','Batidora',5,35);");
 			statement.executeUpdate("INSERT INTO PRODUCTOS VALUES(7,2,1,5,'Aplastator','2000T','Exprimidoras.jpg', 'Exprimidor', 5, 15);");
-			statement.executeUpdate("INSERT INTO PRODUCTOS VALUES(8,2,1,6,'Dorator','Olieo IV','Freidora.jpg', 'Freidora', 5, 26);");
+			statement.executeUpdate("INSERT INTO PRODUCTOS VALUES(8,2,1,6,'Dorator','Olieo IV','Freidoras.jpg', 'Freidora', 5, 26);");
 		} catch (Exception e) {e.printStackTrace();}
 	}
 	
