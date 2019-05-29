@@ -31,9 +31,7 @@ public class DataAccessCore {
 			connection = DriverManager.getConnection("jdbc:hsqldb:mem:memoriadb", "sa", "");
 			// Iniciar valores BBDD
 			iniciarBBDD();
-		} catch (Exception ex) {
-			ex.printStackTrace();
-		}
+		} catch (Exception ex) {ex.printStackTrace();}
 	}
 
 	/**
@@ -123,7 +121,7 @@ public class DataAccessCore {
 			statement.executeUpdate("CREATE TABLE IF NOT EXISTS TIENDA_SERVICIOS(\r\n"
 					+ "    TIENDA_ID integer ,\r\n"
 					+ "    SERVICIO_ID integer ,\r\n"
-					+ "	CONSTRAINT PK_TS primary key (TIENDA_ID, SERVICIO_ID) ,\r\n"
+					+ "	   CONSTRAINT PK_TS primary key (TIENDA_ID, SERVICIO_ID) ,\r\n"
 					+ "    CONSTRAINT FK_TS_TID foreign key (TIENDA_ID) references TIENDAS(ID),\r\n"
 					+ "    CONSTRAINT FK_TS_SID foreign key (SERVICIO_ID) references SERVICIOS(ID)\r\n" + ");");
 		} catch (SQLException e1) {e1.printStackTrace();}
@@ -211,7 +209,7 @@ public class DataAccessCore {
 			statement.executeUpdate("INSERT INTO PRODUCTOS VALUES(5,2,1,3,'Set Imprescindible','Africa People','tostadorayMaquinaDeCoser.jpg', 'Tostadora máquina coser', 5, 80);");
 			statement.executeUpdate("INSERT INTO PRODUCTOS VALUES(6,2,1,4,'Picadilly','Destrozadora','Batidoras.jpg','Batidora',5,35);");
 			statement.executeUpdate("INSERT INTO PRODUCTOS VALUES(7,2,1,5,'Aplastator','2000T','Exprimidoras.jpg', 'Exprimidor', 5, 15);");
-			statement.executeUpdate("INSERT INTO PRODUCTOS VALUES(8,2,1,6,'Dorator','Olieo IV','Freidoras.jpg', 'Freidora', 5, 26);");
+			statement.executeUpdate("INSERT INTO PRODUCTOS VALUES(8,2,1,6,'Dorator','Olieo IV','Freidoras.jpg','Freidora', 5, 26);");
 		} catch (Exception e) {e.printStackTrace();}
 	}
 	
@@ -249,10 +247,11 @@ public class DataAccessCore {
 		//Creación de la tabla.
 		/* NOTA: el precio ¿debe ser integer o debe ser decimal? */
 		try {
-			statement.executeUpdate(
-					"CREATE TABLE IF NOT EXISTS PRODUCTOS_OFERTAS(\r\n" + "    ID integer identity PRIMARY KEY,\r\n"
-							+ "    PRECIO integer,\r\n" + "    NOMBRE varchar(50), \r\n"
-							+ "    CONSTRAINT FK_PO_C foreign key (ID) references PRODUCTOS(ID)\r\n" + ");");
+			statement.executeUpdate("CREATE TABLE IF NOT EXISTS PRODUCTOS_OFERTAS(\r\n"
+					+ "    ID integer identity PRIMARY KEY,\r\n"
+					+ "    PRECIO integer,\r\n" 
+					+ "    NOMBRE varchar(50), \r\n"
+					+ "    CONSTRAINT FK_PO_C foreign key (ID) references PRODUCTOS(ID)\r\n" + ");");
 		} catch (SQLException e) {e.printStackTrace();}
 	}
 	

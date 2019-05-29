@@ -6,38 +6,50 @@ import java.util.List;
 
 import Market_DO.User;
 
+/**
+ * La clase tiene la función de leer de la Base de Datos, los datos de usuario, y convertirlos en una lista 
+ * de instancias de la clase User con sus campos convertidos adecuadamente.
+ * @author silverio
+ * @version 201905291627
+ */
 public class UserBL {
 	
+	/**
+	 * retorna la lista de usuarios extraida de la base de datos
+	 * en formato texto, convertida en una lista de instancias de la clase User. En caso de error o de 
+	 * excepción se devuelve NULL
+	 * @return listUser lista de instancias de User
+	 * @return null en otro caso
+	 */
 	public static List<User> darUsuarios()
 	{
 		try {
 			ResultSet resultSet;
-			//Lista de Usuario
+			//Creación de una lista de Usuarios
 			List<User> listUsers = new ArrayList<User>();
-			// se recibe el resultSet de Usuarios
+			// se recibe el resultSet de Usuarios, la cuhal es una lista de usuarios
 			resultSet = Market_DA.UserDA.darUsuarios();
 			
 			//Bucle para añadir items a la lista	
 			while (resultSet.next()) {
-				// Añade el item a la lista de productos
+				// Añade usuario a la lista de nueva de usuarios, extrayendo los datos de la BBDD
 				listUsers.add(new User(
 						resultSet.getInt("Id"),
 						resultSet.getString("Nombre"),
+						resultSet.getString("Apellido"),
 						resultSet.getString("Email"),
+						resultSet.getInt("Telefono"),
 						resultSet.getString("Pass"),
 						resultSet.getString("Ciudad"),
-						resultSet.getString("CP"),
+						resultSet.getString("Direccion"),
+						resultSet.getInt("CP"),
 						resultSet.getInt("UserType_Id"))
 				);
-				//En este lugar no se añade a la ninguna lista a la nueva instancia de Producto.				
 			}
-			//Devuelve la lista de productos
-			return listUsers;
+			return listUsers; // Devuelve la lista de usuarios
 		} catch (Exception ex) {
 			ex.printStackTrace();
-			return null;
+			return null; //Devuelve Null en otro caso
 		}
 	}
-	
-
 }
