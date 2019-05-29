@@ -2,7 +2,7 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ page session="false" %>
 <!DOCTYPE html>
-<html title="Electro SA">
+<html title="Electro Market">
     <head>
         <title>Electro Market</title>
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" ></script>
