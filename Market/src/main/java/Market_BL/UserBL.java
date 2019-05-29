@@ -23,11 +23,14 @@ public class UserBL {
 				listUsers.add(new User(
 						resultSet.getInt("Id"),
 						resultSet.getString("Nombre"),
+						resultSet.getString("Apellido"),
 						resultSet.getString("Email"),
+						resultSet.getString("Telefono"),
 						resultSet.getString("Pass"),
 						resultSet.getString("Ciudad"),
+						resultSet.getString("Direccion"),
 						resultSet.getString("CP"),
-						resultSet.getInt("UserType_Id"))
+						resultSet.getInt("User_Type_Id"))
 				);
 				//En este lugar no se añade a la ninguna lista a la nueva instancia de Producto.				
 			}

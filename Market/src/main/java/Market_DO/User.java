@@ -13,9 +13,12 @@ public class User {
 
     private int Id;
     private String Nombre;
+    private String Apellido;
     private String Email;
+    private String Telefono;
     private String Pass;
     private String Ciudad;
+    private String Direccion;
     private String CP;
     private int UserType_Id;
     
@@ -23,17 +26,22 @@ public class User {
 	 * Crea un nuevo usuario, no requiere parámetros a priori.
 	 * Se configuran a posteriori.
 	 */
-
-	public User(int Id, String Nombre, String Email, String Pass, String Ciudad, String CP, int UserType) {
+    
+	public User(int Id, String Nombre, String Apellido, String Email, String Telefono, String Pass, String Ciudad, String Direccion, String CP, int UserType) {
 		this.Id =Id;
 		this.Nombre =Nombre;
+		this.Apellido=Apellido;
 		this.Email =Email;
+		this.Telefono=Telefono;
 		this.Pass =Pass;
 		this.Ciudad =Ciudad;
+		this.Direccion=Direccion;
 		this.CP =CP;
 		this.UserType_Id =UserType;
 		
 	}
+
+
 
 	/**
 	 * @return the id
@@ -106,4 +114,28 @@ public class User {
 	 * @param userType the userType to set
 	*/
 	public void setUserType(int userType) {UserType_Id = userType;}
+
+	public String getApellido() {
+		return Apellido;
+	}
+
+	public void setApellido(String apellido) {
+		Apellido = apellido;
+	}
+
+	public String getTelefono() {
+		return Telefono;
+	}
+
+	public void setTelefono(String telefono) {
+		Telefono = telefono;
+	}
+
+	public String getDireccion() {
+		return Direccion;
+	}
+
+	public void setDireccion(String direccion) {
+		Direccion = direccion;
+	}
 }
