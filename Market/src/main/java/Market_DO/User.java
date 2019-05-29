@@ -15,11 +15,11 @@ public class User {
     private String nombre;
     private String apellido;
     private String email;
-    private int telefono;
+    private String telefono;
     private String pass;
     private String ciudad;
     private String direccion;
-    private int CP;
+    private String CP;
     private int userType_Id;
 
 	/**
@@ -35,7 +35,7 @@ public class User {
 	 * @param CP Código Postal del usuario
 	 * @param UserType Tipo de Usuario, 1 Admin, 2 Usuario generico (Cliente)
 	 */
-	public User(int Id, String Nombre,String apellido, String Email, int telefono, String Pass, String Ciudad, String direccion, int CP, int UserType) {
+	public User(int Id, String Nombre,String apellido, String Email, String telefono, String Pass, String Ciudad, String direccion, String CP, int UserType) {
 		this.id = Id;
 		this.nombre =Nombre;
 		this.apellido = apellido;
@@ -109,12 +109,12 @@ public class User {
 	 * @param string 
 	 * @return the cP
 	 */
-	public int getCP() {return CP;}
+	public String getCP() {return CP;}
 
 	/**
 	 * @param cP the cP to set
 	 */
-	public void setCP(int cP) {this.CP = cP;}
+	public void setCP(String cP) {this.CP = cP;}
 
 	/**
 	 * @return the userType
@@ -129,13 +129,13 @@ public class User {
 	/**
 	 * @return el número de teléfono del usuario
 	 */
-	public int getTelefono() {return telefono;}
+	public String getTelefono() {return telefono;}
 	
 	/**
 	 * Establece el número de teléfono del usuario
 	 * @param telefono teléfono del usuario
 	 */
-	public void setTelefono(int telefono) {this.telefono = telefono;}
+	public void setTelefono(String telefono) {this.telefono = telefono;}
 
 	/**
 	 * @return the apellido

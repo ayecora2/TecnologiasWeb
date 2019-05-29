@@ -38,11 +38,11 @@ public class UserBL {
 						resultSet.getString("Nombre"),
 						resultSet.getString("Apellido"),
 						resultSet.getString("Email"),
-						resultSet.getInt("Telefono"),
+						resultSet.getString("Telefono"),
 						resultSet.getString("Pass"),
 						resultSet.getString("Ciudad"),
 						resultSet.getString("Direccion"),
-						resultSet.getInt("CP"),
+						resultSet.getString("CP"),
 						resultSet.getInt("UserType_Id"))
 				);
 			}
