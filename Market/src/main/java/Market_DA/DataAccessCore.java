@@ -308,7 +308,7 @@ public class DataAccessCore {
 					+ "    COMPRA_ID integer,\r\n"
 					+ "    PRODUCTO_ID integer,\r\n"
 					+ "    CANTIDAD integer,\r\n"
-					+ "    CONSTRAINT PK_CI primary key (COMPRA_ID, PRODUCTO_ID) ,\r\n" //¿Es necesario doble key?
+					+ "    CONSTRAINT PK_CI primary key (COMPRA_ID, PRODUCTO_ID) ,\r\n" //¿Es necesario doble key? me parece que no debería estar Producto ID en la KEY
 					+ "    CONSTRAINT FK_CI_C foreign key (COMPRA_ID) references CARRITO(ID),\r\n"
 					+ "    CONSTRAINT FK_CI_P foreign key (PRODUCTO_ID) references PRODUCTOS(ID)\r\n" + ");");
 
