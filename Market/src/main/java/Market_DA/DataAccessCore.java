@@ -42,8 +42,7 @@ public class DataAccessCore {
 		//Creación tipos de usuario
 		try {
 			statement.executeUpdate("CREATE TABLE IF NOT EXISTS USERS_TYPE(\r\n"
-					+ "    ID integer identity PRIMARY KEY,\r\n" 
-					+ "    NOMBRE varchar(40) UNIQUE\r\n" + ");");
+					+ "    ID integer identity PRIMARY KEY,\r\n" + "    NOMBRE varchar(40) UNIQUE\r\n" + ");");
 		} catch (SQLException e1) {e1.printStackTrace();} // Imprimir la traza del error
 		//Añadir dos tipos de usuario, Admin y usuario.
 		try {
@@ -72,13 +71,16 @@ public class DataAccessCore {
 					+ "    CP varchar(5), \r\n" 
 					+ "    USER_TYPE_ID integer,\r\n" //enlace con la tabla de Tipos de Usuarios
 					+ "    CONSTRAINT FK_UT_ID foreign key (USER_TYPE_ID) references USERS_TYPE(ID)\r\n" + ");");
-		} catch (SQLException e1) {e1.printStackTrace();} //Imprime la traza del error
+		} catch (SQLException e1) {
+			System.out.println("Error al crear la tabla de usuarios");
+			e1.printStackTrace();
+			} //Imprime la traza del error
 		//Introducir usuarios básicos
 		try { 
 			//ID/PK(integer), Nombre(40), email(50), password(8), ciudad(50), CP(5), Tipo Usuario(Integer 1).
-			statement.executeUpdate("INSERT INTO USERS VALUES(1,'Charly','charly@alumno.uned.es','9998887770','123','Leon','Calle Lola','24001',1);");
-			statement.executeUpdate("INSERT INTO USERS VALUES(2,'Silverio','srosales2@alumno.uned.es','615324121','1234','Leon','Calle Tomás','24001',2);");				
-			statement.executeUpdate("INSERT INTO USERS VALUES(3,'Abel','ayecora2@alumno.uned.es','623456788','1234','Logroño','Avenida Tomasolo','26001',2);");
+			statement.executeUpdate("INSERT INTO USERS VALUES(1,'Charly','Bravo','charly@alumno.uned.es','9998887770','123','Leon','Calle Lola','24001',1);");
+			statement.executeUpdate("INSERT INTO USERS VALUES(2,'Silverio','Rosales','srosales2@alumno.uned.es','615324121','1234','Leon','Calle Tomás','24001',2);");				
+			statement.executeUpdate("INSERT INTO USERS VALUES(3,'Abel','Yécora','ayecora2@alumno.uned.es','623456788','1234','Logroño','Avenida Tomasolo','26001',2);");
 		} catch (Exception e) {e.printStackTrace();} //Imprime la traza del error.
 	}
 	

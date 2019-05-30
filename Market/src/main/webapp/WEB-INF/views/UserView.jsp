@@ -17,10 +17,13 @@
         <div id="containerUser" class="container-fluid text-center bg-grey">
             <h4>Usuarios</h4><br>
             <div class="row text-center container-fluid">
-            <c:forEach var="user" items="${listUsuarios}" varStatus="tagStatus">
+            <c:forEach var="produc" items="${listUsuarios}" varStatus="tagStatus">
 			    <div class="col-md-3">
-                 <p><strong>${user.getId()}</strong></p> 
-                <p>${user.getNombre()}</p>
+                <div class="thumbnail">
+                <img src="content/Images/Productos/${produc.getImagen()}" alt="diablo" width="400" height="300">
+                 <p><strong>${produc.getDescripcion()}</strong></p> 
+                <p>${produc.getPrecio()} &#8364;</p>
+                </div>
             </div>
 			</c:forEach>
             </div><br>
