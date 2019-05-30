@@ -1,5 +1,6 @@
 package Market_DA;
 
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -76,9 +77,9 @@ public class DataAccessCore {
 		//Introducir usuarios básicos
 		try { 
 			//ID/PK(integer), Nombre(40), email(50), password(8), ciudad(50), CP(5), Tipo Usuario(Integer 1).
-			statement.executeUpdate("INSERT INTO USERS VALUES(1,'Charly','charly@alumno.uned.es','9998887770','123','Leon','Calle Lola','24001',1);");
-			statement.executeUpdate("INSERT INTO USERS VALUES(2,'Silverio','srosales2@alumno.uned.es','615324121','1234','Leon','Calle Tomás','24001',2);");				
-			statement.executeUpdate("INSERT INTO USERS VALUES(3,'Abel','ayecora2@alumno.uned.es','623456788','1234','Logroño','Avenida Tomasolo','26001',2);");
+			statement.executeUpdate("INSERT INTO USERS VALUES(1,'Charly','Brabo','charly@alumno.uned.es','9998887770','123','Leon','Calle Lola','24001',1);");
+			statement.executeUpdate("INSERT INTO USERS VALUES(2,'Silverio','Rosales','srosales2@alumno.uned.es','615324121','1234','Leon','Calle Tomás','24001',2);");				
+			statement.executeUpdate("INSERT INTO USERS VALUES(3,'Abel','Yecora','ayecora2@alumno.uned.es','623456788','1234','Logroño','Avenida Tomasolo','26001',2);");
 		} catch (Exception e) {e.printStackTrace();} //Imprime la traza del error.
 	}
 	
