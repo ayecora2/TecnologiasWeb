@@ -7,95 +7,104 @@ package Market_DO;
  * Almacena sus datos personales así como un identificador
  * único, una clave y el tipo de usuario.
  * @author silverio
+ * @version 201929051557
  */
 public class User {
-	
-
-    private int Id;
-    private String Nombre;
-    private String Apellido;
-    private String Email;
-    private String Telefono;
-    private String Pass;
-    private String Ciudad;
-    private String Direccion;
+	//Campos privados que definen a una instancia.
+    private int id;
+    private String nombre;
+    private String apellido;
+    private String email;
+    private String telefono;
+    private String pass;
+    private String ciudad;
+    private String direccion;
     private String CP;
-    private int UserType_Id;
-    
+    private int userType_Id;
+
+	/**
+	 * Constructor de la clase User, configura mediante parámetros la instancia a crear.
+	 * @param Id del usuario
+	 * @param Nombre del usuario
+	 * @param apellido del usuario
+	 * @param Email del usuario
+	 * @param telefono del usuario
+	 * @param Pass clave personal del usuario
+	 * @param Ciudad de residencia habitual del usuario
+	 * @param direccion del usuario
+	 * @param CP Código Postal del usuario
+	 * @param UserType Tipo de Usuario, 1 Admin, 2 Usuario generico (Cliente)
+	 */
+	public User(int Id, String Nombre,String apellido, String Email, String telefono, String Pass, String Ciudad, String direccion, String CP, int UserType) {
+		this.id = Id;
+		this.nombre =Nombre;
+		this.apellido = apellido;
+		this.email = Email;
+		this.telefono = telefono;
+		this.pass = Pass;
+		this.ciudad = Ciudad;
+		this.direccion = direccion;
+		this.CP = CP;
+		this.userType_Id = UserType;		
+	}
+
 	/**
 	 * Crea un nuevo usuario, no requiere parámetros a priori.
 	 * Se configuran a posteriori.
 	 */
-    
-	public User(int Id, String Nombre, String Apellido, String Email, String Telefono, String Pass, String Ciudad, String Direccion, String CP, int UserType) {
-		this.Id =Id;
-		this.Nombre =Nombre;
-		this.Apellido=Apellido;
-		this.Email =Email;
-		this.Telefono=Telefono;
-		this.Pass =Pass;
-		this.Ciudad =Ciudad;
-		this.Direccion=Direccion;
-		this.CP =CP;
-		this.UserType_Id =UserType;
-		
-	}
-
-
-
+	public User() {super();	}
+	
 	/**
 	 * @return the id
 	 */
-	public int getId() {return Id;}
+	public int getId() {return id;}
 
 	/**
 	 * @param id the id to set
 	 */
-	public void setId(int id) {Id = id;}
+	public void setId(int id) {this.id = id;}
 
 	/**
 	 * @return the nombre
 	 */
-	public String getNombre() {return Nombre;}
+	public String getNombre() {return nombre;}
 
 	/**
 	 * @param nombre the nombre to set
 	 */
-	public void setNombre(String nombre) {Nombre = nombre;}
+	public void setNombre(String nombre) {this.nombre = nombre;}
 
 	/**
 	 * @return the email
 	 */
-	public String getEmail() {return Email;}
+	public String getEmail() {return email;}
 
 	/**
 	 * @param email the email to set
 	 */
-	public void setEmail(String email) {Email = email;}
+	public void setEmail(String email) {this.email = email;}
 
 	/**
 	 * @return the pass
 	 */
-	public String getPass() {return Pass;}
+	public String getPass() {return pass;}
 
 	/**
 	 * @param pass the pass to set
 	 */
-	public void setPass(String pass) {Pass = pass;}
+	public void setPass(String pass) {this.pass = pass;}
 
 	/**
 	 * @return the ciudad
 	 */
-	public String getCiudad() {return Ciudad;}
+	public String getCiudad() {return ciudad;}
 
 	/**
 	 * @param ciudad the ciudad to set
 	 */
-	public void setCiudad(String ciudad) {Ciudad = ciudad;}
+	public void setCiudad(String ciudad) {this.ciudad = ciudad;}
 
 	/**
-	 * @param string 
-	 * @param string 
 	 * @return the cP
 	 */
 	public String getCP() {return CP;}
@@ -103,39 +112,47 @@ public class User {
 	/**
 	 * @param cP the cP to set
 	 */
-	public void setCP(String cP) {CP = cP;}
+	public void setCP(String cP) {this.CP = cP;}
 
 	/**
 	 * @return the userType
 	 */
-	public int getUserType() {return UserType_Id;}
+	public int getUserType() {return userType_Id;}
 
 	/**
 	 * @param userType the userType to set
 	*/
-	public void setUserType(int userType) {UserType_Id = userType;}
+	public void setUserType(int userType) {userType_Id = userType;}
 
-	public String getApellido() {
-		return Apellido;
-	}
+	/**
+	 * @return el número de teléfono del usuario
+	 */
+	public String getTelefono() {return telefono;}
+	
+	/**
+	 * Establece el número de teléfono del usuario
+	 * @param telefono teléfono del usuario
+	 */
+	public void setTelefono(String telefono) {this.telefono = telefono;}
 
-	public void setApellido(String apellido) {
-		Apellido = apellido;
-	}
+	/**
+	 * @return the apellido
+	 */
+	public String getApellido() {return apellido;}
 
-	public String getTelefono() {
-		return Telefono;
-	}
+	/**
+	 * @param apellido the apellido to set
+	 */
+	public void setApellido(String apellido) {this.apellido = apellido;}
 
-	public void setTelefono(String telefono) {
-		Telefono = telefono;
-	}
+	/**
+	 * @return the direccion
+	 */
+	public String getDireccion() {return direccion;}
 
-	public String getDireccion() {
-		return Direccion;
-	}
+	/**
+	 * @param direccion the direccion to set
+	 */
+	public void setDireccion(String direccion) {this.direccion = direccion;}
 
-	public void setDireccion(String direccion) {
-		Direccion = direccion;
-	}
 }

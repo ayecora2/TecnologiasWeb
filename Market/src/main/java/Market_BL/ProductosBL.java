@@ -9,6 +9,7 @@ import Market_DO.Producto;
 /**
  * Clase para la optención de una lista de productos.
  * @author silverio
+ * @version 201905291600
  */
 public class ProductosBL {
 	
@@ -16,7 +17,7 @@ public class ProductosBL {
 	 * Función para la creación de una lista de productos buscada. Puede contener una cadena 
 	 * para realizar un filtro o un valor nulo para obtener una lista completa.
 	 * @param filterProducto filtro a aplicar, puede ser un valor null o contener una cadena texto.
-	 * @return Lista final de productos
+	 * @return Lista final de productos o null en otro caso.
 	 */
 	public static List<Producto> darProductos(String filterProducto) {
 		try {
