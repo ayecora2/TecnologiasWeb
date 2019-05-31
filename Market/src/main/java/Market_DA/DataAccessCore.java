@@ -28,7 +28,7 @@ public class DataAccessCore {
 			// Carga el Driver
 			Class.forName("org.hsqldb.jdbc.JDBCDriver");
 			// Establece la conexión
-			connection = DriverManager.getConnection("jdbc:hsqldb:mem:memoriadb", "sa", "");
+			connection = DriverManager.getConnection("jdbc:hsqldb:mem:memoria", "sa", "");
 			// Iniciar valores BBDD
 			iniciarBBDD();
 		} catch (Exception ex) {ex.printStackTrace();}
@@ -230,15 +230,11 @@ public class DataAccessCore {
 		} catch (SQLException e1) {e1.printStackTrace();}
 		//Inserta algunas puntuaciones a los productos
 		try {
-			statement.executeUpdate("INSERT INTO PRODUCTOS_PUNTUACION VALUES(1,5);");
-			statement.executeUpdate("INSERT INTO PRODUCTOS_PUNTUACION VALUES(1,4);");
-			statement.executeUpdate("INSERT INTO PRODUCTOS_PUNTUACION VALUES(2,4);");
-			statement.executeUpdate("INSERT INTO PRODUCTOS_PUNTUACION VALUES(3,5);");
+			statement.executeUpdate("INSERT INTO PRODUCTOS_PUNTUACION VALUES(1,1);");
+			statement.executeUpdate("INSERT INTO PRODUCTOS_PUNTUACION VALUES(2,2);");
+			statement.executeUpdate("INSERT INTO PRODUCTOS_PUNTUACION VALUES(3,3);");
 			statement.executeUpdate("INSERT INTO PRODUCTOS_PUNTUACION VALUES(4,4);");
-			statement.executeUpdate("INSERT INTO PRODUCTOS_PUNTUACION VALUES(5,3);");
-			statement.executeUpdate("INSERT INTO PRODUCTOS_PUNTUACION VALUES(3,5);");
-			statement.executeUpdate("INSERT INTO PRODUCTOS_PUNTUACION VALUES(3,4);");
-			statement.executeUpdate("INSERT INTO PRODUCTOS_PUNTUACION VALUES(6,2);");
+			statement.executeUpdate("INSERT INTO PRODUCTOS_PUNTUACION VALUES(5,5);");
 		} catch (Exception e) {e.printStackTrace();}
 	}
 	
