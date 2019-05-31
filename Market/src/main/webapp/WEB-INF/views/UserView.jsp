@@ -38,14 +38,14 @@
 			<div class="modal-dialog modal-lg">
 			  <div class="modal-content">
 				<div class="modal-header">
-					<h4 class="modal-title">Su compra</h4>
+					<h4 class="modal-title">Su lista de la compra</h4>
 				  <button type="button" class="close" data-dismiss="modal">&times;</button>
 				</div>
 				<div class="modal-body">
-				  <p>This is a large modal.</p>
+				  <p>Esto podría ser la lista de su compra.</p>
 				</div>
 				<div class="modal-footer">
-				  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				  <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
 				</div>
 			  </div>
 			</div>

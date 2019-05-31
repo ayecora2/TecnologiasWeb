@@ -11,8 +11,8 @@
         <div class="col-md-6 mt-md-0 mt-3">
 
           <!-- Content -->
-          <h5 class="text-uppercase">Footer Content</h5>
-          <p>Here you can use rows and columns here to organize your footer content.</p>
+          <h5 class="text-uppercase">Secciones</h5>
+          <p>Desde aquí puede listar los productos de una sección concreta</p>
 
         </div>
         <!-- Grid column -->
@@ -23,20 +23,20 @@
         <div class="col-md-3 mb-md-0 mb-3">
 
             <!-- Links -->
-            <h5 class="text-uppercase">Links</h5>
+            <h5 class="text-uppercase">Categorías</h5>
 
             <ul class="list-unstyled">
               <li>
-                <a href="#!">Link 1</a>
+                <a href="#!">Video Juegos</a>
               </li>
               <li>
-                <a href="#!">Link 2</a>
+                <a href="#!">Electrodomésticos</a>
               </li>
               <li>
-                <a href="#!">Link 3</a>
+                <a href="#!">Informática</a>
               </li>
               <li>
-                <a href="#!">Link 4</a>
+                <a href="#!">Telefonía</a>
               </li>
             </ul>
 
@@ -75,7 +75,7 @@
 
     <!-- Copyright -->
     <div class="footer-copyright text-center py-3">© 2019 Copyright:
-      <a href="https://mdbootstrap.com/education/bootstrap/"> Juan Pablo Vaquero Carmona</a>
+      <a href="https://mdbootstrap.com/education/bootstrap/"> Abel Yécora y Silverio Rosales</a>
     </div>
     <!-- Copyright -->
 

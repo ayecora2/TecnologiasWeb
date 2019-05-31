@@ -38,9 +38,11 @@
                 Usuarios
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">Register/Login</a>
+                <a class="dropdown-item" href="#">Acceso a mi cuenta</a>           
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Exit</a>
+                <a class="dropdown-item" href="#">Nuevo usuario</a>
+                <div class="dropdown-divider"></div>
+          		  <a class="dropdown-item" href="#">Salir</a>
                 </div>
             </li>
             </ul>
@@ -51,7 +53,7 @@
 <button type="button" class="btn btn-sm" data-toggle="modal" data-target="#myModalCarrito" title="Mi compra">
 	<img src="content/Icons/glyph/svg/si-glyph-basket.svg" height="20" width="20"/>
 </button>
-<button type="button" class="btn btn-sm" data-toggle="tooltip" title="Documentacion!">
+<button type="button" class="btn btn-sm" data-toggle="tooltip" title="Documentación">
 	<img src="content/Icons/glyph/svg/si-glyph-document.svg" height="20" width="20"/>
 </button>
         </div>
