@@ -12,8 +12,10 @@ public class Producto {
 	
 	private int id; //Id del producto.
 	private int categoria_Id; //Identificador de la categoría del producto
-	private int marca_Id; //identificador de la marca
 	private int tienda_Id; //Identificador de la tienda
+	private int marca_Id; //identificador de la marca
+	private String nombre;
+	private String modelo;
 	private String imagen;
 	private String descripcion; //la descripción del producto
 	private int cantidad; //Su cantidad
@@ -24,20 +26,24 @@ public class Producto {
 	 * Constructor que genera un producto mediante el paso de los parámetros.
 	 * @param id id del producto
 	 * @param categoria_Id id de la categoría del producto
-	 * @param marca_Id id de la marca del producto
 	 * @param tienda_Id id de la tienda donde está el producto
+	 * @param marca_Id id de la marca del producto
+	 * @param nombre del producto.
+	 * @param modelo del producto.
 	 * @param imagen id de la imagen del producto
 	 * @param descripcion descripción del producto
 	 * @param cantidad número de items que hay del producto
 	 * @param precio precio de cada unidad de producto
 	 */
-	public Producto(int id, int categoria_Id, int marca_Id, int tienda_Id, String imagen, String descripcion,
+	public Producto(int id, int categoria_Id, int tienda_Id, int marca_Id, String nombre, String modelo, String imagen, String descripcion,
 			int cantidad, double precio) {
 		super();
 		this.id = id;
 		this.categoria_Id = categoria_Id;
-		this.marca_Id = marca_Id;
 		this.tienda_Id = tienda_Id;
+		this.marca_Id = marca_Id;
+		this.nombre = nombre;
+		this.modelo = modelo;
 		this.imagen = imagen;
 		this.descripcion = descripcion;
 		this.cantidad = cantidad;
@@ -121,5 +127,21 @@ public class Producto {
 	/**
 	 * @param productoPuntuacion the productoPuntuacion to set
 	 */
-	public void setProductoPuntuacion(List<ProductoPuntuacion> productoPuntuacion) {this.productoPuntuacion = productoPuntuacion;}	
+	public void setProductoPuntuacion(List<ProductoPuntuacion> productoPuntuacion) {this.productoPuntuacion = productoPuntuacion;}
+	/**
+	 * @return the nombre
+	 */
+	public String getNombre() {return nombre;}
+	/**
+	 * @param nombre the nombre to set
+	 */
+	public void setNombre(String nombre) {this.nombre = nombre;}
+	/**
+	 * @return the modelo
+	 */
+	public String getModelo() {return modelo;}
+	/**
+	 * @param modelo the modelo to set
+	 */
+	public void setModelo(String modelo) {this.modelo = modelo;}	
 }

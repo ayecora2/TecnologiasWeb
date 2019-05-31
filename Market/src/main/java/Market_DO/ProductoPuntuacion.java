@@ -3,6 +3,7 @@ package Market_DO;
 /**
  * Esta clase almacena el ID de un producto y la puntuación
  * @author silverio
+ * @version 201905302021
  */
 public class ProductoPuntuacion {
 	private int id;
@@ -26,7 +27,7 @@ public class ProductoPuntuacion {
 	/**
 	 * @param id the id to set
 	 */
-	public void setId(int id) {this.id = id;}
+//	public void setId(int id) {this.id = id;}
 
 	/**
 	 * @return the puntuacion
