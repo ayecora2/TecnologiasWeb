@@ -5,7 +5,7 @@
 <html title="Electro Market">
     <head>
         <title>Electro Market</title>
-        <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+        <script src="bootstrap/js/jquery-1.10.2.js"></script>
         <script src="bootstrap/js/bootstrap.min.js"></script>
         <script src="bootstrap/js/Myjs.js"></script>
         <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">	
