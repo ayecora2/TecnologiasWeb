@@ -2,7 +2,7 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ page session="false" %>
 <!DOCTYPE html>
-<html title="Electro JP">
+<html title="Electro Market">
     <head>
         <title>Electro Market</title>
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" ></script>
@@ -14,65 +14,15 @@
        
 		<jsp:include page="templates/_NavBarView.jsp" /> 
 
-        <div id="containerProductos" class="container-fluid text-center bg-grey">
-            <h4>Inventario</h4><br>
+        <div id="containerUser" class="container-fluid text-center bg-grey">
+            <h4>Usuarios</h4><br>
             <div class="row text-center container-fluid">
-            <div class="col-md-3">
-                <div class="thumbnail">
-                <img src="content/Images/Productos/Batidoras.jpg" alt="Batidoras" width="400" height="300">
-                <p><strong>Batidorass</strong></p>
-                <p>Nuestra gama de batidoras</p>
-                </div>
+            <c:forEach var="user" items="${listUsuarios}" varStatus="tagStatus">
+			    <div class="col-md-3">
+                 <p><strong>${user.getId()}</strong></p> 
+                <p>${user.getNombre()}</p>
             </div>
-            <div class="col-md-3">
-                <div class="thumbnail">
-                <img src="content/Images/Productos/Freidoras.jpg" alt="Freidoras" width="400" height="300">
-                <p><strong>Freidoras</strong></p>
-                <p>Nuestra gama de Freidoras</p>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="thumbnail">
-                <img src="content/Images/Productos/Microondas.jpg" alt="Microondas" width="400" height="300">
-                <p><strong>Microondas</strong></p>
-                <p>Nuestra gama de Microondas</p>
-                </div>
-            </div>
-			<div class="col-md-3">
-                <div class="thumbnail">
-                <img src="content/Images/Productos/Exprimidoras" alt="Exprimidoras" width="400" height="300">
-                <p><strong>Exprimidoras</strong></p>
-                <p>Nuestra gama de Exprimidoras</p>
-                </div>
-            </div>
-            <div class="col-md-3">
-				<div class="thumbnail">
-				<img src="content/Images/Productos/Electrodomesticos%de%cocina.jpg" alt="Electrodomesticos de cocina" width="400" height="300">
-				<p><strong>Electrodomésticos de cocina</strong></p>
-				<p>Nuestra gama de cocina</p>
-				</div>
-			</div>
-			<div class="col-md-3">
-				<div class="thumbnail">
-				<img src="content/Images/Productos/Tostadora%20y%20máquina%20de%20coser.jpg" alt="Tostadora y máquina de coser" width="400" height="300">
-				<p><strong>Tostadora y máquina de coserk</strong></p>
-				<p>Nuestro dúo mágico</p>
-				</div>
-			</div>
-			<div class="col-md-3">
-				<div class="thumbnail">
-				<img src="content/Images/Productos/CommandAndConquer.jpg" alt="Command & Conquer" width="400" height="300">
-				<p><strong>Command And Conquer</strong></p>
-				<p>Nuestros Juegos</p>
-				</div>
-			</div>
-			<div class="col-md-3">
-                <div class="thumbnail">
-                <img src="ontent/Images/Productos/diablo2.jpg" alt="Diablo II" width="400" height="300">
-				<p><strong>Diablo II</strong></p>
-				<p>Nuestros Juegos</p>
-                </div>
-            </div>
+			</c:forEach>
             </div><br>
         </div>
 		

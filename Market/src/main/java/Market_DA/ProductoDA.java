@@ -18,8 +18,7 @@ public class ProductoDA extends DataAccessCore{
 	
 	public static ResultSet darProductos(String filterProducto)
 	{
-		try{	
-			
+		try{				
 			resultSet = statement.executeQuery(""
 					+ "SELECT * FROM PRODUCTOS P"
 					+ "INNER JOIN MARCAS M ON M.ID = P.MARCA_ID "

@@ -28,12 +28,10 @@ public class DataAccessCore {
 			// Carga el Driver
 			Class.forName("org.hsqldb.jdbc.JDBCDriver");
 			// Establece la conexión
-			connection = DriverManager.getConnection("jdbc:hsqldb:hsql://localhost/", "sa", "");
+			connection = DriverManager.getConnection("jdbc:hsqldb:mem:memoria", "sa", "");
 			// Iniciar valores BBDD
 			iniciarBBDD();
-		} catch (Exception ex) {
-			ex.printStackTrace();
-		}
+		} catch (Exception ex) {ex.printStackTrace();}
 	}
 
 	/**
@@ -44,7 +42,8 @@ public class DataAccessCore {
 		//Creación tipos de usuario
 		try {
 			statement.executeUpdate("CREATE TABLE IF NOT EXISTS USERS_TYPE(\r\n"
-					+ "    ID integer identity PRIMARY KEY,\r\n" + "    NOMBRE varchar(40) UNIQUE\r\n" + ");");
+					+ "    ID integer identity PRIMARY KEY,\r\n" 
+					+ "    NOMBRE varchar(40) UNIQUE\r\n" + ");");
 		} catch (SQLException e1) {e1.printStackTrace();} // Imprimir la traza del error
 		//Añadir dos tipos de usuario, Admin y usuario.
 		try {
@@ -66,23 +65,25 @@ public class DataAccessCore {
 					+ "    NOMBRE varchar(40),\r\n" 
 					+ "    APELLIDO varchar(40),\r\n" 
 					+ "    EMAIL varchar(50),\r\n" 
-					+ "    TELEFONO integer(12),\r\n" 
+					+ "    TELEFONO varchar(12),\r\n" 
 					+ "    PASS varchar(8),\r\n"
 					+ "    CIUDAD varchar(50),\r\n" 
 					+ "    DIRECCION varchar(100), \r\n" 
 					+ "    CP varchar(5), \r\n" 
 					+ "    USER_TYPE_ID integer,\r\n" //enlace con la tabla de Tipos de Usuarios
 					+ "    CONSTRAINT FK_UT_ID foreign key (USER_TYPE_ID) references USERS_TYPE(ID)\r\n" + ");");
-		} catch (SQLException e1) {e1.printStackTrace();} //Imprime la traza del error
+		} catch (SQLException e1) {
+			System.out.println("Error al crear la tabla de usuarios");
+			e1.printStackTrace();
+			} //Imprime la traza del error
 		//Introducir usuarios básicos
 		try { 
 			//ID/PK(integer), Nombre(40), email(50), password(8), ciudad(50), CP(5), Tipo Usuario(Integer 1).
-			statement.executeUpdate("INSERT INTO USERS VALUES(1,'Charly','charly@alumno.uned.es','9998887770','123','Leon','Calle Lola','24001',1);");
-			statement.executeUpdate("INSERT INTO USERS VALUES(2,'Silverio','srosales2@alumno.uned.es','615324121','1234','Leon','Calle Tomás','24001',2);");				
-			statement.executeUpdate("INSERT INTO USERS VALUES(3,'Abel','ayecora2@alumno.uned.es','623456788','1234','Logroño','Avenida Tomasolo','26001',2);");
+			statement.executeUpdate("INSERT INTO USERS VALUES(1,'Charly','Bravo','charly@alumno.uned.es','9998887770','123','Leon','Calle Lola','24001',1);");
+			statement.executeUpdate("INSERT INTO USERS VALUES(2,'Silverio','Rosales','srosales2@alumno.uned.es','615324121','1234','Leon','Calle Tomás','24001',2);");				
+			statement.executeUpdate("INSERT INTO USERS VALUES(3,'Abel','Yécora','ayecora2@alumno.uned.es','623456788','1234','Logroño','Avenida Tomasolo','26001',2);");
 		} catch (Exception e) {e.printStackTrace();} //Imprime la traza del error.
 	}
-	
 	/**
 	 * Método que creará la tabla de servicios e introducirá los servicios básicos
 	 */
@@ -123,7 +124,7 @@ public class DataAccessCore {
 			statement.executeUpdate("CREATE TABLE IF NOT EXISTS TIENDA_SERVICIOS(\r\n"
 					+ "    TIENDA_ID integer ,\r\n"
 					+ "    SERVICIO_ID integer ,\r\n"
-					+ "	CONSTRAINT PK_TS primary key (TIENDA_ID, SERVICIO_ID) ,\r\n"
+					+ "	   CONSTRAINT PK_TS primary key (TIENDA_ID, SERVICIO_ID) ,\r\n"
 					+ "    CONSTRAINT FK_TS_TID foreign key (TIENDA_ID) references TIENDAS(ID),\r\n"
 					+ "    CONSTRAINT FK_TS_SID foreign key (SERVICIO_ID) references SERVICIOS(ID)\r\n" + ");");
 		} catch (SQLException e1) {e1.printStackTrace();}
@@ -206,12 +207,12 @@ public class DataAccessCore {
 		try {
 			statement.executeUpdate("INSERT INTO PRODUCTOS VALUES(1,1,1,3,'Diablo II','Rol','diablo2.jpg','Juego de Rol',5,50);");
 			statement.executeUpdate("INSERT INTO PRODUCTOS VALUES(2,1,1,2,'Comamand And Conquer','Estrategia','CommandAndConquer.jpg','Juego de estretegía', 5, 45);");
-			statement.executeUpdate("INSERT INTO PRODUCTOS VALUES(3,2,1,3,'Set de Cocina','Blanco California','1.jpg','Cocina completa',5,250);");
-			statement.executeUpdate("INSERT INTO PRODUCTOS VALUES(4,2,1,1,'Microondas','700Wattios','2.jpg','Microondas',5,24);");
-			statement.executeUpdate("INSERT INTO PRODUCTOS VALUES(5,2,1,3,'Set Imprescindible','Africa People','3.jpg', 'Tostadora máquina coser', 5, 80);");
-			statement.executeUpdate("INSERT INTO PRODUCTOS VALUES(6,2,1,4,'Picadilly','Destrozadora','4.jpg','Batidora',5,35);");
-			statement.executeUpdate("INSERT INTO PRODUCTOS VALUES(7,2,1,5,'Aplastator','2000T','5.jpg', 'Exprimidor', 5, 15);");
-			statement.executeUpdate("INSERT INTO PRODUCTOS VALUES(8,2,1,6,'Dorator','Olieo IV','6.jpg', 'Freidora', 5, 26);");
+			statement.executeUpdate("INSERT INTO PRODUCTOS VALUES(3,2,1,3,'Set de Cocina','Blanco California','ElectrodomesticosDeCocina.jpg','Cocina completa',5,270);");
+			statement.executeUpdate("INSERT INTO PRODUCTOS VALUES(4,2,1,1,'Microondas','700Wattios','Microondas.jpg','Microondas',5,24);");
+			statement.executeUpdate("INSERT INTO PRODUCTOS VALUES(5,2,1,3,'Set Imprescindible','Africa People','tostadorayMaquinaDeCoser.jpg', 'Tostadora máquina coser', 5, 80);");
+			statement.executeUpdate("INSERT INTO PRODUCTOS VALUES(6,2,1,4,'Picadilly','Destrozadora','Batidoras.jpg','Batidora',5,35);");
+			statement.executeUpdate("INSERT INTO PRODUCTOS VALUES(7,2,1,5,'Aplastator','2000T','Exprimidoras.jpg', 'Exprimidor', 5, 15);");
+			statement.executeUpdate("INSERT INTO PRODUCTOS VALUES(8,2,1,6,'Dorator','Olieo IV','Freidoras.jpg','Freidora', 5, 26);");
 		} catch (Exception e) {e.printStackTrace();}
 	}
 	
@@ -229,15 +230,11 @@ public class DataAccessCore {
 		} catch (SQLException e1) {e1.printStackTrace();}
 		//Inserta algunas puntuaciones a los productos
 		try {
-			statement.executeUpdate("INSERT INTO PRODUCTOS_PUNTUACION VALUES(1,5);");
-			statement.executeUpdate("INSERT INTO PRODUCTOS_PUNTUACION VALUES(1,4);");
-			statement.executeUpdate("INSERT INTO PRODUCTOS_PUNTUACION VALUES(2,4);");
-			statement.executeUpdate("INSERT INTO PRODUCTOS_PUNTUACION VALUES(3,5);");
+			statement.executeUpdate("INSERT INTO PRODUCTOS_PUNTUACION VALUES(1,1);");
+			statement.executeUpdate("INSERT INTO PRODUCTOS_PUNTUACION VALUES(2,2);");
+			statement.executeUpdate("INSERT INTO PRODUCTOS_PUNTUACION VALUES(3,3);");
 			statement.executeUpdate("INSERT INTO PRODUCTOS_PUNTUACION VALUES(4,4);");
-			statement.executeUpdate("INSERT INTO PRODUCTOS_PUNTUACION VALUES(5,3);");
-			statement.executeUpdate("INSERT INTO PRODUCTOS_PUNTUACION VALUES(3,5);");
-			statement.executeUpdate("INSERT INTO PRODUCTOS_PUNTUACION VALUES(3,4);");
-			statement.executeUpdate("INSERT INTO PRODUCTOS_PUNTUACION VALUES(6,2);");
+			statement.executeUpdate("INSERT INTO PRODUCTOS_PUNTUACION VALUES(5,5);");
 		} catch (Exception e) {e.printStackTrace();}
 	}
 	
@@ -249,10 +246,11 @@ public class DataAccessCore {
 		//Creación de la tabla.
 		/* NOTA: el precio ¿debe ser integer o debe ser decimal? */
 		try {
-			statement.executeUpdate(
-					"CREATE TABLE IF NOT EXISTS PRODUCTOS_OFERTAS(\r\n" + "    ID integer identity PRIMARY KEY,\r\n"
-							+ "    PRECIO integer,\r\n" + "    NOMBRE varchar(50), \r\n"
-							+ "    CONSTRAINT FK_PO_C foreign key (ID) references PRODUCTOS(ID)\r\n" + ");");
+			statement.executeUpdate("CREATE TABLE IF NOT EXISTS PRODUCTOS_OFERTAS(\r\n"
+					+ "    ID integer identity PRIMARY KEY,\r\n"
+					+ "    PRECIO integer,\r\n" 
+					+ "    NOMBRE varchar(50), \r\n"
+					+ "    CONSTRAINT FK_PO_C foreign key (ID) references PRODUCTOS(ID)\r\n" + ");");
 		} catch (SQLException e) {e.printStackTrace();}
 	}
 	
