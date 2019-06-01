@@ -1,9 +1,11 @@
 package Market_DA;
 
+import java.sql.DriverManager;
 import java.sql.ResultSet;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
+import Market_BL.ConectarBBDD;
 import Market_DO.User;
 
 /**
@@ -34,10 +36,12 @@ public class UserDA extends DataAccessCore{
 	 * @param usuario el usuario que se desea añadir
 	 */
 	@Autowired
-	public static void addUsuarios(User usuario)
+	public static String addUsuarios(User usuario)
 	{
+		
 		//Extrae la información de la instancia y la introduce en la BBDD
 		try {
+			
 			 statement.executeUpdate("INSERT INTO USERS VALUES("
 			+usuario.getId()
 			+","+usuario.getNombre()
@@ -49,10 +53,12 @@ public class UserDA extends DataAccessCore{
 			+","+usuario.getDireccion()
 			+","+usuario.getCP()
 			+","+usuario.getUserType()+");");
+			 return "ok";
 			 
 		} catch (Exception e) {  //Imprime la traza en caso de excepción junto a un mensaje de aviso.
 			System.out.println("\n>>>No ha sido posible introducir el usuario en la BBDD\n>>>\n");
 			e.printStackTrace();
+			return "KO";
 			}
 	}
 }
