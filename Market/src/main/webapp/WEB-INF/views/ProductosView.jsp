@@ -29,7 +29,7 @@
             </div><br>
         </div>
 		
-	<jsp:include page="templates/_Footer.jsp" /> 
+	<jsp:include page="templates/_footerProductos.jsp" /> 
 		
 		<!-- MODAL CARRITO -->
 		
@@ -45,10 +45,11 @@
 				  <button type="button" class="close" data-dismiss="modal">&times;</button>
 				</div>
 				<div class="modal-body">
-				  <p>This is a large modal.</p>
+				  <p>Pulse Aceptar para procesar su compra o Cancelar para anularla.</p>
 				</div>
 				<div class="modal-footer">
-				  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				  <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+				  <button type="button" class="btn btn-default" data-dismiss="modal">Aceptar</button>
 				</div>
 			  </div>
 			</div>
