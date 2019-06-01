@@ -38,7 +38,7 @@
                 Usuarios
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">Register/Login</a>
+                <a class="dropdown-item" href="AddUser">Register/Login</a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="#">Exit</a>
                 </div>
