@@ -1,5 +1,5 @@
 package Market_DO;
-
+import java.io.*;
 
 /**
  * Esta clase representa a un usuario.
@@ -9,7 +9,7 @@ package Market_DO;
  * @author silverio
  * @version 201929051557
  */
-public class User implements java.io.Serializable{
+public final class User implements Serializable{
 	//Campos privados que definen a una instancia.
     private int id;
     private String nombre;

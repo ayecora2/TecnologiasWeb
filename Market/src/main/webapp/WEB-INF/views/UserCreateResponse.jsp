@@ -11,6 +11,6 @@
 <body>
 	<p>gracias </p>
 	<jsp:getProperty name="userBean" property="nombre"/>
-	
+	 
 </body>
 </html>
