@@ -42,8 +42,8 @@ public class DataAccessCore {
 		//Creación tipos de usuario
 		try {
 			statement.executeUpdate("CREATE TABLE IF NOT EXISTS USERS_TYPE(\r\n"
-					+ "    ID integer identity PRIMARY KEY UNIQUE,\r\n" 
-					+ "    NOMBRE varchar(40) \r\n" + ");");
+					+ "    ID integer identity PRIMARY KEY,\r\n" 
+					+ "    NOMBRE varchar(40) UNIQUE\r\n" + ");");
 		} catch (SQLException e1) {e1.printStackTrace();} // Imprimir la traza del error
 		//Añadir dos tipos de usuario, Admin y usuario.
 		try {
