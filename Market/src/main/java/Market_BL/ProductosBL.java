@@ -7,7 +7,7 @@ import java.util.List;
 import Market_DO.Producto;
 
 /**
- * Clase para la optención de una lista de productos.
+ * Clase para la optención de una lista de productos como instancias de la clase Producto,
  * @author silverio
  * @version 201905291600
  */
@@ -31,11 +31,14 @@ public class ProductosBL {
 			//Bucle para añadir items		
 			while (resultSet.next()) {
 				// Añade el item a la lista de productos
+				// Hay que comprobar previamente que no existe ya ese producto (ID)
 				listProductos.add(new Producto(
 						resultSet.getInt("Id"),
 						resultSet.getInt("Categoria_Id"),
-						resultSet.getInt("Marca_Id"),
 						resultSet.getInt("Tienda_Id"),
+						resultSet.getInt("Marca_Id"),
+						resultSet.getString("Nombre"),
+						resultSet.getString("Modelo"),
 						resultSet.getString("Imagen"),
 						resultSet.getString("Descripcion"),
 						resultSet.getInt("Cantidad"),

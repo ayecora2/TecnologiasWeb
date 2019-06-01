@@ -5,7 +5,7 @@
 <html title="Electro Market">
     <head>
         <title>Electro Market</title>
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" ></script>
+        <script src="bootstrap/js/jquery-3.3.1.slim.min.js" ></script>
         <script src="bootstrap/js/bootstrap.min.js"></script>
         <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">	
         <spring:url value="bootstrap/css/bootstrap.min.css" var="MyBootstrap" />

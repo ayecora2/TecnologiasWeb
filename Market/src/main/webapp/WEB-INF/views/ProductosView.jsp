@@ -5,7 +5,7 @@
 <html title="Electro Market">
     <head>
         <title>Electro Market</title>
-        <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+        <script src="bootstrap/js/jquery-1.10.2.js"></script>
         <script src="bootstrap/js/bootstrap.min.js"></script>
         <script src="bootstrap/js/Myjs.js"></script>
         <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">	
@@ -20,7 +20,7 @@
             <c:forEach var="produc" items="${listProductos}" varStatus="tagStatus">
 			    <div class="col-md-3">
                 <div class="thumbnail">
-                <img src="content/Images/Productos/${produc.getImagen()}" alt="diablo" width="400" height="300">
+                <img src="content/Images/Productos/${produc.getImagen()}" alt="diablo" width="200" height="150">
                  <p><strong>${produc.getDescripcion()}</strong></p> 
                 <p>${produc.getPrecio()} &#8364;</p>
                 </div>

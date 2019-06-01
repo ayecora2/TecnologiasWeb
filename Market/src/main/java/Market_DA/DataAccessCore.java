@@ -154,7 +154,8 @@ public class DataAccessCore {
 			statement.executeUpdate("INSERT INTO MARCAS VALUES(3,'LG');");
 			statement.executeUpdate("INSERT INTO MARCAS VALUES(4,'Microsoft');");
 			statement.executeUpdate("INSERT INTO MARCAS VALUES(5,'Sony');");
-			statement.executeUpdate("INSERT INTO MARCAS VALUES(6,'IOS');");
+			statement.executeUpdate("INSERT INTO MARCAS VALUES(6,'IBM');");
+			statement.executeUpdate("INSERT INTO MARCAS VALUES(7,'IOS');");
 		} catch (Exception e) {System.out.println("\nError al intentar introducir las marcas por defecto.\n");}
 	}
 	
@@ -213,6 +214,8 @@ public class DataAccessCore {
 			statement.executeUpdate("INSERT INTO PRODUCTOS VALUES(6,2,1,4,'Picadilly','Destrozadora','Batidoras.jpg','Batidora',5,35);");
 			statement.executeUpdate("INSERT INTO PRODUCTOS VALUES(7,2,1,5,'Aplastator','2000T','Exprimidoras.jpg', 'Exprimidor', 5, 15);");
 			statement.executeUpdate("INSERT INTO PRODUCTOS VALUES(8,2,1,6,'Dorator','Olieo IV','Freidoras.jpg','Freidora', 5, 26);");
+			statement.executeUpdate("INSERT INTO PRODUCTOS VALUES(9,3,1,6,'Holus','5000','computer.jpg','Ordenador PC', 2, 2666);");
+			statement.executeUpdate("INSERT INTO PRODUCTOS VALUES(10,4,1,6,'Liberator','FreeSet','manoslibres.jpg','Set de manos libres', 400, 60);");
 		} catch (Exception e) {e.printStackTrace();}
 	}
 	
@@ -225,16 +228,18 @@ public class DataAccessCore {
 		//Creación de la tabla
 		try {
 			statement.executeUpdate("CREATE TABLE IF NOT EXISTS PRODUCTOS_PUNTUACION(\r\n"
-					+ "    ID integer identity PRIMARY KEY,\r\n" + "    PUNTUACION integer,\r\n"
+					+ "    ID integer identity PRIMARY KEY,\r\n" 
+					+ "    PUNTUACION integer,\r\n"
 					+ "    CONSTRAINT FK_PP_P foreign key (ID) references PRODUCTOS(ID)\r\n" + ");");
 		} catch (SQLException e1) {e1.printStackTrace();}
 		//Inserta algunas puntuaciones a los productos
 		try {
-			statement.executeUpdate("INSERT INTO PRODUCTOS_PUNTUACION VALUES(1,1);");
-			statement.executeUpdate("INSERT INTO PRODUCTOS_PUNTUACION VALUES(2,2);");
-			statement.executeUpdate("INSERT INTO PRODUCTOS_PUNTUACION VALUES(3,3);");
+			statement.executeUpdate("INSERT INTO PRODUCTOS_PUNTUACION VALUES(1,5);"); //Conflicto, el primary key == con la ID y eso hace que se repita
+			statement.executeUpdate("INSERT INTO PRODUCTOS_PUNTUACION VALUES(2,4);");
+			statement.executeUpdate("INSERT INTO PRODUCTOS_PUNTUACION VALUES(3,5);");
 			statement.executeUpdate("INSERT INTO PRODUCTOS_PUNTUACION VALUES(4,4);");
-			statement.executeUpdate("INSERT INTO PRODUCTOS_PUNTUACION VALUES(5,5);");
+			statement.executeUpdate("INSERT INTO PRODUCTOS_PUNTUACION VALUES(5,3);");
+			statement.executeUpdate("INSERT INTO PRODUCTOS_PUNTUACION VALUES(6,2);");
 		} catch (Exception e) {e.printStackTrace();}
 	}
 	
