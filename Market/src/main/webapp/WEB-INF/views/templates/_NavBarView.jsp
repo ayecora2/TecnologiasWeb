@@ -41,7 +41,7 @@
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item" href="#">Acceso a mi cuenta</a>           
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="addUser">Nuevo usuario</a>
+                <a class="dropdown-item" href="AddUser">Nuevo usuario</a>
                 <div class="dropdown-divider"></div>
           		  <a class="dropdown-item" href="#">Salir</a>
                 </div>
