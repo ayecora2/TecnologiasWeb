@@ -15,9 +15,6 @@
         <li class="nav-item">
             <a class="nav-link" href="Producto">Productos</a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link" href="User">Usuarios</a>
-        </li>
         <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Servicios
@@ -42,6 +39,8 @@
                 <a class="dropdown-item" href="#">Acceso a mi cuenta</a>           
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="AddUser">Nuevo usuario</a>
+                <div class="dropdown-divider"></div>
+           		<a class="dropdown-item" href="User">Lista Usuarios</a>
                 <div class="dropdown-divider"></div>
           		  <a class="dropdown-item" href="#">Salir</a>
                 </div>
