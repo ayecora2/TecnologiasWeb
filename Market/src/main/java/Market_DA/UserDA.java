@@ -39,20 +39,21 @@ public class UserDA extends DataAccessCore{
 	public static String addUsuarios(User usuario)
 	{
 		
-		//Extrae la información de la instancia y la introduce en la BBDD
+		//introduce la información de la instancia y la introduce en la BBDD
 		try {
-			
-			 statement.executeUpdate("INSERT INTO USERS VALUES("
-			+usuario.getId()
-			+","+usuario.getNombre()
-			+","+usuario.getApellido()
-			+","+usuario.getEmail()
-			+","+usuario.getTelefono()
-			+","+usuario.getPass()
-			+","+usuario.getCiudad()
-			+","+usuario.getDireccion()
-			+","+usuario.getCP()
-			+","+usuario.getUserType()+");");
+			String sentencia="INSERT INTO USERS VALUES("
+					+usuario.getId()
+					+",'"+usuario.getNombre()
+					+"','"+usuario.getApellido()
+					+"','"+usuario.getEmail()
+					+"','"+usuario.getTelefono()
+					+"','"+usuario.getPass()
+					+"','"+usuario.getCiudad()
+					+"','"+usuario.getDireccion()
+					+"','"+usuario.getCP()
+					+"',"+usuario.getUserType()+");";
+					
+			statement.executeUpdate(sentencia);
 			 return "ok";
 			 
 		} catch (Exception e) {  //Imprime la traza en caso de excepción junto a un mensaje de aviso.

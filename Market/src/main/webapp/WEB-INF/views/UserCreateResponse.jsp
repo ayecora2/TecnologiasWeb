@@ -14,6 +14,9 @@
 <body>
 	<p>gracias </p>
 	<jsp:getProperty name="userBean" property="nombre"/>
+	
+	<jsp:setProperty name="userBean" property="id" value= "10"/>
+	<jsp:setProperty name="userBean" property="userType_Id" value= "2"/>
 	<%
 		String respuesta = UserDA.addUsuarios(userBean);
 		System.out.printf(respuesta);
