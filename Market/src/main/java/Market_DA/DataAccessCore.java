@@ -5,10 +5,7 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.ArrayList;
-import java.util.List;
-
-import Market_DO.User;
+//import Market_DO.User;
 
 /**
  * Clase para la interacción con la base de datos en memoria.
@@ -31,14 +28,62 @@ public class DataAccessCore {
 		try {
 			// Carga el Driver
 			Class.forName("org.hsqldb.jdbc.JDBCDriver");
+			connection = DriverManager.getConnection("jdbc:hsqldb:mem:memoria", "sa", "");
+			statement = connection.createStatement();
 			// Establece la conexión
-			connection = DriverManager.getConnection("jdbc:hsqldb:mem:memoria", "sa", "");	
+			if (!comprobarBBDD()) {
+				System.out.println("\n\nLa BBDD NO ESTABA CONECTADA conectarBBDD\n\n");								
+				iniciarBBDD();
+				System.out.println("\n\nBBDD Iniciada por Excepción en ComprobarBBDD\n\n");
+				
+			} else {System.out.println("\nLa BBDD ya esta conectada\n");}
+				
 			//connection.isClosed();
+			//iniciarBBDD();
+			
 		} catch (Exception ex) {
 			ex.printStackTrace();
 			System.out.println("\n\n >>>> SE HA INTENTADO INCIALIZAR DE NUEVO LA BASE DE DATOS <<<<< \n\n");
 		}
 	}
+
+	/**
+	 * Este método comprueba mediante un query que existe la tabla tiendas, la cual es la base
+	 * de todos los datos de usuario, productos, etc. Sino existe realiza una conexión a la 
+	 * Base de datos.
+	 * @author Abel Yécora.
+	 * @return 
+	 */
+	public static boolean comprobarBBDD()
+	{
+		boolean conectada = false;
+		try{
+			//ResultSet resultSet;
+			//resultSet = statement.executeQuery("SELECT * FROM USERS");
+			System.out.println("\n\nComprobación BBDD PREVIO\n\n");
+			resultSet = statement.executeQuery("SELECT * FROM TIENDAS");
+			System.out.println("\n\nComprobación BBDD OK\n\n");
+			conectada = true;
+
+		} catch (Exception ex) {
+			//conectarBBDD();
+			//ex.printStackTrace();		
+			System.out.println("\n\nComprobación BBDD EXEPCION\n\n");
+			conectada =  false;
+			return conectada;
+		}
+		return conectada;
+	}
+	
+	/**
+	 * Cierra la conexión con la base de datos.
+	 */
+	public void cerrarConexionBBDD() {
+		try {statement.executeQuery("SHUTDOWN COMPACT");} 
+		catch (Exception ex) {ex.printStackTrace();}
+	}
+
+	// MÉTODOS CREACIÓN TABLAS Y DATOS DE PRUEBA.
 
 	/**
 	 * Metodo para la creación de la tabla de Tipo de usuario, así como
@@ -102,10 +147,10 @@ public class DataAccessCore {
 		} catch (SQLException e1) {e1.printStackTrace();} //Impresión de la traza de error
 		//Introducción de servicios básicos.
 		try { 
-			statement.executeUpdate("INSERT INTO SERVICIOS VALUES(1,'Venta');");
-			statement.executeUpdate("INSERT INTO SERVICIOS VALUES(2,'Financiación');");
-			statement.executeUpdate("INSERT INTO SERVICIOS VALUES(3,'Servicio Postventa');");
-			statement.executeUpdate("INSERT INTO SERVICIOS VALUES(4,'Reparto a domicilio');");
+			statement.executeUpdate("INSERT INTO SERVICIOS (NOMBRE) VALUES('Venta');");
+			statement.executeUpdate("INSERT INTO SERVICIOS (NOMBRE) VALUES('Financiación');");
+			statement.executeUpdate("INSERT INTO SERVICIOS (NOMBRE) VALUES('Servicio Postventa');");
+			statement.executeUpdate("INSERT INTO SERVICIOS (NOMBRE) VALUES('Reparto a domicilio');");
 		} catch (Exception e) {e.printStackTrace();} //Impresión de la traza de error
 	}
 		
@@ -121,8 +166,10 @@ public class DataAccessCore {
 					+ "    ID integer identity PRIMARY KEY,\r\n"
 					+ "    NOMBRE varchar(50) UNIQUE\r\n" + ");");
 		} catch (SQLException e1) {e1.printStackTrace();}
-
-		try {statement.executeUpdate("INSERT INTO TIENDAS VALUES(1,'ElectroMarket');");
+		
+		//Insercción del nombre de la tienda.
+		try { 
+			statement.executeUpdate("INSERT INTO TIENDAS VALUES(1,'ElectroMarket');");
 		} catch (Exception e) {}
 		
 		//Creación de la tabla y los servicios adjuntos a la tienda
@@ -136,6 +183,7 @@ public class DataAccessCore {
 		} catch (SQLException e1) {e1.printStackTrace();}
 		//Insercción de los servicios establecidos para la tienda 1 (única)
 		try {
+			//En esta sección no es posible automatizar el ID tienda, puesto que se debe referir cada SVC a la única tienda creada.
 			statement.executeUpdate("INSERT INTO TIENDA_SERVICIOS VALUES(1,1);");
 			statement.executeUpdate("INSERT INTO TIENDA_SERVICIOS VALUES(1,2);");
 			statement.executeUpdate("INSERT INTO TIENDA_SERVICIOS VALUES(1,3);");
@@ -231,7 +279,7 @@ public class DataAccessCore {
 	 * Los valores a pasar de la tabla es el ID (integer PK == ID PK de Productos) y puntuación (integer)
 	 */
 	private static void tablaProductosPuntuacion() {
-		//Creación de la tabla
+		//Creación de la tabla NOTA!!! REQUIERE RESTRUCTURACIÓN NO CONFLICTIVA!!!
 		try {
 			statement.executeUpdate("CREATE TABLE IF NOT EXISTS PRODUCTOS_PUNTUACION(\r\n"
 					+ "    ID integer identity PRIMARY KEY,\r\n" 
@@ -285,11 +333,16 @@ public class DataAccessCore {
 		} catch (Exception e) {e.printStackTrace();}
 	}
 	
-	/** Valores para iniciar la base de datos. */
+	
+	/**
+	 * Método de caracter general de llamadas a las funciones que crean las tablas
+	 * e introducen unos datos iniciales de prueba. Además crea dos tablas dentro 
+	 * de este método que no tienen valores iniciales.
+	 */
 	public static void iniciarBBDD() {
 		try {
 			// Ejecutamos los comandos de BBDD
-			statement = connection.createStatement();
+			//statement = connection.createStatement();
 			//Creación de las tablas y introducción de datos básicos.			
 			tablaTipoUsuario();
 			tablaUsuarios();
@@ -323,23 +376,5 @@ public class DataAccessCore {
 
 		} catch (Exception ex) {ex.printStackTrace();}
 	}
-	public static void comprobarBBDD()
-	{
-		try{
-			ResultSet resultSet;
-			resultSet = statement.executeQuery("SELECT * FROM USERS");
-
-		} catch (Exception ex) {
-			conectarBBDD();
-			//ex.printStackTrace();
-		}
-	}
-
-	/**
-	 * Cierra la conexión con la base de datos.
-	 */
-	public void cerrarConexionBBDD() {
-		try {statement.executeQuery("SHUTDOWN COMPACT");} 
-		catch (Exception ex) {ex.printStackTrace();}
-	}
+	
 }
