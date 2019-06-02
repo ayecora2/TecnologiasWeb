@@ -26,7 +26,7 @@
             <a class="dropdown-item" href="#">Servicio PostVenta</a>
             <a class="dropdown-item" href="#">Reparto a Domicilio</a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Contactar con nostros</a>
+            <a class="dropdown-item" href="#">Contactar con nosotros</a>
             </div>
         </li>
         <li class="nav-item">

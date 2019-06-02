@@ -28,16 +28,62 @@ public class DataAccessCore {
 		try {
 			// Carga el Driver
 			Class.forName("org.hsqldb.jdbc.JDBCDriver");
+			connection = DriverManager.getConnection("jdbc:hsqldb:mem:memoria", "sa", "");
+			statement = connection.createStatement();
 			// Establece la conexión
-			connection = DriverManager.getConnection("jdbc:hsqldb:mem:memoria", "sa", "");	
+			if (!comprobarBBDD()) {
+				System.out.println("\n\nLa BBDD NO ESTABA CONECTADA conectarBBDD\n\n");								
+				iniciarBBDD();
+				System.out.println("\n\nBBDD Iniciada por Excepción en ComprobarBBDD\n\n");
+				
+			} else {System.out.println("\nLa BBDD ya esta conectada\n");}
+				
 			//connection.isClosed();
-			iniciarBBDD();
+			//iniciarBBDD();
 			
 		} catch (Exception ex) {
 			ex.printStackTrace();
 			System.out.println("\n\n >>>> SE HA INTENTADO INCIALIZAR DE NUEVO LA BASE DE DATOS <<<<< \n\n");
 		}
 	}
+
+	/**
+	 * Este método comprueba mediante un query que existe la tabla tiendas, la cual es la base
+	 * de todos los datos de usuario, productos, etc. Sino existe realiza una conexión a la 
+	 * Base de datos.
+	 * @author Abel Yécora.
+	 * @return 
+	 */
+	public static boolean comprobarBBDD()
+	{
+		boolean conectada = false;
+		try{
+			//ResultSet resultSet;
+			//resultSet = statement.executeQuery("SELECT * FROM USERS");
+			System.out.println("\n\nComprobación BBDD PREVIO\n\n");
+			resultSet = statement.executeQuery("SELECT * FROM TIENDAS");
+			System.out.println("\n\nComprobación BBDD OK\n\n");
+			conectada = true;
+
+		} catch (Exception ex) {
+			//conectarBBDD();
+			//ex.printStackTrace();		
+			System.out.println("\n\nComprobación BBDD EXEPCION\n\n");
+			conectada =  false;
+			return conectada;
+		}
+		return conectada;
+	}
+	
+	/**
+	 * Cierra la conexión con la base de datos.
+	 */
+	public void cerrarConexionBBDD() {
+		try {statement.executeQuery("SHUTDOWN COMPACT");} 
+		catch (Exception ex) {ex.printStackTrace();}
+	}
+
+	// MÉTODOS CREACIÓN TABLAS Y DATOS DE PRUEBA.
 
 	/**
 	 * Metodo para la creación de la tabla de Tipo de usuario, así como
@@ -287,11 +333,16 @@ public class DataAccessCore {
 		} catch (Exception e) {e.printStackTrace();}
 	}
 	
-	/** Valores para iniciar la base de datos. */
+	
+	/**
+	 * Método de caracter general de llamadas a las funciones que crean las tablas
+	 * e introducen unos datos iniciales de prueba. Además crea dos tablas dentro 
+	 * de este método que no tienen valores iniciales.
+	 */
 	public static void iniciarBBDD() {
 		try {
 			// Ejecutamos los comandos de BBDD
-			statement = connection.createStatement();
+			//statement = connection.createStatement();
 			//Creación de las tablas y introducción de datos básicos.			
 			tablaTipoUsuario();
 			tablaUsuarios();
@@ -326,30 +377,4 @@ public class DataAccessCore {
 		} catch (Exception ex) {ex.printStackTrace();}
 	}
 	
-	/**
-	 * Este método comprueba mediante un query que existe la tabla tiendas, la cual es la base
-	 * de todos los datos de usuario, productos, etc. Sino existe realiza una conexión a la 
-	 * Base de datos.
-	 * @author Abel Yécora.
-	 */
-	public static void comprobarBBDD()
-	{
-		try{
-			//ResultSet resultSet;
-			//resultSet = statement.executeQuery("SELECT * FROM USERS");
-			resultSet = statement.executeQuery("SELECT * FROM TIENDAS");
-
-		} catch (Exception ex) {
-			conectarBBDD();
-			//ex.printStackTrace();
-		}
-	}
-	
-	/**
-	 * Cierra la conexión con la base de datos.
-	 */
-	public void cerrarConexionBBDD() {
-		try {statement.executeQuery("SHUTDOWN COMPACT");} 
-		catch (Exception ex) {ex.printStackTrace();}
-	}
 }
