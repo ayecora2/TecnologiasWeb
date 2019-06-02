@@ -282,18 +282,34 @@ public class DataAccessCore {
 		//Creación de la tabla NOTA!!! REQUIERE RESTRUCTURACIÓN NO CONFLICTIVA!!!
 		try {
 			statement.executeUpdate("CREATE TABLE IF NOT EXISTS PRODUCTOS_PUNTUACION(\r\n"
-					+ "    ID integer identity PRIMARY KEY,\r\n" 
+					+ "    ID integer identity PRIMARY KEY,\r\n"
+					+ "    PRODUCTO integer,\r\n"
 					+ "    PUNTUACION integer,\r\n"
-					+ "    CONSTRAINT FK_PP_P foreign key (ID) references PRODUCTOS(ID)\r\n" + ");");
+					+ "    CONSTRAINT FK_PP_P foreign key (PRODUCTO) references PRODUCTOS(ID)\r\n" + ");");
 		} catch (SQLException e1) {e1.printStackTrace();}
 		//Inserta algunas puntuaciones a los productos
 		try {
-			statement.executeUpdate("INSERT INTO PRODUCTOS_PUNTUACION VALUES(1,5);"); //Conflicto, el primary key == con la ID y eso hace que se repita
-			statement.executeUpdate("INSERT INTO PRODUCTOS_PUNTUACION VALUES(2,4);");
-			statement.executeUpdate("INSERT INTO PRODUCTOS_PUNTUACION VALUES(3,5);");
-			statement.executeUpdate("INSERT INTO PRODUCTOS_PUNTUACION VALUES(4,4);");
-			statement.executeUpdate("INSERT INTO PRODUCTOS_PUNTUACION VALUES(5,3);");
-			statement.executeUpdate("INSERT INTO PRODUCTOS_PUNTUACION VALUES(6,2);");
+			statement.executeUpdate("INSERT INTO PRODUCTOS_PUNTUACION (PRODUCTO,PUNTUACION) VALUES(0,4);");
+			statement.executeUpdate("INSERT INTO PRODUCTOS_PUNTUACION (PRODUCTO,PUNTUACION) VALUES(1,5);"); //Conflicto, el primary key == con la ID y eso hace que se repita
+			statement.executeUpdate("INSERT INTO PRODUCTOS_PUNTUACION (PRODUCTO,PUNTUACION) VALUES(2,4);");
+			statement.executeUpdate("INSERT INTO PRODUCTOS_PUNTUACION (PRODUCTO,PUNTUACION) VALUES(3,5);");
+			statement.executeUpdate("INSERT INTO PRODUCTOS_PUNTUACION (PRODUCTO,PUNTUACION) VALUES(4,4);");
+			statement.executeUpdate("INSERT INTO PRODUCTOS_PUNTUACION (PRODUCTO,PUNTUACION) VALUES(5,3);");
+			statement.executeUpdate("INSERT INTO PRODUCTOS_PUNTUACION (PRODUCTO,PUNTUACION) VALUES(6,2);");
+			statement.executeUpdate("INSERT INTO PRODUCTOS_PUNTUACION (PRODUCTO,PUNTUACION) VALUES(7,4);");
+			statement.executeUpdate("INSERT INTO PRODUCTOS_PUNTUACION (PRODUCTO,PUNTUACION) VALUES(8,3);");
+			statement.executeUpdate("INSERT INTO PRODUCTOS_PUNTUACION (PRODUCTO,PUNTUACION) VALUES(9,2);");
+			statement.executeUpdate("INSERT INTO PRODUCTOS_PUNTUACION (PRODUCTO,PUNTUACION) VALUES(5,5);");
+			statement.executeUpdate("INSERT INTO PRODUCTOS_PUNTUACION (PRODUCTO,PUNTUACION) VALUES(1,5);");
+			statement.executeUpdate("INSERT INTO PRODUCTOS_PUNTUACION (PRODUCTO,PUNTUACION) VALUES(1,5);");
+			statement.executeUpdate("INSERT INTO PRODUCTOS_PUNTUACION (PRODUCTO,PUNTUACION) VALUES(1,5);");
+			statement.executeUpdate("INSERT INTO PRODUCTOS_PUNTUACION (PRODUCTO,PUNTUACION) VALUES(1,1);");
+			statement.executeUpdate("INSERT INTO PRODUCTOS_PUNTUACION (PRODUCTO,PUNTUACION) VALUES(1,1);");
+			statement.executeUpdate("INSERT INTO PRODUCTOS_PUNTUACION (PRODUCTO,PUNTUACION) VALUES(1,1);");
+			statement.executeUpdate("INSERT INTO PRODUCTOS_PUNTUACION (PRODUCTO,PUNTUACION) VALUES(1,1);");
+			statement.executeUpdate("INSERT INTO PRODUCTOS_PUNTUACION (PRODUCTO,PUNTUACION) VALUES(1,1);");
+			statement.executeUpdate("INSERT INTO PRODUCTOS_PUNTUACION (PRODUCTO,PUNTUACION) VALUES(1,1);");
+			statement.executeUpdate("INSERT INTO PRODUCTOS_PUNTUACION (PRODUCTO,PUNTUACION) VALUES(1,1);");
 		} catch (Exception e) {e.printStackTrace();}
 	}
 	
