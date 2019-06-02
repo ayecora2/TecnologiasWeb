@@ -5,10 +5,7 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.ArrayList;
-import java.util.List;
-
-import Market_DO.User;
+//import Market_DO.User;
 
 /**
  * Clase para la interacción con la base de datos en memoria.
@@ -160,13 +157,13 @@ public class DataAccessCore {
 		} catch (SQLException e1) {e1.printStackTrace();} //Imprime la traza
 		//Introducción de unas cuantas Marcas de base.
 		try {
-			statement.executeUpdate("INSERT INTO MARCAS (NOMBRE) VALUES('Brawn');");
-			statement.executeUpdate("INSERT INTO MARCAS (NOMBRE) VALUES('Phillips');");
-			statement.executeUpdate("INSERT INTO MARCAS (NOMBRE) VALUES('LG');");
-			statement.executeUpdate("INSERT INTO MARCAS (NOMBRE) VALUES('Microsoft');");
-			statement.executeUpdate("INSERT INTO MARCAS (NOMBRE) VALUES('Sony');");
-			statement.executeUpdate("INSERT INTO MARCAS (NOMBRE) VALUES('IBM');");
-			statement.executeUpdate("INSERT INTO MARCAS (NOMBRE) VALUES('IOS');");
+			statement.executeUpdate("INSERT INTO MARCAS VALUES(1,'Brawn');");
+			statement.executeUpdate("INSERT INTO MARCAS VALUES(2,'Phillips');");
+			statement.executeUpdate("INSERT INTO MARCAS VALUES(3,'LG');");
+			statement.executeUpdate("INSERT INTO MARCAS VALUES(4,'Microsoft');");
+			statement.executeUpdate("INSERT INTO MARCAS VALUES(5,'Sony');");
+			statement.executeUpdate("INSERT INTO MARCAS VALUES(6,'IBM');");
+			statement.executeUpdate("INSERT INTO MARCAS VALUES(7,'IOS');");
 		} catch (Exception e) {System.out.println("\nError al intentar introducir las marcas por defecto.\n");}
 	}
 	
@@ -217,16 +214,16 @@ public class DataAccessCore {
 		} catch (SQLException e1) {e1.printStackTrace();}
 		//Insercción de algunos productos básicos
 		try {
-			statement.executeUpdate("INSERT INTO PRODUCTOS (CATEGORIA_ID, TIENDA_ID, MARCA_ID, NOMBRE, MODELO, IMAGEN, DESCRIPCION, CANTIDAD, PRECIO) VALUES(1,1,3,'Diablo II','Rol','diablo2.jpg','Juego de Rol',5,50);");
-			statement.executeUpdate("INSERT INTO PRODUCTOS (CATEGORIA_ID, TIENDA_ID, MARCA_ID, NOMBRE, MODELO, IMAGEN, DESCRIPCION, CANTIDAD, PRECIO) VALUES(1,1,2,'Comamand And Conquer','Estrategia','CommandAndConquer.jpg','Juego de estretegía', 5, 45);");
-			statement.executeUpdate("INSERT INTO PRODUCTOS (CATEGORIA_ID, TIENDA_ID, MARCA_ID, NOMBRE, MODELO, IMAGEN, DESCRIPCION, CANTIDAD, PRECIO) VALUES(2,1,3,'Set de Cocina','Blanco California','ElectrodomesticosDeCocina.jpg','Cocina completa',5,270);");
-			statement.executeUpdate("INSERT INTO PRODUCTOS (CATEGORIA_ID, TIENDA_ID, MARCA_ID, NOMBRE, MODELO, IMAGEN, DESCRIPCION, CANTIDAD, PRECIO) VALUES(2,1,1,'Microondas','700Wattios','Microondas.jpg','Microondas',5,24);");
-			statement.executeUpdate("INSERT INTO PRODUCTOS (CATEGORIA_ID, TIENDA_ID, MARCA_ID, NOMBRE, MODELO, IMAGEN, DESCRIPCION, CANTIDAD, PRECIO) VALUES(2,1,3,'Set Imprescindible','Africa People','tostadorayMaquinaDeCoser.jpg', 'Tostadora máquina coser', 5, 80);");
-			statement.executeUpdate("INSERT INTO PRODUCTOS (CATEGORIA_ID, TIENDA_ID, MARCA_ID, NOMBRE, MODELO, IMAGEN, DESCRIPCION, CANTIDAD, PRECIO) VALUES(2,1,4,'Picadilly','Destrozadora','Batidoras.jpg','Batidora',5,35);");
-			statement.executeUpdate("INSERT INTO PRODUCTOS (CATEGORIA_ID, TIENDA_ID, MARCA_ID, NOMBRE, MODELO, IMAGEN, DESCRIPCION, CANTIDAD, PRECIO) VALUES(2,1,5,'Aplastator','2000T','Exprimidoras.jpg', 'Exprimidor', 5, 15);");
-			statement.executeUpdate("INSERT INTO PRODUCTOS (CATEGORIA_ID, TIENDA_ID, MARCA_ID, NOMBRE, MODELO, IMAGEN, DESCRIPCION, CANTIDAD, PRECIO) VALUES(2,1,6,'Dorator','Olieo IV','Freidoras.jpg','Freidora', 5, 26);");
-			statement.executeUpdate("INSERT INTO PRODUCTOS (CATEGORIA_ID, TIENDA_ID, MARCA_ID, NOMBRE, MODELO, IMAGEN, DESCRIPCION, CANTIDAD, PRECIO) VALUES(3,1,6,'Holus','5000','computer.jpg','Ordenador PC', 2, 2666);");
-			statement.executeUpdate("INSERT INTO PRODUCTOS (CATEGORIA_ID, TIENDA_ID, MARCA_ID, NOMBRE, MODELO, IMAGEN, DESCRIPCION, CANTIDAD, PRECIO) VALUES(4,1,6,'Liberator','FreeSet','manoslibres.jpg','Set de manos libres', 400, 60);");
+			statement.executeUpdate("INSERT INTO PRODUCTOS VALUES(1,1,1,3,'Diablo II','Rol','diablo2.jpg','Juego de Rol',5,50);");
+			statement.executeUpdate("INSERT INTO PRODUCTOS VALUES(2,1,1,2,'Comamand And Conquer','Estrategia','CommandAndConquer.jpg','Juego de estretegía', 5, 45);");
+			statement.executeUpdate("INSERT INTO PRODUCTOS VALUES(3,2,1,3,'Set de Cocina','Blanco California','ElectrodomesticosDeCocina.jpg','Cocina completa',5,270);");
+			statement.executeUpdate("INSERT INTO PRODUCTOS VALUES(4,2,1,1,'Microondas','700Wattios','Microondas.jpg','Microondas',5,24);");
+			statement.executeUpdate("INSERT INTO PRODUCTOS VALUES(5,2,1,3,'Set Imprescindible','Africa People','tostadorayMaquinaDeCoser.jpg', 'Tostadora máquina coser', 5, 80);");
+			statement.executeUpdate("INSERT INTO PRODUCTOS VALUES(6,2,1,4,'Picadilly','Destrozadora','Batidoras.jpg','Batidora',5,35);");
+			statement.executeUpdate("INSERT INTO PRODUCTOS VALUES(7,2,1,5,'Aplastator','2000T','Exprimidoras.jpg', 'Exprimidor', 5, 15);");
+			statement.executeUpdate("INSERT INTO PRODUCTOS VALUES(8,2,1,6,'Dorator','Olieo IV','Freidoras.jpg','Freidora', 5, 26);");
+			statement.executeUpdate("INSERT INTO PRODUCTOS VALUES(9,3,1,6,'Holus','5000','computer.jpg','Ordenador PC', 2, 2666);");
+			statement.executeUpdate("INSERT INTO PRODUCTOS VALUES(10,4,1,6,'Liberator','FreeSet','manoslibres.jpg','Set de manos libres', 400, 60);");
 		} catch (Exception e) {e.printStackTrace();}
 	}
 	
@@ -245,12 +242,12 @@ public class DataAccessCore {
 		} catch (SQLException e1) {e1.printStackTrace();}
 		//Inserta algunas puntuaciones a los productos
 		try {
-			statement.executeUpdate("INSERT INTO PRODUCTOS_PUNTUACION VALUES(0,5);"); //Conflicto, el primary key == con la ID y eso hace que se repita
-			statement.executeUpdate("INSERT INTO PRODUCTOS_PUNTUACION VALUES(1,4);");
-			statement.executeUpdate("INSERT INTO PRODUCTOS_PUNTUACION VALUES(2,5);");
-			statement.executeUpdate("INSERT INTO PRODUCTOS_PUNTUACION VALUES(3,4);");
-			statement.executeUpdate("INSERT INTO PRODUCTOS_PUNTUACION VALUES(4,3);");
-			statement.executeUpdate("INSERT INTO PRODUCTOS_PUNTUACION VALUES(5,2);");
+			statement.executeUpdate("INSERT INTO PRODUCTOS_PUNTUACION VALUES(1,5);"); //Conflicto, el primary key == con la ID y eso hace que se repita
+			statement.executeUpdate("INSERT INTO PRODUCTOS_PUNTUACION VALUES(2,4);");
+			statement.executeUpdate("INSERT INTO PRODUCTOS_PUNTUACION VALUES(3,5);");
+			statement.executeUpdate("INSERT INTO PRODUCTOS_PUNTUACION VALUES(4,4);");
+			statement.executeUpdate("INSERT INTO PRODUCTOS_PUNTUACION VALUES(5,3);");
+			statement.executeUpdate("INSERT INTO PRODUCTOS_PUNTUACION VALUES(6,2);");
 		} catch (Exception e) {e.printStackTrace();}
 	}
 	
@@ -284,9 +281,9 @@ public class DataAccessCore {
 		} catch (SQLException e1) {e1.printStackTrace();}
 		//Insercción de los posibles estados
 		try {
-			statement.executeUpdate("INSERT INTO COMPRAS_ESTADOS (ESTADO) VALUES('Confirmada,');");
-			statement.executeUpdate("INSERT INTO COMPRAS_ESTADOS (ESTADO) VALUES('Modificada,');");
-			statement.executeUpdate("INSERT INTO COMPRAS_ESTADOS (ESTADO) VALUES('Cancelada,');");
+			statement.executeUpdate("INSERT INTO COMPRAS_ESTADOS VALUES(1,'Confirmada,');");
+			statement.executeUpdate("INSERT INTO COMPRAS_ESTADOS VALUES(2,'Modificada,');");
+			statement.executeUpdate("INSERT INTO COMPRAS_ESTADOS VALUES(3,'Cancelada,');");
 		} catch (Exception e) {e.printStackTrace();}
 	}
 	
