@@ -5,6 +5,6 @@ import Market_DA.DataAccessCore;
 public class ConectarBBDD {
 	public static void conectarBBDD()
 	{
-		DataAccessCore.conectarBBDD();
+		DataAccessCore.comprobarBBDD();
 	}
 }

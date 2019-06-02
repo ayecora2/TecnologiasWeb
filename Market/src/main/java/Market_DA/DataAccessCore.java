@@ -5,6 +5,10 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+
+import Market_DO.User;
 
 /**
  * Clase para la interacción con la base de datos en memoria.
@@ -316,6 +320,17 @@ public class DataAccessCore {
 					+ "    CONSTRAINT FK_CI_P foreign key (PRODUCTO_ID) references PRODUCTOS(ID)\r\n" + ");");
 
 		} catch (Exception ex) {ex.printStackTrace();}
+	}
+	public static void comprobarBBDD()
+	{
+		try{
+			ResultSet resultSet;
+			resultSet = statement.executeQuery("SELECT * FROM USERS");
+
+		} catch (Exception ex) {
+			conectarBBDD();
+			ex.printStackTrace();
+		}
 	}
 
 	/**
