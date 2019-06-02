@@ -41,9 +41,8 @@ public class UserDA extends DataAccessCore{
 		
 		//introduce la información de la instancia y la introduce en la BBDD
 		try {
-			String sentencia="INSERT INTO USERS VALUES("
-					+usuario.getId()
-					+",'"+usuario.getNombre()
+			String sentencia="INSERT INTO USERS (NOMBRE, APELLIDO, EMAIL, TELEFONO, PASS, CIUDAD, DIRECCION, CP, USER_TYPE_ID) VALUES('"
+					+usuario.getNombre()
 					+"','"+usuario.getApellido()
 					+"','"+usuario.getEmail()
 					+"','"+usuario.getTelefono()

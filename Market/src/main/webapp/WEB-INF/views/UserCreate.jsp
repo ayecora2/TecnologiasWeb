@@ -118,12 +118,7 @@
 
 		<jsp:include page="templates/_Footer.jsp" />
 
-		<%
-			String policyNumber = request.getParameter("policyNumber");
-			String claimValue = request.getParameter("claim");
-			String claimType = request.getParameter("type");
-			String description = request.getParameter("description");
-		%>
+
 	</div>
 </body>
 </html>
