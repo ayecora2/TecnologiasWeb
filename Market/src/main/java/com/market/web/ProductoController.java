@@ -40,7 +40,7 @@ public class ProductoController {
 	}
 	
 	
-	@RequestMapping(value = "/addEmployee", method = RequestMethod.POST)
+	@RequestMapping(value = "/addProducto", method = RequestMethod.POST)
 	public String submit(@ModelAttribute("Productos")  List<Producto> Productos) {
 	    // Code that uses the employee object
 	 

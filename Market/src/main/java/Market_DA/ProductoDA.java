@@ -1,7 +1,6 @@
 package Market_DA;
 
 import java.sql.ResultSet;
-
 import Market_DO.Producto;
 
 

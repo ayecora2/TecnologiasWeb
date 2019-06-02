@@ -28,10 +28,12 @@ public class DataAccessCore {
 			// Carga el Driver
 			Class.forName("org.hsqldb.jdbc.JDBCDriver");
 			// Establece la conexión
-			connection = DriverManager.getConnection("jdbc:hsqldb:mem:memoria", "sa", "");
-			// Iniciar valores BBDD
-			iniciarBBDD();
-		} catch (Exception ex) {ex.printStackTrace();}
+			connection = DriverManager.getConnection("jdbc:hsqldb:mem:memoria", "sa", "");	
+			//connection.isClosed();
+		} catch (Exception ex) {
+			ex.printStackTrace();
+			System.out.println("\n\n >>>> SE HA INTENTADO INCIALIZAR DE NUEVO LA BASE DE DATOS <<<<< \n\n");
+		}
 	}
 
 	/**
@@ -280,11 +282,11 @@ public class DataAccessCore {
 	}
 	
 	/** Valores para iniciar la base de datos. */
-	private static void iniciarBBDD() {
+	public static void iniciarBBDD() {
 		try {
 			// Ejecutamos los comandos de BBDD
 			statement = connection.createStatement();
-			//Creación de las tablas y introducción de datos básicos.
+			//Creación de las tablas y introducción de datos básicos.			
 			tablaTipoUsuario();
 			tablaUsuarios();
 			tablaServicios();
