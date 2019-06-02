@@ -329,7 +329,7 @@ public class DataAccessCore {
 
 		} catch (Exception ex) {
 			conectarBBDD();
-			ex.printStackTrace();
+			//ex.printStackTrace();
 		}
 	}
 

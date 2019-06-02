@@ -17,11 +17,11 @@
 <body>
 	<div>
 		<jsp:include page="templates/_NavBarView.jsp" />
-		<form class="form-horizontal" action="UserCreateRequest" method="get">
+		<form class="form-horizontal" action="UserCreateRequest" method="post">
 			<fieldset>
 
 				<!-- Form Name -->
-				<legend>Form Name</legend>
+				<legend>Alta Usuario</legend>
 
 				<!-- Text input-->
 				<div class="form-group">
