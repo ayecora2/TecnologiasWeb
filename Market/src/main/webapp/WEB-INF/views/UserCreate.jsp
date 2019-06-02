@@ -17,7 +17,7 @@
 <body>
 	<div>
 		<jsp:include page="templates/_NavBarView.jsp" />
-		<form class="form-horizontal" action="UserCreateRequest" method="post">
+		<form class="form-horizontal" action="UserCreateRequest" method="get">
 			<fieldset>
 
 				<!-- Form Name -->

@@ -34,6 +34,8 @@ public class DataAccessCore {
 			// Establece la conexión
 			connection = DriverManager.getConnection("jdbc:hsqldb:mem:memoria", "sa", "");	
 			//connection.isClosed();
+			iniciarBBDD();
+			
 		} catch (Exception ex) {
 			ex.printStackTrace();
 			System.out.println("\n\n >>>> SE HA INTENTADO INCIALIZAR DE NUEVO LA BASE DE DATOS <<<<< \n\n");
@@ -102,10 +104,10 @@ public class DataAccessCore {
 		} catch (SQLException e1) {e1.printStackTrace();} //Impresión de la traza de error
 		//Introducción de servicios básicos.
 		try { 
-			statement.executeUpdate("INSERT INTO SERVICIOS VALUES(1,'Venta');");
-			statement.executeUpdate("INSERT INTO SERVICIOS VALUES(2,'Financiación');");
-			statement.executeUpdate("INSERT INTO SERVICIOS VALUES(3,'Servicio Postventa');");
-			statement.executeUpdate("INSERT INTO SERVICIOS VALUES(4,'Reparto a domicilio');");
+			statement.executeUpdate("INSERT INTO SERVICIOS (NOMBRE) VALUES('Venta');");
+			statement.executeUpdate("INSERT INTO SERVICIOS (NOMBRE) VALUES('Financiación');");
+			statement.executeUpdate("INSERT INTO SERVICIOS (NOMBRE) VALUES('Servicio Postventa');");
+			statement.executeUpdate("INSERT INTO SERVICIOS (NOMBRE) VALUES('Reparto a domicilio');");
 		} catch (Exception e) {e.printStackTrace();} //Impresión de la traza de error
 	}
 		
@@ -121,8 +123,10 @@ public class DataAccessCore {
 					+ "    ID integer identity PRIMARY KEY,\r\n"
 					+ "    NOMBRE varchar(50) UNIQUE\r\n" + ");");
 		} catch (SQLException e1) {e1.printStackTrace();}
-
-		try {statement.executeUpdate("INSERT INTO TIENDAS VALUES(1,'ElectroMarket');");
+		
+		//Insercción del nombre de la tienda.
+		try { 
+			statement.executeUpdate("INSERT INTO TIENDAS VALUES(1,'ElectroMarket');");
 		} catch (Exception e) {}
 		
 		//Creación de la tabla y los servicios adjuntos a la tienda
@@ -136,6 +140,7 @@ public class DataAccessCore {
 		} catch (SQLException e1) {e1.printStackTrace();}
 		//Insercción de los servicios establecidos para la tienda 1 (única)
 		try {
+			//En esta sección no es posible automatizar el ID tienda, puesto que se debe referir cada SVC a la única tienda creada.
 			statement.executeUpdate("INSERT INTO TIENDA_SERVICIOS VALUES(1,1);");
 			statement.executeUpdate("INSERT INTO TIENDA_SERVICIOS VALUES(1,2);");
 			statement.executeUpdate("INSERT INTO TIENDA_SERVICIOS VALUES(1,3);");
@@ -155,13 +160,13 @@ public class DataAccessCore {
 		} catch (SQLException e1) {e1.printStackTrace();} //Imprime la traza
 		//Introducción de unas cuantas Marcas de base.
 		try {
-			statement.executeUpdate("INSERT INTO MARCAS VALUES(1,'Brawn');");
-			statement.executeUpdate("INSERT INTO MARCAS VALUES(2,'Phillips');");
-			statement.executeUpdate("INSERT INTO MARCAS VALUES(3,'LG');");
-			statement.executeUpdate("INSERT INTO MARCAS VALUES(4,'Microsoft');");
-			statement.executeUpdate("INSERT INTO MARCAS VALUES(5,'Sony');");
-			statement.executeUpdate("INSERT INTO MARCAS VALUES(6,'IBM');");
-			statement.executeUpdate("INSERT INTO MARCAS VALUES(7,'IOS');");
+			statement.executeUpdate("INSERT INTO MARCAS (NOMBRE) VALUES('Brawn');");
+			statement.executeUpdate("INSERT INTO MARCAS (NOMBRE) VALUES('Phillips');");
+			statement.executeUpdate("INSERT INTO MARCAS (NOMBRE) VALUES('LG');");
+			statement.executeUpdate("INSERT INTO MARCAS (NOMBRE) VALUES('Microsoft');");
+			statement.executeUpdate("INSERT INTO MARCAS (NOMBRE) VALUES('Sony');");
+			statement.executeUpdate("INSERT INTO MARCAS (NOMBRE) VALUES('IBM');");
+			statement.executeUpdate("INSERT INTO MARCAS (NOMBRE) VALUES('IOS');");
 		} catch (Exception e) {System.out.println("\nError al intentar introducir las marcas por defecto.\n");}
 	}
 	
@@ -212,16 +217,16 @@ public class DataAccessCore {
 		} catch (SQLException e1) {e1.printStackTrace();}
 		//Insercción de algunos productos básicos
 		try {
-			statement.executeUpdate("INSERT INTO PRODUCTOS VALUES(1,1,1,3,'Diablo II','Rol','diablo2.jpg','Juego de Rol',5,50);");
-			statement.executeUpdate("INSERT INTO PRODUCTOS VALUES(2,1,1,2,'Comamand And Conquer','Estrategia','CommandAndConquer.jpg','Juego de estretegía', 5, 45);");
-			statement.executeUpdate("INSERT INTO PRODUCTOS VALUES(3,2,1,3,'Set de Cocina','Blanco California','ElectrodomesticosDeCocina.jpg','Cocina completa',5,270);");
-			statement.executeUpdate("INSERT INTO PRODUCTOS VALUES(4,2,1,1,'Microondas','700Wattios','Microondas.jpg','Microondas',5,24);");
-			statement.executeUpdate("INSERT INTO PRODUCTOS VALUES(5,2,1,3,'Set Imprescindible','Africa People','tostadorayMaquinaDeCoser.jpg', 'Tostadora máquina coser', 5, 80);");
-			statement.executeUpdate("INSERT INTO PRODUCTOS VALUES(6,2,1,4,'Picadilly','Destrozadora','Batidoras.jpg','Batidora',5,35);");
-			statement.executeUpdate("INSERT INTO PRODUCTOS VALUES(7,2,1,5,'Aplastator','2000T','Exprimidoras.jpg', 'Exprimidor', 5, 15);");
-			statement.executeUpdate("INSERT INTO PRODUCTOS VALUES(8,2,1,6,'Dorator','Olieo IV','Freidoras.jpg','Freidora', 5, 26);");
-			statement.executeUpdate("INSERT INTO PRODUCTOS VALUES(9,3,1,6,'Holus','5000','computer.jpg','Ordenador PC', 2, 2666);");
-			statement.executeUpdate("INSERT INTO PRODUCTOS VALUES(10,4,1,6,'Liberator','FreeSet','manoslibres.jpg','Set de manos libres', 400, 60);");
+			statement.executeUpdate("INSERT INTO PRODUCTOS (CATEGORIA_ID, TIENDA_ID, MARCA_ID, NOMBRE, MODELO, IMAGEN, DESCRIPCION, CANTIDAD, PRECIO) VALUES(1,1,3,'Diablo II','Rol','diablo2.jpg','Juego de Rol',5,50);");
+			statement.executeUpdate("INSERT INTO PRODUCTOS (CATEGORIA_ID, TIENDA_ID, MARCA_ID, NOMBRE, MODELO, IMAGEN, DESCRIPCION, CANTIDAD, PRECIO) VALUES(1,1,2,'Comamand And Conquer','Estrategia','CommandAndConquer.jpg','Juego de estretegía', 5, 45);");
+			statement.executeUpdate("INSERT INTO PRODUCTOS (CATEGORIA_ID, TIENDA_ID, MARCA_ID, NOMBRE, MODELO, IMAGEN, DESCRIPCION, CANTIDAD, PRECIO) VALUES(2,1,3,'Set de Cocina','Blanco California','ElectrodomesticosDeCocina.jpg','Cocina completa',5,270);");
+			statement.executeUpdate("INSERT INTO PRODUCTOS (CATEGORIA_ID, TIENDA_ID, MARCA_ID, NOMBRE, MODELO, IMAGEN, DESCRIPCION, CANTIDAD, PRECIO) VALUES(2,1,1,'Microondas','700Wattios','Microondas.jpg','Microondas',5,24);");
+			statement.executeUpdate("INSERT INTO PRODUCTOS (CATEGORIA_ID, TIENDA_ID, MARCA_ID, NOMBRE, MODELO, IMAGEN, DESCRIPCION, CANTIDAD, PRECIO) VALUES(2,1,3,'Set Imprescindible','Africa People','tostadorayMaquinaDeCoser.jpg', 'Tostadora máquina coser', 5, 80);");
+			statement.executeUpdate("INSERT INTO PRODUCTOS (CATEGORIA_ID, TIENDA_ID, MARCA_ID, NOMBRE, MODELO, IMAGEN, DESCRIPCION, CANTIDAD, PRECIO) VALUES(2,1,4,'Picadilly','Destrozadora','Batidoras.jpg','Batidora',5,35);");
+			statement.executeUpdate("INSERT INTO PRODUCTOS (CATEGORIA_ID, TIENDA_ID, MARCA_ID, NOMBRE, MODELO, IMAGEN, DESCRIPCION, CANTIDAD, PRECIO) VALUES(2,1,5,'Aplastator','2000T','Exprimidoras.jpg', 'Exprimidor', 5, 15);");
+			statement.executeUpdate("INSERT INTO PRODUCTOS (CATEGORIA_ID, TIENDA_ID, MARCA_ID, NOMBRE, MODELO, IMAGEN, DESCRIPCION, CANTIDAD, PRECIO) VALUES(2,1,6,'Dorator','Olieo IV','Freidoras.jpg','Freidora', 5, 26);");
+			statement.executeUpdate("INSERT INTO PRODUCTOS (CATEGORIA_ID, TIENDA_ID, MARCA_ID, NOMBRE, MODELO, IMAGEN, DESCRIPCION, CANTIDAD, PRECIO) VALUES(3,1,6,'Holus','5000','computer.jpg','Ordenador PC', 2, 2666);");
+			statement.executeUpdate("INSERT INTO PRODUCTOS (CATEGORIA_ID, TIENDA_ID, MARCA_ID, NOMBRE, MODELO, IMAGEN, DESCRIPCION, CANTIDAD, PRECIO) VALUES(4,1,6,'Liberator','FreeSet','manoslibres.jpg','Set de manos libres', 400, 60);");
 		} catch (Exception e) {e.printStackTrace();}
 	}
 	
@@ -231,7 +236,7 @@ public class DataAccessCore {
 	 * Los valores a pasar de la tabla es el ID (integer PK == ID PK de Productos) y puntuación (integer)
 	 */
 	private static void tablaProductosPuntuacion() {
-		//Creación de la tabla
+		//Creación de la tabla NOTA!!! REQUIERE RESTRUCTURACIÓN NO CONFLICTIVA!!!
 		try {
 			statement.executeUpdate("CREATE TABLE IF NOT EXISTS PRODUCTOS_PUNTUACION(\r\n"
 					+ "    ID integer identity PRIMARY KEY,\r\n" 
@@ -240,12 +245,12 @@ public class DataAccessCore {
 		} catch (SQLException e1) {e1.printStackTrace();}
 		//Inserta algunas puntuaciones a los productos
 		try {
-			statement.executeUpdate("INSERT INTO PRODUCTOS_PUNTUACION VALUES(1,5);"); //Conflicto, el primary key == con la ID y eso hace que se repita
-			statement.executeUpdate("INSERT INTO PRODUCTOS_PUNTUACION VALUES(2,4);");
-			statement.executeUpdate("INSERT INTO PRODUCTOS_PUNTUACION VALUES(3,5);");
-			statement.executeUpdate("INSERT INTO PRODUCTOS_PUNTUACION VALUES(4,4);");
-			statement.executeUpdate("INSERT INTO PRODUCTOS_PUNTUACION VALUES(5,3);");
-			statement.executeUpdate("INSERT INTO PRODUCTOS_PUNTUACION VALUES(6,2);");
+			statement.executeUpdate("INSERT INTO PRODUCTOS_PUNTUACION VALUES(0,5);"); //Conflicto, el primary key == con la ID y eso hace que se repita
+			statement.executeUpdate("INSERT INTO PRODUCTOS_PUNTUACION VALUES(1,4);");
+			statement.executeUpdate("INSERT INTO PRODUCTOS_PUNTUACION VALUES(2,5);");
+			statement.executeUpdate("INSERT INTO PRODUCTOS_PUNTUACION VALUES(3,4);");
+			statement.executeUpdate("INSERT INTO PRODUCTOS_PUNTUACION VALUES(4,3);");
+			statement.executeUpdate("INSERT INTO PRODUCTOS_PUNTUACION VALUES(5,2);");
 		} catch (Exception e) {e.printStackTrace();}
 	}
 	
@@ -279,9 +284,9 @@ public class DataAccessCore {
 		} catch (SQLException e1) {e1.printStackTrace();}
 		//Insercción de los posibles estados
 		try {
-			statement.executeUpdate("INSERT INTO COMPRAS_ESTADOS VALUES(1,'Confirmada,');");
-			statement.executeUpdate("INSERT INTO COMPRAS_ESTADOS VALUES(2,'Modificada,');");
-			statement.executeUpdate("INSERT INTO COMPRAS_ESTADOS VALUES(3,'Cancelada,');");
+			statement.executeUpdate("INSERT INTO COMPRAS_ESTADOS (ESTADO) VALUES('Confirmada,');");
+			statement.executeUpdate("INSERT INTO COMPRAS_ESTADOS (ESTADO) VALUES('Modificada,');");
+			statement.executeUpdate("INSERT INTO COMPRAS_ESTADOS (ESTADO) VALUES('Cancelada,');");
 		} catch (Exception e) {e.printStackTrace();}
 	}
 	
@@ -323,18 +328,26 @@ public class DataAccessCore {
 
 		} catch (Exception ex) {ex.printStackTrace();}
 	}
+	
+	/**
+	 * Este método comprueba mediante un query que existe la tabla tiendas, la cual es la base
+	 * de todos los datos de usuario, productos, etc. Sino existe realiza una conexión a la 
+	 * Base de datos.
+	 * @author Abel Yécora.
+	 */
 	public static void comprobarBBDD()
 	{
 		try{
-			ResultSet resultSet;
-			resultSet = statement.executeQuery("SELECT * FROM USERS");
+			//ResultSet resultSet;
+			//resultSet = statement.executeQuery("SELECT * FROM USERS");
+			resultSet = statement.executeQuery("SELECT * FROM TIENDAS");
 
 		} catch (Exception ex) {
 			conectarBBDD();
 			//ex.printStackTrace();
 		}
 	}
-
+	
 	/**
 	 * Cierra la conexión con la base de datos.
 	 */

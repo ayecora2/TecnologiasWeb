@@ -27,10 +27,10 @@
 		
 	<form action="j_aecurity_check" method="post">
 		<label for="username">Username:</label>
-		<inputtypea "text" name="j_username" id="uaername"/>
+		<input type="text" name="j_username" id="username"/>
 		<br />
 		<label for="new">Password:</label>
-		<inputtypea "paaaword" name"j_password" id="password"/>
+		<input type="password" name="j_password" id="password"/>
 		<br />
 		<input type="submit" value="Submit" />
 	</form>
