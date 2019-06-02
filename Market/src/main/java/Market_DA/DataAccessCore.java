@@ -5,6 +5,10 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+
+import Market_DO.User;
 
 /**
  * Clase para la interacción con la base de datos en memoria.
@@ -44,8 +48,8 @@ public class DataAccessCore {
 		//Creación tipos de usuario
 		try {
 			statement.executeUpdate("CREATE TABLE IF NOT EXISTS USERS_TYPE(\r\n"
-					+ "    ID integer identity PRIMARY KEY UNIQUE,\r\n" 
-					+ "    NOMBRE varchar(40) \r\n" + ");");
+					+ "    ID integer identity PRIMARY KEY,\r\n" 
+					+ "    NOMBRE varchar(40) UNIQUE\r\n" + ");");
 		} catch (SQLException e1) {e1.printStackTrace();} // Imprimir la traza del error
 		//Añadir dos tipos de usuario, Admin y usuario.
 		try {
@@ -63,7 +67,7 @@ public class DataAccessCore {
 		//Creación tabla de usuarios
 		try {
 			statement.executeUpdate("CREATE TABLE IF NOT EXISTS USERS(\r\n"
-					+ "    ID integer identity PRIMARY KEY,\r\n" 
+					+ "    ID INTEGER IDENTITY PRIMARY KEY,\r\n" 
 					+ "    NOMBRE varchar(40),\r\n" 
 					+ "    APELLIDO varchar(40),\r\n" 
 					+ "    EMAIL varchar(50),\r\n" 
@@ -81,9 +85,9 @@ public class DataAccessCore {
 		//Introducir usuarios básicos
 		try { 
 			//ID/PK(integer), Nombre(40), email(50), password(8), ciudad(50), CP(5), Tipo Usuario(Integer 1).
-			statement.executeUpdate("INSERT INTO USERS VALUES(1,'Charly','Bravo','charly@alumno.uned.es','9998887770','123','Leon','Calle Lola','24001',1);");
-			statement.executeUpdate("INSERT INTO USERS VALUES(2,'Silverio','Rosales','srosales2@alumno.uned.es','615324121','1234','Leon','Calle Tomás','24001',2);");				
-			statement.executeUpdate("INSERT INTO USERS VALUES(3,'Abel','Yécora','ayecora2@alumno.uned.es','623456788','1234','Logroño','Avenida Tomasolo','26001',2);");
+			statement.executeUpdate("INSERT INTO USERS (NOMBRE, APELLIDO, EMAIL, TELEFONO, PASS, CIUDAD, DIRECCION, CP, USER_TYPE_ID) VALUES('Charly','Bravo','charly@alumno.uned.es','9998887770','123','Leon','Calle Lola','24001',1);");
+			statement.executeUpdate("INSERT INTO USERS (NOMBRE, APELLIDO, EMAIL, TELEFONO, PASS, CIUDAD, DIRECCION, CP, USER_TYPE_ID) VALUES('Silverio','Rosales','srosales2@alumno.uned.es','615324121','1234','Leon','Calle Tomás','24001',2);");				
+			statement.executeUpdate("INSERT INTO USERS (NOMBRE, APELLIDO, EMAIL, TELEFONO, PASS, CIUDAD, DIRECCION, CP, USER_TYPE_ID) VALUES('Abel','Yécora','ayecora2@alumno.uned.es','623456788','1234','Logroño','Avenida Tomasolo','26001',2);");
 		} catch (Exception e) {e.printStackTrace();} //Imprime la traza del error.
 	}
 	/**
@@ -318,6 +322,17 @@ public class DataAccessCore {
 					+ "    CONSTRAINT FK_CI_P foreign key (PRODUCTO_ID) references PRODUCTOS(ID)\r\n" + ");");
 
 		} catch (Exception ex) {ex.printStackTrace();}
+	}
+	public static void comprobarBBDD()
+	{
+		try{
+			ResultSet resultSet;
+			resultSet = statement.executeQuery("SELECT * FROM USERS");
+
+		} catch (Exception ex) {
+			conectarBBDD();
+			ex.printStackTrace();
+		}
 	}
 
 	/**

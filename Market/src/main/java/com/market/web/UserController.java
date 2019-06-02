@@ -32,6 +32,11 @@ public class UserController {
 		return "UserCreate";
 	}
 	
+	@RequestMapping(value = "UserCreateRequest", method = RequestMethod.GET)
+	public String UserCreateRequest() {
+
+		return "UserCreateRequest";
+	}
 	
 
 }

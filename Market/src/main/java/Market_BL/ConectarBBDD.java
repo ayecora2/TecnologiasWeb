@@ -12,8 +12,6 @@ public class ConectarBBDD {
 	{
 		//conecta a la Base de Datos
 		DataAccessCore.comprobarBBDD();
-		
-		// Crea tablas y algunos valores de prueba en la BBDD
-		DataAccessCore.iniciarBBDD();
+
 	}
 }
