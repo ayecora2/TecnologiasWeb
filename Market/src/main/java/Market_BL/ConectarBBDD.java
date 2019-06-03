@@ -11,7 +11,8 @@ public class ConectarBBDD {
 	public static void conectarBBDD()
 	{
 		//conecta a la Base de Datos
-		//DataAccessCore.comprobarBBDD();
 		DataAccessCore.conectarBBDD();
 	}
+	
+	public static void desconectarBBDD() {DataAccessCore.cerrarConexionBBDD();}
 }

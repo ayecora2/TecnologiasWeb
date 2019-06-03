@@ -12,7 +12,8 @@ import java.sql.Statement;
  * Esta clase en particular esta encargada de la introducción de los 
  * datos a usar en la práctica en la BBDD
  * 
- * @author silverio
+ * @author Abel Yécora
+ * @author Silverio Rosales
  * @version 201905281427
  */
 public class DataAccessCore {
@@ -22,24 +23,21 @@ public class DataAccessCore {
 	protected static Statement statement = null;
 
 	/**
-	 * Este médoto establece la conexión con la BBDD
+	 * Este médoto establece la conexión con la BBDD y la inicializa en caso de que no
+	 * lo estuviera. Realizando una comprobación previa.
 	 */
 	public static void conectarBBDD() {
 		try {
 			// Carga el Driver
 			Class.forName("org.hsqldb.jdbc.JDBCDriver");
-			connection = DriverManager.getConnection("jdbc:hsqldb:mem:memoria", "sa", "");
-			statement = connection.createStatement();
-			// Establece la conexión
+			// Establece la conexión e inicializa si no lo estaba
 			if (!comprobarBBDD()) {
-				System.out.println("\n\nLa BBDD NO ESTABA CONECTADA conectarBBDD\n\n");								
+				System.out.println("\n>>>La BBDD NO ESTABA CONECTADA NI INICIADA\n");	
+				connection = DriverManager.getConnection("jdbc:hsqldb:mem:memoria", "sa", "");
+				statement = connection.createStatement();
 				iniciarBBDD();
-				System.out.println("\n\nBBDD Iniciada por Excepción en ComprobarBBDD\n\n");
-				
-			} else {System.out.println("\nLa BBDD ya esta conectada\n");}
-				
-			//connection.isClosed();
-			//iniciarBBDD();
+				System.out.println(">>>BBDD Iniciada y conectada\n\n");			
+			} else {System.out.println("\n>>>La BBDD ya esta conectada\n");}
 			
 		} catch (Exception ex) {
 			ex.printStackTrace();
@@ -50,35 +48,23 @@ public class DataAccessCore {
 	/**
 	 * Este método comprueba mediante un query que existe la tabla tiendas, la cual es la base
 	 * de todos los datos de usuario, productos, etc. Sino existe realiza una conexión a la 
-	 * Base de datos.
-	 * @author Abel Yécora.
-	 * @return 
+	 * Base de datos. Para ello hace uso de las excepciones al realizar un Query.
+	 * @return true si la base de datos esta conectada e inicializada
+	 * @return false en caso de que la base de datos no este inicializada o conectada.
 	 */
-	public static boolean comprobarBBDD()
+	private static boolean comprobarBBDD()
 	{
-		boolean conectada = false;
+		//Comprobación del estado de la BBDD mediante un query.
 		try{
-			//ResultSet resultSet;
-			//resultSet = statement.executeQuery("SELECT * FROM USERS");
-			System.out.println("\n\nComprobación BBDD PREVIO\n\n");
-			resultSet = statement.executeQuery("SELECT * FROM TIENDAS");
-			System.out.println("\n\nComprobación BBDD OK\n\n");
-			conectada = true;
-
-		} catch (Exception ex) {
-			//conectarBBDD();
-			//ex.printStackTrace();		
-			System.out.println("\n\nComprobación BBDD EXEPCION\n\n");
-			conectada =  false;
-			return conectada;
-		}
-		return conectada;
+			resultSet = statement.executeQuery("SELECT * FROM TIENDAS");			
+			return true; //Retorna true si la prueba ha tenido exito.
+		} catch (Exception ex) {return false;} //False en otro caso
 	}
 	
 	/**
 	 * Cierra la conexión con la base de datos.
 	 */
-	public void cerrarConexionBBDD() {
+	public static void cerrarConexionBBDD() {
 		try {statement.executeQuery("SHUTDOWN COMPACT");} 
 		catch (Exception ex) {ex.printStackTrace();}
 	}
