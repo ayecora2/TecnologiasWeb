@@ -18,43 +18,21 @@
 		class="container-fluid text-center bg-grey">
 		<h4>Nuestros Productos Destacados</h4>
 		<br>
-		<div class="row text-center container-fluid">
-			<div class="col-md-3">
-				<div class="thumbnail">
-					<img src="content/Images/Productos/Freidoras.jpg" alt="Freidoras" width="200"
-						height="200">
-					<p>
-						<strong>Freidoras</strong>
-					</p>
-				</div>
-			</div>
-			<div class="col-md-3">
-				<div class="thumbnail">
-					<img src="content/Images/Productos/Exprimidoras.jpg" alt="Exprimidoras" width="200" height="200">
-					<p>
-						<strong>Exprimidoras</strong>
-					</p>
-				</div>
-			</div>
-			<div class="col-md-3">
-				<div class="thumbnail">
-					<img src="content/Images/Productos/Microondas.jpg" alt="Microondas" width="200" height="200">
-					<p>
-						<strong>Microondas</strong>
-					</p>
-				</div>
-			</div>
-			<div class="col-md-3">
-				<div class="thumbnail">
-					<img src="content/Images/Productos/Batidoras.jpg" alt="Batidoras" width="200" height="200">
-					<p>
-						<strong>Batidoras</strong>
-					</p>
-				</div>
-			</div>
-		</div>
-		<br>
-	</div>
+            <div class="row text-center container-fluid">
+            <c:forEach var="produc" items="${listProductosPuntuados}" varStatus="tagStatus">
+			    <div class="col-md-3">
+                <div class="thumbnail">
+                <img src="content/Images/Productos/${produc.getProducto().getImagen()}" alt="diablo" width="200" height="150">
+                 <p><strong>${produc.getProducto().getDescripcion()}</strong></p> 
+                <p>${produc.getProducto().getPrecio()} &#8364;</p>
+                <p>${produc.getPuntuacion()} &#9733;</p>
+                </div>
+            </div>
+			</c:forEach>
+            </div><br>
+        </div>
+
+
 
 	<jsp:include page="templates/_Footer.jsp" />
 
