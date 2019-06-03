@@ -173,7 +173,7 @@ public class DataAccessCore {
 			statement.executeUpdate("INSERT INTO TIENDA_SERVICIOS VALUES(1,1);");
 			statement.executeUpdate("INSERT INTO TIENDA_SERVICIOS VALUES(1,2);");
 			statement.executeUpdate("INSERT INTO TIENDA_SERVICIOS VALUES(1,3);");
-			statement.executeUpdate("INSERT INTO TIENDA_SERVICIOS VALUES(1,4);");
+	//		statement.executeUpdate("INSERT INTO TIENDA_SERVICIOS VALUES(1,4);");
 		} catch (Exception e) {}
 	}
 
