@@ -276,7 +276,7 @@ public class DataAccessCore {
 		//Inserta algunas puntuaciones a los productos
 		try {
 			statement.executeUpdate("INSERT INTO PRODUCTOS_PUNTUACION (PRODUCTO,PUNTUACION) VALUES(0,4);");
-			statement.executeUpdate("INSERT INTO PRODUCTOS_PUNTUACION (PRODUCTO,PUNTUACION) VALUES(1,5);"); //Conflicto, el primary key == con la ID y eso hace que se repita
+			statement.executeUpdate("INSERT INTO PRODUCTOS_PUNTUACION (PRODUCTO,PUNTUACION) VALUES(1,5);");
 			statement.executeUpdate("INSERT INTO PRODUCTOS_PUNTUACION (PRODUCTO,PUNTUACION) VALUES(2,4);");
 			statement.executeUpdate("INSERT INTO PRODUCTOS_PUNTUACION (PRODUCTO,PUNTUACION) VALUES(3,5);");
 			statement.executeUpdate("INSERT INTO PRODUCTOS_PUNTUACION (PRODUCTO,PUNTUACION) VALUES(4,4);");
