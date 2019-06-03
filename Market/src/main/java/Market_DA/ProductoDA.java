@@ -30,6 +30,22 @@ public class ProductoDA extends DataAccessCore{
 	}
 	
 	/**
+	 * Método que devuelve todos los productos que esten en la Base de datos.
+	 * @return lista de productos de la base de datos
+	 * @return null en otro caso
+	 */
+	public static ResultSet bestProduct(){
+		try{	
+			resultSet = statement.executeQuery("SELECT A.*,AVG(B.PUNTUACION) FROM PRODUCTOS A, PRODUCTOS_PUNTUACION B WHERE A.id=B.PRODUCTO GROUP BY (A.ID) ORDER BY AVG(B.PUNTUACION) DESC LIMIT 4");
+
+			return resultSet;
+		} catch (Exception ex) {
+			ex.printStackTrace();
+			return null; //en caso de excepción devuelve NULL.
+		}
+	}
+	
+	/**
 	 * Realiza una consulta a la Base de Datos utilizando un filtro para
 	 * obtener una lista parcial que cumpla la condición dada por el filtro.
 	 * @param filterProducto es el filtro a aplicar en la búsqueda parcial.
