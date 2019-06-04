@@ -325,7 +325,7 @@ public class DataAccessCore {
 		try {
 			statement.executeUpdate("CREATE TABLE IF NOT EXISTS COMPRAS_ESTADOS(\r\n"
 					+ "    ID integer identity PRIMARY KEY,\r\n"
-					+ "    ESTADO varchar(30)\r\n" + ");"); //Cambiado NOMBRE por ESTADO
+					+ "    ESTADO varchar(30)\r\n" + ");"); //RELACIONAR CON EL CARRITO CON CAMPO EXTRA
 		} catch (SQLException e1) {e1.printStackTrace();}
 		//Insercción de los posibles estados
 		try {
@@ -372,7 +372,7 @@ public class DataAccessCore {
 					+ "    COMPRA_ID integer,\r\n"
 					+ "    PRODUCTO_ID integer,\r\n"
 					+ "    CANTIDAD integer,\r\n"
-					+ "    CONSTRAINT PK_CI primary key (COMPRA_ID, PRODUCTO_ID) ,\r\n" //¿Es necesario doble key?
+					+ "    CONSTRAINT PK_CI primary key (COMPRA_ID, PRODUCTO_ID) ,\r\n" //Doble key necesaria para relación item-compra.
 					+ "    CONSTRAINT FK_CI_C foreign key (COMPRA_ID) references CARRITO(ID),\r\n"
 					+ "    CONSTRAINT FK_CI_P foreign key (PRODUCTO_ID) references PRODUCTOS(ID)\r\n" + ");");
 
