@@ -8,10 +8,10 @@
         <script src="bootstrap/js/jquery-1.10.2.js"></script>
         <script src="bootstrap/js/bootstrap.min.js"></script>
         <script src="bootstrap/js/Myjs.js"></script>
-        <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">	
-    </head>
+        <link rel="stylesheet" href="bootstrap/css/bootstrap-grid.min.css">	
+    </head><style></style>
     <body>  
-		<jsp:include page="templates/_NavBarView.jsp" /> 
+		<jsp:include page="templates/_NavBarView.jsp" />
         <div id="containerProductos" class="container-fluid text-center bg-grey">
             <h4>Inventario</h4><br>
             <div class="row text-center container-fluid">
@@ -28,7 +28,7 @@
 			</c:forEach>
             </div><br>
         </div>
-		
+	
 	<jsp:include page="templates/_footerProductos.jsp" /> 
 		
 		<!-- MODAL CARRITO -->

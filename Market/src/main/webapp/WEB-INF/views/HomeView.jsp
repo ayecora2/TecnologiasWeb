@@ -7,7 +7,7 @@
 <title>Electro Market</title>
 <script src="bootstrap/js/jquery-3.3.1.slim.min.js"></script>
 <script src="bootstrap/js/bootstrap.min.js"></script>
-<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="bootstrap/css/bootstrap.css">
 <spring:url value="bootstrap/css/bootstrap.min.css" var="MyBootstrap" />
 </head>
 <body>
@@ -33,14 +33,11 @@
 			</c:forEach>
             </div><br>
         </div>
-
 	<jsp:include page="templates/_Footer.jsp" />
 
 	<!-- MODAL CARRITO -->
 
 	<div class="container">
-
-
 		<!-- Modal -->
 		<div class="modal fade" id="myModalCarrito" role="dialog">
 			<div class="modal-dialog modal-lg">

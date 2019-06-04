@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
+
+<html lang="es">
 <head>
 <meta charset="UTF-8">
 </head>
@@ -81,7 +82,7 @@
 
     <!-- Copyright -->
     <div class="footer-copyright text-center py-3">© 2019 Copyright:
-      <a href="https://mdbootstrap.com/education/bootstrap/"> Abel Yécora y Silverio Rosales</a>
+      <a href="content/Images/Varios/epiblas.gif" title="Autores"> Abel Yécora y Silverio Rosales</a>
     </div>
     <!-- Copyright -->
   </footer>

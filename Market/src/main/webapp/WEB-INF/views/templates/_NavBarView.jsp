@@ -1,10 +1,13 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags/form"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
+<!DOCTYPE html><html lang="es"> <meta charset="UTF-8">
+
+<link rel="stylesheet" href="bootstrap/css/compiled-4.8.1.min.css"><style></style>
+
 <!-- BARRA LAYOUT -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light"
-	style="margin-bottom: 15px;">
-	<a class="navbar-brand" href="#">Electro S&amp;A</a>
+<nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin-bottom: 15px;">
+	<a class="navbar-brand" href="/web/">Electro S&amp;A</a>
 	<button class="navbar-toggler" type="button" data-toggle="collapse"
 		data-target="#navbarSupportedContent"
 		aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -39,14 +42,14 @@
 					<a class="dropdown-item" href="javascript:alert('No sabe lo que hace, siga comprando');"><b>¿Salir?</b></a>
 				</div></li>
 		</ul>
-		<button type="button" class="btn btn-sm" data-toggle="modal" data-target="#miCuenta" title="Mi Cuenta">
+		<button type="button" class="btn btn-sm" data-toggle="modal" data-target="#" title="Mi Cuenta">
 			<img src="content/Icons/glyph/svg/si-glyph-person-people.svg" height="20" width="20" />
 		</button>
 		<!-- CARRITO -->
 		<button type="button" class="btn btn-sm" data-toggle="modal" data-target="#myModalCarrito" title="Mi compra">
 			<img src="content/Icons/glyph/svg/si-glyph-basket.svg" height="20" width="20" />
 		</button>
-		<button type="button" class="btn btn-sm" data-toggle="tooltip" title="Documentación">
+		<button type="button" class="btn btn-sm" data-toggle="tooltip" data-target="#Documentacion" title="Documentación">
 			<img src="content/Icons/glyph/svg/si-glyph-document.svg" height="20" width="20" />
 		</button>
 	</div>
