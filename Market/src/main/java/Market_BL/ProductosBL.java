@@ -1,15 +1,16 @@
 package Market_BL;
 
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
 import Market_DO.Producto;
-import Market_DO.ProductoPuntuado;
 
 /**
  * Clase para la optención de una lista de productos como instancias de la clase Producto,
- * @author silverio
+ * @author Abel Yécora
+ * @author Silverio Rosales
  * @version 201905291600
  */
 public class ProductosBL {
@@ -32,7 +33,36 @@ public class ProductosBL {
 			//Bucle para añadir items		
 			while (resultSet.next()) {
 				// Añade el item a la lista de productos
-				// Hay que comprobar previamente que no existe ya ese producto (ID)
+						Producto producto = new Producto();							
+						producto.setId(resultSet.getInt("Id"));
+						producto.setCategoria_Id(resultSet.getInt("Categoria_Id"));
+						producto.setTienda_Id(resultSet.getInt("Tienda_Id"));
+						producto.setMarca_Id(resultSet.getInt("Marca_Id"));
+						producto.setNombre(resultSet.getString("Nombre"));
+						producto.setModelo(resultSet.getString("Modelo"));
+						producto.setImagen(resultSet.getString("Imagen"));
+						producto.setDescripcion(resultSet.getString("Descripcion"));
+						producto.setCantidad(resultSet.getInt("Cantidad"));
+						producto.setPrecio(resultSet.getFloat("Precio"));
+				//En este lugar no se añade a la ninguna lista a la nueva instancia de Producto.	
+				listProductos.add(producto);
+			}
+			//Devuelve la lista de productos
+			return listProductos;
+		} catch (Exception ex) {
+			ex.printStackTrace();
+			return null;
+		}
+	}
+	public static List<Producto> bestProduct() {
+		try {
+			//Lista de productos
+			List<Producto> listProductos = new ArrayList<Producto>();			
+			//Ejecuta la búsqueda de los 5 productos con más puntuacion
+			ResultSet resultSet = Market_DA.ProductoDA.bestProduct() ;			
+			//Bucle para añadir a una lista instancias de los productos seleccionados	
+			while (resultSet.next()) {
+				// Añade el item a la lista de productos	
 				listProductos.add(new Producto(
 						resultSet.getInt("Id"),
 						resultSet.getInt("Categoria_Id"),
@@ -43,52 +73,31 @@ public class ProductosBL {
 						resultSet.getString("Imagen"),
 						resultSet.getString("Descripcion"),
 						resultSet.getInt("Cantidad"),
-						resultSet.getDouble("Precio"))
-				);
-				//En este lugar no se añade a la ninguna lista a la nueva instancia de Producto.				
+						resultSet.getFloat("Precio"),
+						resultSet.getFloat("C11"))); //¿Qué es C11? cambiar nomenclatura o describirla. Debe ser Double
 			}
 			//Devuelve la lista de productos
 			return listProductos;
 		} catch (Exception ex) {
 			ex.printStackTrace();
-			return null;
+			return null; //Devuelve null en otro caso.
 		}
 	}
-	public static List<ProductoPuntuado> bestProduct() {
-		try {
-			ResultSet resultSet;
-			//Lista de productos
-			List<ProductoPuntuado> listProductos = new ArrayList<ProductoPuntuado>();
-			
-			//Ejecuta la búsqueda de los 5 productos con más puntuacion
-			resultSet = Market_DA.ProductoDA.bestProduct() ;
-			
-			//Bucle para añadir items		
-			while (resultSet.next()) {
-				// Añade el item a la lista de productos
-				// Hay que comprobar previamente que no existe ya ese producto (ID)
-			
-				listProductos.add(new ProductoPuntuado(new Producto(
-						resultSet.getInt("Id"),
-						resultSet.getInt("Categoria_Id"),
-						resultSet.getInt("Tienda_Id"),
-						resultSet.getInt("Marca_Id"),
-						resultSet.getString("Nombre"),
-						resultSet.getString("Modelo"),
-						resultSet.getString("Imagen"),
-						resultSet.getString("Descripcion"),
-						resultSet.getInt("Cantidad"),
-						resultSet.getDouble("Precio")),
-						resultSet.getInt("C11"))
-				);
-				//En este lugar no se añade a la ninguna lista a la nueva instancia de Producto.				
-			}
-			//Devuelve la lista de productos
-			return listProductos;
-		} catch (Exception ex) {
-			ex.printStackTrace();
-			return null;
-		}
+	
+	/**
+	 * Comprueba la existenacia de un producto en la base de datos. Para ello, se le pasa el ID del producto.
+	 * @param Resault rs resultados de una búsqueda en la base de datos.
+	 * @param ID del producto a buscar, si el ID es negativo indica que la búsqueda será por campo (String).
+	 * @param campo es el parámetro a buscar que no sea el ID (nombre, modelo, imagen, descripción)
+	 * @return true en caso de que exista.
+	 * @return false en caso de que no exista el producto en la base de datos.
+	 */
+	public static boolean existeProducto(ResultSet rs, int id, String campo) {
+		try { //realiza búsqueda entre los resultados.
+			if(id < 0) {rs.getString(campo);} //búsqueda por campo
+			else {rs.getInt("Id");}  //Búsqueda por ID		
+		} catch (SQLException e) {return false;} //Si ha habido excepción entonces no existe. 
+		return true;
 	}
 
 }

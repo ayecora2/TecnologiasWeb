@@ -10,18 +10,18 @@
         <script src="bootstrap/js/Myjs.js"></script>
         <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">	
     </head>
-    <body>
-       
+    <body>  
 		<jsp:include page="templates/_NavBarView.jsp" /> 
-
         <div id="containerProductos" class="container-fluid text-center bg-grey">
             <h4>Inventario</h4><br>
             <div class="row text-center container-fluid">
             <c:forEach var="produc" items="${listProductos}" varStatus="tagStatus">
 			    <div class="col-md-3">
                 <div class="thumbnail">
-                <img src="content/Images/Productos/${produc.getImagen()}" alt="diablo" width="200" height="150">
-                 <p><strong>${produc.getDescripcion()}</strong></p> 
+                <a href="javascript:alert('Sin enlace colega');">
+                <img id="imagenID" title="${produc.getNombre()}" src="content/Images/Productos/${produc.getImagen()}" alt="Imagen del Producto" width="200" height="150">
+                </a>
+                <p><strong>${produc.getDescripcion()}</strong></p> 
                 <p>${produc.getPrecio()} &#8364;</p>
                 </div>
             </div>
@@ -46,7 +46,7 @@
 				</div>
 				<div class="modal-body">
 				  <p>Pulse Aceptar para procesar su compra o Cancelar para anularla.</p>
-				</div>
+					</div>
 				<div class="modal-footer">
 				  <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
 				  <button type="button" class="btn btn-default" data-dismiss="modal">Aceptar</button>
@@ -55,6 +55,5 @@
 			</div>
 		  </div>
 		</div>
-		
-    </body>
+</body>
 </html>

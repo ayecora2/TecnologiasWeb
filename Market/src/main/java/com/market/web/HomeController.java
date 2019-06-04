@@ -11,31 +11,26 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import Market_DO.Producto;
-import Market_DO.ProductoPuntuado;
 
 /**
  * Handles requests for the application home page.
  */
 @Controller
 public class HomeController {
-	
 	//private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 	
 	/**
 	 * Simply selects the home view to render by returning its name.
+	 * Realizando la conexión con la BBDD y además extrayendo los productos mejor puntuados.
 	 */
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public ModelAndView Home(Locale locale, Model model) {
 
 		Market_BL.ConectarBBDD.conectarBBDD();
-		List<ProductoPuntuado> listProductosPuntuados = Market_BL.ProductosBL.bestProduct();
+		List<Producto> listProductosPuntuados = Market_BL.ProductosBL.bestProduct();
 		ModelAndView MV = new ModelAndView("HomeView");
 		MV.addObject("listProductosPuntuados", listProductosPuntuados);
-//		MV.setViewName();
-		
+//		MV.setViewName();		
 		return MV;
-	}
-	
-	
-	
+	}	
 }

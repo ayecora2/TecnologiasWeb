@@ -52,8 +52,7 @@ public class DataAccessCore {
 	 * @return true si la base de datos esta conectada e inicializada
 	 * @return false en caso de que la base de datos no este inicializada o conectada.
 	 */
-	private static boolean comprobarBBDD()
-	{
+	private static boolean comprobarBBDD(){
 		//Comprobación del estado de la BBDD mediante un query.
 		try{
 			resultSet = statement.executeQuery("SELECT * FROM TIENDAS");			
@@ -232,7 +231,7 @@ public class DataAccessCore {
 			statement.executeUpdate("CREATE TABLE IF NOT EXISTS PRODUCTOS(\r\n"
 					+ "    ID INTEGER IDENTITY PRIMARY KEY,\r\n" 
 					+ "    CATEGORIA_ID integer,\r\n"
-					+ "    TIENDA_ID integer,\r\n"  //Quizás debería eliminarse de la tabla. Sólo hay una tienda por ahora.
+					+ "    TIENDA_ID integer,\r\n"
 					+ "    MARCA_ID integer,\r\n" 
 					+ "    NOMBRE varchar(50),\r\n"
 					+ "    MODELO varchar(100),\r\n" 				
@@ -246,16 +245,17 @@ public class DataAccessCore {
 		} catch (SQLException e1) {e1.printStackTrace();}
 		//Insercción de algunos productos básicos
 		try {
-			statement.executeUpdate("INSERT INTO PRODUCTOS (CATEGORIA_ID,TIENDA_ID,MARCA_ID,NOMBRE,MODELO,IMAGEN,DESCRIPCION,CANTIDAD,PRECIO) VALUES(1,1,3,'Diablo II','Rol','diablo2.jpg','Juego de Rol',5,50);");
-			statement.executeUpdate("INSERT INTO PRODUCTOS (CATEGORIA_ID,TIENDA_ID,MARCA_ID,NOMBRE,MODELO,IMAGEN,DESCRIPCION,CANTIDAD,PRECIO) VALUES(1,1,2,'Comamand And Conquer','Estrategia','CommandAndConquer.jpg','Juego de estretegía', 5, 45);");
-			statement.executeUpdate("INSERT INTO PRODUCTOS (CATEGORIA_ID,TIENDA_ID,MARCA_ID,NOMBRE,MODELO,IMAGEN,DESCRIPCION,CANTIDAD,PRECIO) VALUES(2,1,3,'Set de Cocina','Blanco California','ElectrodomesticosDeCocina.jpg','Cocina completa',5,270);");
+			statement.executeUpdate("INSERT INTO PRODUCTOS (CATEGORIA_ID,TIENDA_ID,MARCA_ID,NOMBRE,MODELO,IMAGEN,DESCRIPCION,CANTIDAD,PRECIO) VALUES(1,1,3,'Diablo II','Rol','diablo2.jpg','Juego de Rol',5,50.98);");
+			statement.executeUpdate("INSERT INTO PRODUCTOS (CATEGORIA_ID,TIENDA_ID,MARCA_ID,NOMBRE,MODELO,IMAGEN,DESCRIPCION,CANTIDAD,PRECIO) VALUES(1,1,2,'Comamand And Conquer','Estrategia','CommandAndConquer.jpg','Juego de estretegía', 5, 45.73);");
+			statement.executeUpdate("INSERT INTO PRODUCTOS (CATEGORIA_ID,TIENDA_ID,MARCA_ID,NOMBRE,MODELO,IMAGEN,DESCRIPCION,CANTIDAD,PRECIO) VALUES(2,1,3,'Set de Cocina','Blanco California','ElectrodomesticosDeCocina.jpg','Cocina completa',5,270.34);");
 			statement.executeUpdate("INSERT INTO PRODUCTOS (CATEGORIA_ID,TIENDA_ID,MARCA_ID,NOMBRE,MODELO,IMAGEN,DESCRIPCION,CANTIDAD,PRECIO) VALUES(2,1,1,'Microondas','700Wattios','Microondas.jpg','Microondas',5,24);");
-			statement.executeUpdate("INSERT INTO PRODUCTOS (CATEGORIA_ID,TIENDA_ID,MARCA_ID,NOMBRE,MODELO,IMAGEN,DESCRIPCION,CANTIDAD,PRECIO) VALUES(2,1,3,'Set Imprescindible','Africa People','tostadorayMaquinaDeCoser.jpg', 'Tostadora máquina coser', 5, 80);");
+			statement.executeUpdate("INSERT INTO PRODUCTOS (CATEGORIA_ID,TIENDA_ID,MARCA_ID,NOMBRE,MODELO,IMAGEN,DESCRIPCION,CANTIDAD,PRECIO) VALUES(2,1,3,'Set Imprescindible','Africa People','tostadorayMaquinaDeCoser.jpg', 'Selladora de Sandwitchs', 5, 80);");
 			statement.executeUpdate("INSERT INTO PRODUCTOS (CATEGORIA_ID,TIENDA_ID,MARCA_ID,NOMBRE,MODELO,IMAGEN,DESCRIPCION,CANTIDAD,PRECIO) VALUES(2,1,4,'Picadilly','Destrozadora','Batidoras.jpg','Batidora',5,35);");
 			statement.executeUpdate("INSERT INTO PRODUCTOS (CATEGORIA_ID,TIENDA_ID,MARCA_ID,NOMBRE,MODELO,IMAGEN,DESCRIPCION,CANTIDAD,PRECIO) VALUES(2,1,5,'Aplastator','2000T','Exprimidoras.jpg', 'Exprimidor', 5, 15);");
 			statement.executeUpdate("INSERT INTO PRODUCTOS (CATEGORIA_ID,TIENDA_ID,MARCA_ID,NOMBRE,MODELO,IMAGEN,DESCRIPCION,CANTIDAD,PRECIO) VALUES(2,1,6,'Dorator','Olieo IV','Freidoras.jpg','Freidora', 5, 26);");
 			statement.executeUpdate("INSERT INTO PRODUCTOS (CATEGORIA_ID,TIENDA_ID,MARCA_ID,NOMBRE,MODELO,IMAGEN,DESCRIPCION,CANTIDAD,PRECIO) VALUES(3,1,6,'Holus','5000','computer.jpg','Ordenador PC', 2, 2666);");
 			statement.executeUpdate("INSERT INTO PRODUCTOS (CATEGORIA_ID,TIENDA_ID,MARCA_ID,NOMBRE,MODELO,IMAGEN,DESCRIPCION,CANTIDAD,PRECIO) VALUES(4,1,6,'Liberator','FreeSet','manoslibres.jpg','Set de manos libres', 400, 60);");
+			statement.executeUpdate("INSERT INTO PRODUCTOS (CATEGORIA_ID,TIENDA_ID,MARCA_ID,NOMBRE,MODELO,DESCRIPCION,CANTIDAD,PRECIO) VALUES(4,1,6,'Timafon','Surprises Ace','Producto en plan confianza', 30, 41.6);");
 		} catch (Exception e) {e.printStackTrace();}
 	}
 	
@@ -270,16 +270,16 @@ public class DataAccessCore {
 			statement.executeUpdate("CREATE TABLE IF NOT EXISTS PRODUCTOS_PUNTUACION(\r\n"
 					+ "    ID integer identity PRIMARY KEY,\r\n"
 					+ "    PRODUCTO integer,\r\n"
-					+ "    PUNTUACION integer,\r\n"
+					+ "    PUNTUACION decimal,\r\n"
 					+ "    CONSTRAINT FK_PP_P foreign key (PRODUCTO) references PRODUCTOS(ID)\r\n" + ");");
 		} catch (SQLException e1) {e1.printStackTrace();}
 		//Inserta algunas puntuaciones a los productos
 		try {
 			statement.executeUpdate("INSERT INTO PRODUCTOS_PUNTUACION (PRODUCTO,PUNTUACION) VALUES(0,4);");
 			statement.executeUpdate("INSERT INTO PRODUCTOS_PUNTUACION (PRODUCTO,PUNTUACION) VALUES(1,5);");
-			statement.executeUpdate("INSERT INTO PRODUCTOS_PUNTUACION (PRODUCTO,PUNTUACION) VALUES(2,4);");
+			statement.executeUpdate("INSERT INTO PRODUCTOS_PUNTUACION (PRODUCTO,PUNTUACION) VALUES(2,4.7);");
 			statement.executeUpdate("INSERT INTO PRODUCTOS_PUNTUACION (PRODUCTO,PUNTUACION) VALUES(3,5);");
-			statement.executeUpdate("INSERT INTO PRODUCTOS_PUNTUACION (PRODUCTO,PUNTUACION) VALUES(4,4);");
+			statement.executeUpdate("INSERT INTO PRODUCTOS_PUNTUACION (PRODUCTO,PUNTUACION) VALUES(4,4.2);");
 			statement.executeUpdate("INSERT INTO PRODUCTOS_PUNTUACION (PRODUCTO,PUNTUACION) VALUES(5,3);");
 			statement.executeUpdate("INSERT INTO PRODUCTOS_PUNTUACION (PRODUCTO,PUNTUACION) VALUES(6,2);");
 			statement.executeUpdate("INSERT INTO PRODUCTOS_PUNTUACION (PRODUCTO,PUNTUACION) VALUES(7,4);");
@@ -325,7 +325,7 @@ public class DataAccessCore {
 		try {
 			statement.executeUpdate("CREATE TABLE IF NOT EXISTS COMPRAS_ESTADOS(\r\n"
 					+ "    ID integer identity PRIMARY KEY,\r\n"
-					+ "    ESTADO varchar(30)\r\n" + ");"); //Cambiado NOMBRE por ESTADO
+					+ "    ESTADO varchar(30)\r\n" + ");"); //RELACIONAR CON EL CARRITO CON CAMPO EXTRA
 		} catch (SQLException e1) {e1.printStackTrace();}
 		//Insercción de los posibles estados
 		try {
@@ -372,7 +372,7 @@ public class DataAccessCore {
 					+ "    COMPRA_ID integer,\r\n"
 					+ "    PRODUCTO_ID integer,\r\n"
 					+ "    CANTIDAD integer,\r\n"
-					+ "    CONSTRAINT PK_CI primary key (COMPRA_ID, PRODUCTO_ID) ,\r\n" //¿Es necesario doble key?
+					+ "    CONSTRAINT PK_CI primary key (COMPRA_ID, PRODUCTO_ID) ,\r\n" //Doble key necesaria para relación item-compra.
 					+ "    CONSTRAINT FK_CI_C foreign key (COMPRA_ID) references CARRITO(ID),\r\n"
 					+ "    CONSTRAINT FK_CI_P foreign key (PRODUCTO_ID) references PRODUCTOS(ID)\r\n" + ");");
 

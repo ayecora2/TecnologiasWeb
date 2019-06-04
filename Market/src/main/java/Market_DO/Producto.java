@@ -1,7 +1,5 @@
 package Market_DO;
 
-import java.util.*;
-
 /**
  * La clase producto identifica y describe a un producto
  * en concreto, además de almecenar sus características peculiares.
@@ -19,8 +17,8 @@ public class Producto {
 	private String imagen;
 	private String descripcion; //la descripción del producto
 	private int cantidad; //Su cantidad
-	private double precio; //su precio
-	private List<ProductoPuntuacion> productoPuntuacion; //Almacena una lista de las puntuaciones del producto
+	private float precio; //su precio
+	private float puntuacion; //Almacena la puntuación del producto
 
 	/**
 	 * Constructor que genera un producto mediante el paso de los parámetros.
@@ -34,9 +32,10 @@ public class Producto {
 	 * @param descripcion descripción del producto
 	 * @param cantidad número de items que hay del producto
 	 * @param precio precio de cada unidad de producto
+	 * @param puntuacion la puntuación del producto.
 	 */
 	public Producto(int id, int categoria_Id, int tienda_Id, int marca_Id, String nombre, String modelo, String imagen, String descripcion,
-			int cantidad, double precio) {
+			int cantidad, float precio, float puntos) {
 		super();
 		this.id = id;
 		this.categoria_Id = categoria_Id;
@@ -48,13 +47,19 @@ public class Producto {
 		this.descripcion = descripcion;
 		this.cantidad = cantidad;
 		this.precio = precio;
-		//this.productoPuntuacion = productoPuntuacion;
+		this.puntuacion = puntos;
 	}
 	/**
 	 * Constructor sin parámetros que hereda de la superclase sus atributos.
-	 * Luego mediante los setters se pueden configurar sus campos.
+	 * Luego mediante los setters se pueden configurar sus campos,
+	 * previamente se inicializa a 0.0 su puntuación y como imagen se selecciona
+	 * la imagen de no disponibilidad, para el caso de que no se configuren alternativas.
 	 */
-	public Producto() {	super();}
+	public Producto() {	
+		super();
+		this.puntuacion = 0.0F;
+		
+	}
 	
 	/**
 	 * @return the id
@@ -93,9 +98,15 @@ public class Producto {
 	 */
 	public String getImagen() {return imagen;}
 	/**
+	 * El metodo comprueba que el nombre de la imagen no sea null, 
+	 * en cuyo caso configura como nombre de la imagen la de no disponible,
+	 * en otro caso introduce el nombre que se le ha pasado por parámetro.
 	 * @param imagen the imagen to set
 	 */
-	public void setImagen(String imagen) {this.imagen = imagen;}
+	public void setImagen(String imagen) {
+		if(imagen == null) {this.imagen = "imagenNoDisponible.png";}
+		else {this.imagen = imagen;}
+		}
 	/**
 	 * @return the descripcion
 	 */
@@ -119,15 +130,15 @@ public class Producto {
 	/**
 	 * @param precio the precio to set
 	 */
-	public void setPrecio(double precio) {this.precio = precio;}
+	public void setPrecio(float precio) {this.precio = precio;}
 	/**
 	 * @return the productoPuntuacion
 	 */
-	public List<ProductoPuntuacion> getProductoPuntuacion() {return productoPuntuacion;}
+	public double getPuntuacion() {return puntuacion;}
 	/**
 	 * @param productoPuntuacion the productoPuntuacion to set
 	 */
-	public void setProductoPuntuacion(List<ProductoPuntuacion> productoPuntuacion) {this.productoPuntuacion = productoPuntuacion;}
+	public void setPuntuacion(float productoPuntuacion) {this.puntuacion = productoPuntuacion;}
 	/**
 	 * @return the nombre
 	 */
