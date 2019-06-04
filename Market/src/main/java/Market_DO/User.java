@@ -10,6 +10,10 @@ import java.io.*;
  * @version 201929051557
  */
 public final class User implements Serializable{
+	/**
+	 * Valor UID del objeto para su serialización correcta.
+	 */
+	private static final long serialVersionUID = -4049425775355082994L;
 	//Campos privados que definen a una instancia.
     private int id;
     private String nombre;

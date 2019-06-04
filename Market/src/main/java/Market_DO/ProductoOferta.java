@@ -10,7 +10,7 @@ package Market_DO;
 public class ProductoOferta {
 	
 	private int Id;
-	private double Precio;
+	private float Precio;
 	private String Nombre;
 
 	/**
@@ -18,7 +18,7 @@ public class ProductoOferta {
 	 * @param Precio nuevo precio de oferta para el producto
 	 * @param Nombre nombre del producto en oferta
 	 */
-	public ProductoOferta(int Id, double Precio, String Nombre) {
+	public ProductoOferta(int Id, float Precio, String Nombre) {
 		this.Id = Id;
 		this.Precio = Precio;
 		this.Nombre = Nombre;
@@ -37,12 +37,12 @@ public class ProductoOferta {
 	/**
 	 * @return the precio
 	 */
-	public double getPrecio() {return Precio;}
+	public float getPrecio() {return Precio;}
 
 	/**
 	 * @param precio the precio to set
 	 */
-	public void setPrecio(double precio) {Precio = precio;}
+	public void setPrecio(float precio) {Precio = precio;}
 
 	/**
 	 * @return the nombre

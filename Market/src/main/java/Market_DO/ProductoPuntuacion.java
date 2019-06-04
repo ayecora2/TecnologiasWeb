@@ -7,14 +7,14 @@ package Market_DO;
  */
 public class ProductoPuntuacion {
 	private int id;
-	private int puntuacion;
+	private float puntuacion;
 
 	/**
 	 * Este constructor recibe por parámentro el id y la puntuación inicial de producto.
 	 * @param id del producto
 	 * @param puntuacion puntuación del producto
 	 */
-	public ProductoPuntuacion(int id, int puntuacion) {
+	public ProductoPuntuacion(int id, float puntuacion) {
 		this.id = id;
 		this.puntuacion = puntuacion;
 	}
@@ -32,12 +32,12 @@ public class ProductoPuntuacion {
 	/**
 	 * @return the puntuacion
 	 */
-	public int getPuntuacion() {return puntuacion;}
+	public float getPuntuacion() {return puntuacion;}
 
 	/**
 	 * @param puntuacion the puntuacion to set
 	 */
-	public void setPuntuacion(int puntuacion) {this.puntuacion = puntuacion;}
+	public void setPuntuacion(float puntuacion) {this.puntuacion = puntuacion;}
 	
 
 
