@@ -15,30 +15,30 @@ public final class Login implements Serializable{
 	 * Valor del serialversion
 	 */
 	private static final long serialVersionUID = 8386747024348057685L;
-		private String User; //Usurio
+		private String Email; //Email
 		private String Pass; //Pass
 		
 		/**
-		 * Constructor que toma como paramámetros el User y Pass
-		 * @param User Username
+		 * Constructor que toma como paramámetros el Email y Pass
+		 * @param Email Email
 		 * @param Pass Password
 		 */
-		public Login(String User, String Pass) {
-			this.User = User;
+		public Login(String Email, String Pass) {
+			this.Email = Email;
 			this.Pass = Pass;
 		}
 		/**
-		 * Crea un nuevo usuario, no requiere parámetros a priori.
+		 * Crea un nuevo login, no requiere parámetros a priori.
 		 * Se configuran a posteriori.
 		 */
 		public Login() {super();	}
 
-		public String getUser() {
-			return User;
+		public String getEmail() {
+			return Email;
 		}
 
-		public void setUser(String User) {
-			this.User = User;
+		public void setEmail(String Email) {
+			this.Email = Email;
 		}
 
 		public String getPass() {

@@ -46,7 +46,7 @@
 		<%
 			if ((session.getAttribute("User") == null) || (session.getAttribute("User") == "")) {
 		%>
-		You are not logged in <a href="/web/UserLogin">Please Login</a>
+		You are not logged in <a data-toggle="modal" data-target="#miLogin">Please Login</a>
 		<%
 			} else {
 		%>
@@ -75,7 +75,8 @@
 				<div class="modal-dialog modal-lg">
 					<div class="modal-content">				
 						<div class="modal-body mb-0 p-0" style="background-color:#AFEEEE;">	
-							<div class="embed-responsive embed-responsive-4by3 z-depth-1-half">					
+							<div class="embed-responsive embed-responsive-4by3 z-depth-1-half">	
+							  	
 								<iframe class="embed-responsive-item" src="AddUser"></iframe>
 							</div>
 						</div>
@@ -97,5 +98,3 @@
 					</div>
 				</div>
 			</div>
-		
-
