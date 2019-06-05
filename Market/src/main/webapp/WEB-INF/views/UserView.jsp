@@ -10,47 +10,33 @@
         <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">	
         <spring:url value="bootstrap/css/bootstrap.min.css" var="MyBootstrap" />
     </head>
-    <body>
-       
+    <body>      
 		<jsp:include page="templates/_NavBarView.jsp" /> 
 
-        <div id="containerUser" class="container-fluid text-center bg-grey">
-            <h4>Usuarios</h4><br>
-            <div class="row text-center container-fluid">
-            <c:forEach var="user" items="${listUsuarios}" varStatus="tagStatus">
-			    <div class="col-md-3">
-                 <p><strong>${user.getId()}</strong></p> 
-                <p>${user.getNombre()}</p>
-            </div>
+   
+            <h4>Lista de todos los usuarios</h4><br>
+            <table class="table table-striped table-responsive-md btn-table">
+            	<thead>
+				  <tr>
+				    <th><img class="fas mr-2 blue-text" aria-hidden="true" src="content/Icons/glyph/svg/si-glyph-id-badge.svg" height="20" width="20" /></th>
+				    <th>Nombre</th>
+				    <th>Apellido</th>
+				    <th><img class="fas mr-2 blue-text" aria-hidden="true" src="content/Icons/glyph/svg/si-glyph-mail.svg" height="20" width="20" />Email</th>
+				    <th><img class="fas mr-2 blue-text" aria-hidden="true" src="content/Icons/glyph/svg/si-glyph-phone-number.svg" height="20" width="20" />Telefono</th>
+				  </tr>
+				</thead>
+            <c:forEach var="user" items="${listUsuarios}" varStatus="tagStatus">				
+				  <tr>
+				    <th scope="row">${user.getId()}</th>
+				    <td>${user.getNombre()}</td>
+				    <td>${user.getApellido()}</td>
+				    <td>${user.getEmail()}</td>
+				    <td>${user.getTelefono()}</td>
+				  </tr>                 	
 			</c:forEach>
-            </div><br>
-        </div>
-		
-	<jsp:include page="templates/_Footer.jsp" /> 
-		
-		<!-- MODAL CARRITO -->
-		
-		<div class="container">
-		  
-
-		  <!-- Modal -->
-		  <div class="modal fade" id="myModalCarrito" role="dialog">
-			<div class="modal-dialog modal-lg">
-			  <div class="modal-content">
-				<div class="modal-header">
-					<h4 class="modal-title">Su lista de la compra</h4>
-				  <button type="button" class="close" data-dismiss="modal">&times;</button>
-				</div>
-				<div class="modal-body">
-				  <p>Esto podría ser la lista de su compra.</p>
-				</div>
-				<div class="modal-footer">
-				  <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-				</div>
-			  </div>
-			</div>
-		  </div>
-		</div>
-		
+			</table> 
     </body>
+    <footer>
+   		<jsp:include page="templates/_Footer.jsp" /> 
+    </footer>
 </html>
