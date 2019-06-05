@@ -3,7 +3,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <?xml version "1.0"?>
-<!-- File: claimresponseserverpage.jsp -->
+<!-- File: userCreateResponse.jsp -->
 <jsp:useBean id="userBean" class="Market_DO.User" scope="request" />
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtm111/DTD/xhtm111.dtd">

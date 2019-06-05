@@ -43,6 +43,24 @@
 	</div>
 		<button type="button" class="btn btn-sm" data-toggle="modal" data-target="#miLogin" title="Mi Cuenta">
 			<img src="content/Icons/glyph/svg/si-glyph-person-people.svg" height="20" width="20" />
+		<%
+			if ((session.getAttribute("User") == null) || (session.getAttribute("User") == "")) {
+		%>
+		You are not logged in <a href="/web/UserLogin">Please Login</a>
+		<%
+			} else {
+		%>
+		Welcome
+		<%=session.getAttribute("User")%>
+		<a href='UserLogout'>Log out</a>
+		<%
+			}
+		%>
+
+		<button type="button" class="btn btn-sm" data-toggle="modal"
+			data-target="#" title="Mi Cuenta">
+			<img src="content/Icons/glyph/svg/si-glyph-person-people.svg"
+				height="20" width="20" />
 		</button>
 		<!-- CARRITO -->
 		<button type="button" class="btn btn-sm" data-toggle="modal" data-target="#miCarrito" title="Mi compra">
