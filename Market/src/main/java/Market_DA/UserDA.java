@@ -78,7 +78,6 @@ public class UserDA extends DataAccessCore{
 			} catch (Exception ex) {
 				ex.printStackTrace();
 				return null;
-			}
-		    
+			}    
 	}
 }
