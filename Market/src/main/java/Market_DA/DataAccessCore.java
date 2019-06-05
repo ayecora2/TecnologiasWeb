@@ -98,12 +98,12 @@ public class DataAccessCore {
 		try {
 			statement.executeUpdate("CREATE TABLE IF NOT EXISTS USERS(\r\n"
 					+ "    ID INTEGER IDENTITY PRIMARY KEY,\r\n" 
-					+ "    NOMBRE varchar(40),\r\n" 
-					+ "    APELLIDO varchar(40),\r\n" 
-					+ "    EMAIL varchar(50),\r\n" 
+					+ "    NOMBRE varchar(25),\r\n" 
+					+ "    APELLIDO varchar(25),\r\n" 
+					+ "    EMAIL varchar(30),\r\n" 
 					+ "    TELEFONO varchar(12),\r\n" 
 					+ "    PASS varchar(8),\r\n"
-					+ "    CIUDAD varchar(50),\r\n" 
+					+ "    CIUDAD varchar(20),\r\n" 
 					+ "    DIRECCION varchar(100), \r\n" 
 					+ "    CP varchar(5), \r\n" 
 					+ "    USER_TYPE_ID integer,\r\n" //enlace con la tabla de Tipos de Usuarios
