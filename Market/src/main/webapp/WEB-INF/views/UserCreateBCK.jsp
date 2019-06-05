@@ -28,7 +28,7 @@
 					<label class="col-md-4 control-label" for="Nombre">Nombre</label>
 					<div class="col-md-4">
 						<input id="nombre" name="nombre" type="text" placeholder=""
-							class="form-control input-md" required="">
+							class="form-control input-md" required>
 
 					</div>
 				</div>
@@ -38,7 +38,7 @@
 					<label class="col-md-4 control-label" for="Apellido">Apellido</label>
 					<div class="col-md-4">
 						<input id="apellido" name="apellido" type="text" placeholder=""
-							class="form-control input-md" required="">
+							class="form-control input-md" required>
 
 					</div>
 				</div>
@@ -48,7 +48,7 @@
 					<label class="col-md-4 control-label" for="email">E-Mail</label>
 					<div class="col-md-4">
 						<input id="email" name="email" type="text" placeholder=""
-							class="form-control input-md" required="">
+							class="form-control input-md" required>
 
 					</div>
 				</div>
@@ -58,7 +58,7 @@
 					<label class="col-md-4 control-label" for="Telefono">Teléfono</label>
 					<div class="col-md-4">
 						<input id="telefono" name="telefono" type="text" placeholder=""
-							class="form-control input-md" required="">
+							class="form-control input-md" required>
 
 					</div>
 				</div>
@@ -68,7 +68,7 @@
 					<label class="col-md-4 control-label" for="pass">Password</label>
 					<div class="col-md-4">
 						<input id="pass" name="pass" type="password" placeholder=""
-							class="form-control input-md" required="">
+							class="form-control input-md" required>
 
 					</div>
 				</div>
@@ -78,7 +78,7 @@
 					<label class="col-md-4 control-label" for="Ciudad">Ciudad</label>
 					<div class="col-md-4">
 						<input id="ciudad" name="ciudad" type="text" placeholder=""
-							class="form-control input-md" required="">
+							class="form-control input-md" required>
 
 					</div>
 				</div>
@@ -92,14 +92,14 @@
 
 					</div>
 				</div>
-
+ 
 				<!-- Text input-->
 				<div class="form-group">
 					<label class="col-md-4 control-label" for="CP">Código
 						Postal</label>
 					<div class="col-md-4">
 						<input id="CP" name="CP" type="text" placeholder=""
-							class="form-control input-md" required="">
+							class="form-control input-md" required>
 
 					</div>
 				</div>

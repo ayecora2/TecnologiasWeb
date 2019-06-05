@@ -40,7 +40,7 @@
 					<a class="dropdown-item" href="javascript:alert('No sabe lo que hace, siga comprando');"><b>¿Salir?</b></a>
 				</div></li>
 		</ul>
-
+	</div>
 		<button type="button" class="btn btn-sm" data-toggle="modal" data-target="#miLogin" title="Mi Cuenta">
 			<img src="content/Icons/glyph/svg/si-glyph-person-people.svg" height="20" width="20" />
 		</button>
@@ -56,9 +56,9 @@
 			<div class="modal fade" id="miLogin" tabindex="-1" role="dialog">
 				<div class="modal-dialog modal-lg">
 					<div class="modal-content">				
-						<div class="modal-body mb-0 p-0">	
+						<div class="modal-body mb-0 p-0" style="background-color:#AFEEEE;">	
 							<div class="embed-responsive embed-responsive-4by3 z-depth-1-half">					
-								<iframe class="embed-responsive-item" src="AddUser" allowfullscreen></iframe>
+								<iframe class="embed-responsive-item" src="AddUser"></iframe>
 							</div>
 						</div>
 						<div class="modal-footer justify-content-center" style="background-color:#EEE8AA;">
@@ -70,7 +70,7 @@
 			<div class="modal fade" id="miCarrito" role="dialog">
 				<div class="modal-dialog modal-lg">
 					<div class="modal-content">				
-						<div class="modal-body">
+						<div class="modal-body" style="background-color:#EEE8AA;">
 							<a href="AddUser">Test2</a>
 						</div>
 						<div class="modal-footer justify-content-center" style="background-color:#E6E6FA;">

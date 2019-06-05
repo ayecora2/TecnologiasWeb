@@ -1,14 +1,23 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ page session="false"%>
+
 <!DOCTYPE html><html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Login&lt;&gt;Registro/Alta</title>
+    <title>Usuario&lt;&gt;</title>
     <style>
         body {
             margin: 0;
             padding: 0;
         }
     </style>
-<link rel="stylesheet" type="text/css" href="bootstrap/css/compiled-4.8.1.min.css"><style></style>
+<script src="bootstrap/js/jquery-3.3.1.slim.min.js"></script>
+<script src="bootstrap/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="bootstrap/css/compiled-4.8.1.min.css">
+<spring:url value="bootstrap/css/bootstrap.min.css" var="MyBootstrap" />
 </head>
 
 <body>
@@ -23,7 +32,7 @@
         <div class="card-wrapper">
           <div id="my-card" class="card card-rotating text-center">
 
-            <!-- Cara Frontal -->
+            <!-- Cara Login -->
             <div class="face front">
               <div class="card-body">
 
@@ -31,7 +40,7 @@
                 <div class="form-header primary-color">
                   <h3 class="font-weight-500 my-2 py-1"><i class="fas">
                   <img src="content/Icons/glyph/svg/si-glyph-person-people.svg" height="40" width="40" />
-                  </i> Iniciar sesi髇</h3>
+                  </i> Iniciar sesi贸n</h3>
                 </div>
 
                 <!-- Formulario de Login -->
@@ -43,14 +52,14 @@
                 <div class="md-form">
                   <i class="fas grey-text d-flex"></i>
                   <input type="password" id="password" name="password" class="form-control">
-                  <label for="password" class="d-flex">Su contrase馻</label>
+                  <label for="password" class="d-flex">Su contrase帽a</label>
                 </div>
                 
                 <!-- Footer -->
                 <div class="d-flex justify-content-between">
                   <!-- Triggering button -->
                   <a class="rotate-btn text-primary" tabindex="-1" data-card="my-card">crear cuenta nueva</a>
-                  <a href="javascript:alert('Rasca y sigue buscando');" class="green-text" tabindex="-2">縞lave olvidada?</a>
+                  <a href="javascript:alert('Rasca y sigue buscando');" class="green-text" tabindex="-2">驴clave olvidada?</a>
                 </div>
                 <div class="text-center">
                   <button class="btn primary-color white-text btn-lg">Entrar</button>
@@ -59,9 +68,9 @@
 
               </div>
             </div>
-            <!-- FIN.Cara Frontal -->
+            <!-- FIN.Cara Login -->
 
-            <!-- Cara Reverso -->
+            <!-- Cara Creaci贸n Usuario -->
             <div class="face back">
               <div class="card-body">
 
@@ -73,30 +82,67 @@
                 </div>
                  
                 <!-- Formulario de Registro-->
-                <div class="md-form">             
-                  <i class="fas grey-text d-flex"></i>              
-                  <input type="text" id="email" name="email" class="form-control">
-                  <label for="email" class="d-flex">Su email</label>
-                </div>
-                <div class="md-form">
-                  <i class="fas grey-text d-flex"></i>                 
-                  <input type="password" id="password" name="password" class="form-control">
-                  <label for="password" class="d-flex">Su clave</label>
-                </div>
-
-				<!-- Footer -->
-                <div class="d-flex justify-content-between">
-                  <!-- Triggering button -->
-                  <a class="rotate-btn text-primary" tabindex="-3" data-card="my-card">iniciar sesi髇</a>
-                </div>
-                <div class="text-center">
-	                <button class="btn primary-color white-text btn-lg">Crear cuenta</button>
-	            </div>               
+                 <form class="form-horizontal" action="UserCreateRequest" method="get">
+	                 <div class="md-form">             
+		                  <i class="fas grey-text d-flex"></i>              
+		                  <input type="text" id="nombre" name="nombre" class="form-control" required>
+		                  <label for="Nombre" class="d-flex">Nombre</label>
+		             </div>
+		             <div class="md-form">             
+		                  <i class="fas grey-text d-flex"></i>              
+		                  <input type="text" id="apellido" name="apellido" class="form-control" required>
+		                  <label for="Apellido" class="d-flex">Apellido/s</label>
+		             </div>
+		             <div class="md-form">             
+		                  <i class="fas grey-text d-flex"></i>              
+		                  <input type="text" id="email" name="email" class="form-control" required>
+		                  <label for="email" class="d-flex">Su email</label>
+		             </div>
+		             <div class="md-form">             
+		                  <i class="fas grey-text d-flex"></i>              
+		                  <input type="text" id="telefono" name="telefono" class="form-control" required>
+		                  <label for="Telefono" class="d-flex">Tel茅fono de contacto</label>
+		             </div>
+		             <div class="md-form">
+	                  <i class="fas grey-text d-flex"></i>                 
+	                  <input type="password" id="password" name="password" class="form-control" required>
+	                  <label for="pass" class="d-flex">Escriba una contrase帽a</label>
+	                </div>
+		             <div class="md-form">             
+		                  <i class="fas grey-text d-flex"></i>              
+		                  <input type="text" id="ciudad" name="ciudad" class="form-control" required>
+		                  <label for="Ciudad" class="d-flex">Ciudad de residencia</label>
+		             </div>
+	                <div class="md-form">             
+	                  <i class="fas grey-text d-flex"></i>              
+	                  <input type="text" id="direccion" name="direccion" class="form-control" required>
+	                  <label for="Direccion" class="d-flex">Su direcci贸n</label>
+	                </div>
+	                <div class="md-form">             
+	                  <i class="fas grey-text d-flex"></i>              
+	                  <input type="text" id="CP" name="CP" class="form-control" required>
+	                  <label for="CP" class="d-flex">C贸digo postal</label>
+	                </div>
+	                <div class="md-form">             
+	                  <i class="fas grey-text d-flex"></i>
+	                  <input type="hidden" id="userType_Id" name="userType_Id" class="form-control" placeholder="2">
+	                </div>
+	               
+	
+					<!-- Footer -->
+	                <div class="d-flex justify-content-between">
+	                  <!-- Triggering button -->
+	                  <a class="rotate-btn text-primary" tabindex="-3" data-card="my-card">iniciar sesi贸n</a>
+	                </div>
+	                <div class="text-center">
+		                <button id="submit" name="submit" onclick="cerrar()" class="btn primary-color white-text btn-lg">Crear cuenta</button>
+		            </div>
+	            </form>               
                 <!-- FIN.Formulario de Registro-->
 
               </div>
             </div>
-            <!-- Fin.Cara Reverso -->
+            <!-- Fin.Cara Creaci贸n Usuario-->
 
           </div>
         </div>
@@ -105,4 +151,16 @@
       </div>
     </div>
   </div>
-</div><script src="bootstrap/js/compiled-4.8.1.min.js"></script><script></script></body></html>
+</div>
+
+	<script>
+		//Aviso de que se ha enviado el formulario 
+		function cerrar() {
+			$("body").html(
+				'<div align="center"><img title="Suscripci贸n Realizada" src="content/Images/Varios/muneco-ok.jpg" alt="Proceso correcto" width="400" height="300"></div>');
+		}
+	</script>
+	<script src="bootstrap/js/compiled-4.8.1.min.js"></script>
+</body>
+</html>
+
