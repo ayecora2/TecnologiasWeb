@@ -46,7 +46,7 @@
                 <!-- Formulario de Login -->
                 <div class="md-form">
                   <i class="fas grey-text d-flex"></i>                 
-                  <input type="text" id="email" name="email" class="form-control">
+                  <input type="email" maxlength="30" id="email" name="email" class="form-control">
                   <label for="email" class="d-flex">Su email</label>
                 </div>
                 <div class="md-form">
@@ -85,47 +85,47 @@
                  <form class="form-horizontal" action="UserCreateRequest" method="get">
 	                 <div class="md-form">             
 		                  <i class="fas grey-text d-flex"></i>              
-		                  <input type="text" id="nombre" name="nombre" class="form-control" required>
+		                  <input pattern="[A-Za-z]{1,25}" maxlength="25" type="text" id="nombre" name="nombre" class="form-control" required>
 		                  <label for="Nombre" class="d-flex">Nombre</label>
 		             </div>
 		             <div class="md-form">             
 		                  <i class="fas grey-text d-flex"></i>              
-		                  <input type="text" id="apellido" name="apellido" class="form-control" required>
+		                  <input type="text" pattern="[A-Za-z]{1,25}" maxlength="25" id="apellido" name="apellido" class="form-control" required>
 		                  <label for="Apellido" class="d-flex">Apellido/s</label>
 		             </div>
 		             <div class="md-form">             
 		                  <i class="fas grey-text d-flex"></i>              
-		                  <input type="text" id="email" name="email" class="form-control" required>
+		                  <input type="email" maxlength="30" id="email" name="email" class="form-control" required>
 		                  <label for="email" class="d-flex">Su email</label>
 		             </div>
 		             <div class="md-form">             
 		                  <i class="fas grey-text d-flex"></i>              
-		                  <input type="text" id="telefono" name="telefono" class="form-control" required>
+		                  <input type="text" pattern="[0-9]{9,12}" maxlength="12" id="telefono" name="telefono" class="form-control" required>
 		                  <label for="Telefono" class="d-flex">Teléfono de contacto</label>
 		             </div>
 		             <div class="md-form">
 	                  <i class="fas grey-text d-flex"></i>                 
-	                  <input type="password" id="password" name="password" class="form-control" required>
+	                  <input type="password" maxlength="8" id="password" name="password" class="form-control" required>
 	                  <label for="pass" class="d-flex">Escriba una contraseña</label>
 	                </div>
 		             <div class="md-form">             
 		                  <i class="fas grey-text d-flex"></i>              
-		                  <input type="text" id="ciudad" name="ciudad" class="form-control" required>
+		                  <input type="text" maxlength="20" id="ciudad" name="ciudad" class="form-control" required>
 		                  <label for="Ciudad" class="d-flex">Ciudad de residencia</label>
 		             </div>
 	                <div class="md-form">             
 	                  <i class="fas grey-text d-flex"></i>              
-	                  <input type="text" id="direccion" name="direccion" class="form-control" required>
+	                  <input type="text" maxlength="100" id="direccion" name="direccion" class="form-control" required>
 	                  <label for="Direccion" class="d-flex">Su dirección</label>
 	                </div>
 	                <div class="md-form">             
 	                  <i class="fas grey-text d-flex"></i>              
-	                  <input type="text" id="CP" name="CP" class="form-control" required>
+	                  <input type="text" size="6" pattern="[0-9]{5}" maxlength="5" id="CP" name="CP" class="form-control" required>
 	                  <label for="CP" class="d-flex">Código postal</label>
 	                </div>
 	                <div class="md-form">             
 	                  <i class="fas grey-text d-flex"></i>
-	                  <input type="hidden" id="userType_Id" name="userType_Id" class="form-control" placeholder="2">
+	                  <input type="hidden" readonly id="userType_Id" name="userType_Id" class="form-control" placeholder="2">
 	                </div>
 	               
 	
@@ -152,15 +152,15 @@
     </div>
   </div>
 </div>
-
-	<script>
-		//Aviso de que se ha enviado el formulario 
-		function cerrar() {
-			$("body").html(
-				'<div align="center"><img title="Suscripción Realizada" src="content/Images/Varios/muneco-ok.jpg" alt="Proceso correcto" width="400" height="300"></div>');
-		}
-	</script>
-	<script src="bootstrap/js/compiled-4.8.1.min.js"></script>
-</body>
+		<script>
+			//Aviso de que se ha enviado el formulario 
+			function cerrar() {
+				alert('Parece OK1');
+				$("body").html('<div align="center"><img title="Suscripción Realizada" src="content/Images/Varios/muneco-ok.jpg" alt="Formulario enviado" width="400" height="300"></div>');
+	//			alert('Parece OK2');
+			}
+		</script>
+		<script src="bootstrap/js/compiled-4.8.1.min.js"></script>
+	</body>
 </html>
 
