@@ -8,9 +8,10 @@
     
     
     <%
-		String respuesta = UserDA.loginUser(loginBean);
+		String[] respuesta = UserDA.loginUser(loginBean);
     if (respuesta!=null) {
-        session.setAttribute("User", respuesta);
+        session.setAttribute("User", respuesta[0]);
+        session.setAttribute("Role", respuesta[1]);
         response.sendRedirect("/web");
     } else {
         out.println("Invalid password <a href='/login'>try again</a>");

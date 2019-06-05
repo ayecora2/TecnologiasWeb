@@ -39,24 +39,58 @@
 					<div class="dropdown-divider"></div>
 					<a class="dropdown-item" href="javascript:alert('No sabe lo que hace, siga comprando');"><b>¿Salir?</b></a>
 				</div></li>
+			<%
+			/** Muestra el menú del usuario de compras solo si se está logueado como usuarios
+			**/
+			if ((session.getAttribute("User") != null) && (session.getAttribute("User") != "")) {				
+		%>	
+			<li class="nav-item dropdown" style="float: right;"><a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+				role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Mis compras </a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					<a class="dropdown-item" href="#">Carrito</a>
+					<div class="dropdown-divider"></div>
+					<a class="dropdown-item" href="#">Compras anteriores</a>
+					<div class="dropdown-divider"></div>
+					<a class="dropdown-item" href="#"><b>Promociones</b></a>
+				</div></li>
+			<%
+			}
+		%>	
 		</ul>
 	</div>
-		<button type="button" class="btn btn-sm" data-toggle="modal" data-target="#miLogin" title="Mi Cuenta">
-			<img src="content/Icons/glyph/svg/si-glyph-person-people.svg" height="20" width="20" />
-		<%
-			if ((session.getAttribute("User") == null) || (session.getAttribute("User") == "")) {
+	<%
+			/** muestra el usuario logueado y la opción de desloguear y registrar antidua. Si se arregla lo otro
+			Se cambian los enlaces
+			**/
+		if ((session.getAttribute("User") == null) || (session.getAttribute("User") == "")) {				
 		%>
-		You are not logged in <a data-toggle="modal" data-target="#miLogin">Please Login</a>
+			No estas logueado &nbsp;&nbsp;|&nbsp;&nbsp;<a href="UserLogin">Login</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="UserCreateBCK">Sing up</a>&nbsp;&nbsp;|&nbsp;&nbsp;
 		<%
-			} else {
+		} else {
 		%>
-		Welcome
-		<%=session.getAttribute("User")%>
-		<a href='UserLogout'>Log out</a>
+			Bienvenido 
+			<%=session.getAttribute("User")%>&nbsp;&nbsp;|&nbsp;&nbsp;
+			<a href='UserLogout'>Log out</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+
 		<%
-			}
+			/** Muestra el tipo de usuario
+			**/
+		if ((session.getAttribute("Role").equals("2"))) {				
+		%>
+			Usuario&nbsp;&nbsp;|&nbsp;&nbsp;
+		<%
+		}
+		if (session.getAttribute("Role").equals("1")){
+		%>
+			Admin&nbsp;&nbsp;|&nbsp;&nbsp;
+		<%
+		}
 		%>
 
+		<%
+		}
+		%>
+		
 		<button type="button" class="btn btn-sm" data-toggle="modal"
 			data-target="#" title="Mi Cuenta">
 			<img src="content/Icons/glyph/svg/si-glyph-person-people.svg"

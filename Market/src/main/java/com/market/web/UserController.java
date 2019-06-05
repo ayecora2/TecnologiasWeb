@@ -38,6 +38,12 @@ public class UserController {
 		return "UserCreateRequest";
 	}
 	
+	@RequestMapping(value = "UserCreateBCK", method = RequestMethod.GET)
+	public String UserCreateBCK() {
+
+		return "UserCreateBCK";
+	}
+	
 	@RequestMapping(value = "UserLogin", method = RequestMethod.GET)
 	public String UserLogin() {
 

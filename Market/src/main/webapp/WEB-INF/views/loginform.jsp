@@ -21,7 +21,7 @@
 	<jsp:include page="templates/_NavBarView.jsp" />		
 	<form action="UserLoginRequest" method="get">
 		<label for="username">Username:</label>
-		<input type="text" name="user" id="user"/>
+		<input type="text" name="email" id="email"/>
 		<br />
 		<label for="new">Password:</label>
 		<input type="password" name="pass" id="pass"/>

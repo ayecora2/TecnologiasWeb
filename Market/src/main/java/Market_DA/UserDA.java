@@ -61,16 +61,19 @@ public class UserDA extends DataAccessCore{
 			return "KO";
 			}
 	}
-	public static String loginUser(Login login)
+	public static String[] loginUser(Login login)
 	{
-		//Comprueba el user y password del login contra la base de datos y devuelve ok si es correcto
+		/**Comprueba el user y password del login contra la base de datos y devuelve ok si es correcto y
+		 * devuelve un par de string con el numbre del usuario y el tipo para crear la sesion
+		 * **/
 		    String email = login.getEmail();   
 		    String password = login.getPass();
 		    try{			
 				resultSet = statement.executeQuery("select * from users where EMAIL='" + email + "' and PASS='" +password + "'");
 				if (resultSet.next()) {
+					String[] datos = {resultSet.getString("Nombre"),resultSet.getString("USER_TYPE_ID").toString()};
 			        System.out.println("Login Correcto");
-					return resultSet.getString("Nombre");
+					return datos;
 			    } else {
 			        System.out.println("Invalid password try again");
 			        return null;
