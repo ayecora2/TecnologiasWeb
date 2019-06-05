@@ -9,6 +9,8 @@
 <script src="bootstrap/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
 <spring:url value="bootstrap/css/bootstrap.min.css" var="MyBootstrap" />
+<jsp:useBean id="loginBean" class="Market_DO.Login" scope="request"/>
+
 </head>
 <body>
 
@@ -21,6 +23,8 @@
             <c:forEach var="produc" items="${listProductosPuntuados}" varStatus="tagStatus">
 			    <div class="col-md-3">
                 <div class="thumbnail">
+                
+						
                 <p><strong>${produc.getNombre()}</strong></p>
                <a href="javascript:alert('Sin enlace colega');"><img title="${produc.getNombre()}" src="content/Images/Productos/${produc.getImagen()}"
                		 alt="Imagen del producto" width="200" height="150"></a>
