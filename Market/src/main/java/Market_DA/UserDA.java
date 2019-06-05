@@ -70,7 +70,7 @@ public class UserDA extends DataAccessCore{
 				resultSet = statement.executeQuery("select * from users where EMAIL='" + email + "' and PASS='" +password + "'");
 				if (resultSet.next()) {
 			        System.out.println("Login Correcto");
-					return resultSet.getString("Email");
+					return resultSet.getString("Nombre");
 			    } else {
 			        System.out.println("Invalid password try again");
 			        return null;
