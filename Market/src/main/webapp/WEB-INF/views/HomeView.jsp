@@ -11,9 +11,8 @@
 <spring:url value="bootstrap/css/bootstrap.min.css" var="MyBootstrap" />
 </head>
 <body>
-
 	<jsp:include page="templates/_NavBarView.jsp" />
-
+	
 	<div id="containerProductos" class="container-fluid text-center bg-grey">
 		<h4>Nuestros Productos Destacados</h4>
 		<br>
@@ -33,29 +32,10 @@
 			</c:forEach>
             </div><br>
         </div>
-	<jsp:include page="templates/_Footer.jsp" />
-
-	<!-- MODAL CARRITO -->
-
-	<div class="container">
-		<!-- Modal -->
-		<div class="modal fade" id="myModalCarrito" role="dialog">
-			<div class="modal-dialog modal-lg">
-				<div class="modal-content">
-					<div class="modal-header">
-						<h4 class="modal-title">Su compra</h4>
-						<button type="button" class="close" data-dismiss="modal">&times;</button>
-					</div>
-					<div class="modal-body">
-						<p>Esta podría ser la lista de su compra.</p>
-					</div>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
 
 </body>
+<footer>
+	<jsp:include page="templates/_Footer.jsp" />
+</footer>
+
 </html>

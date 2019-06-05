@@ -28,8 +28,6 @@
 			</c:forEach>
             </div><br>
         </div>
-	
-	<jsp:include page="templates/_footerProductos.jsp" /> 
 		
 		<!-- MODAL CARRITO -->
 		
@@ -56,4 +54,7 @@
 		  </div>
 		</div>
 </body>
+<footer>
+	<jsp:include page="templates/_footerProductos.jsp" />
+</footer>
 </html>
