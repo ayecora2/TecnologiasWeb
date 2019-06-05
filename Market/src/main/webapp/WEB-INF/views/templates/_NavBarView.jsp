@@ -34,8 +34,18 @@
 				role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Usuarios </a>
 				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 					<a class="dropdown-item" data-toggle="modal" data-target="#miLogin">Acceso a mi cuenta</a>
-					<div class="dropdown-divider"></div>
-					<a class="dropdown-item" href="User">Lista Usuarios</a>
+		<%
+			/** Muestra el menú del usuario de compras solo si se está logueado como usuarios
+			**/
+			if ((session.getAttribute("User") != null) && (session.getAttribute("Role").equals("1"))) {				
+		%>	
+
+						<div class="dropdown-divider"></div>
+						<a class="dropdown-item" href="User">Lista Usuarios</a>
+	<%
+			}
+		%>	
+
 					<div class="dropdown-divider"></div>
 					<a class="dropdown-item" href="javascript:alert('No sabe lo que hace, siga comprando');"><b>¿Salir?</b></a>
 				</div></li>
