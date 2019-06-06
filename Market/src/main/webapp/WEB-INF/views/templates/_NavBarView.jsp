@@ -29,7 +29,24 @@
 					<div class="dropdown-divider"></div>
 					<a class="dropdown-item" href="mailto:areaclientes@electromarket.es?Subject=Solicitud%20de%20contacto"><b>Contactar con nosotros</b></a>
 				</div></li>
-			<li class="nav-item"><a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Gestión</a></li>
+				<%
+			/** Muestra el menú del usuario de compras solo si se está logueado como usuarios
+			**/
+			if ((session.getAttribute("User") != null) && (session.getAttribute("Role").equals("1"))) {				
+		%>	
+			<li class="nav-item dropdown" style="float: right;"><a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+				role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Gestion </a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					<a class="dropdown-item" href="#">Alta de productos</a>
+					<div class="dropdown-divider"></div>
+					<a class="dropdown-item" href="#">Alta de inventario</a>
+					<div class="dropdown-divider"></div>
+					<a class="dropdown-item" href="#"><b>Anulación de ventas</b></a>
+				</div></li>
+			<%
+			}
+		%>		
+				
 			<li class="nav-item dropdown" style="float: right;"><a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
 				role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Usuarios </a>
 				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -110,7 +127,7 @@
 		<button type="button" class="btn btn-sm" data-toggle="modal" data-target="#miCarrito" title="Mi compra">
 			<img src="content/Icons/glyph/svg/si-glyph-basket.svg" height="20" width="20" />
 		</button>
-		<button type="button" class="btn btn-sm" data-toggle="tooltip" data-target="#top" title="Documentación">
+		<button type="button" class="btn btn-sm" data-toggle="modal" data-target="#documentacion" title="Documentación">
 			<img src="content/Icons/glyph/svg/si-glyph-document.svg" height="20" width="20" />
 		</button>
 </nav>		
@@ -135,6 +152,19 @@
 					<div class="modal-content">				
 						<div class="modal-body" style="background-color:#EEE8AA;">
 							<a href="AddUser">Test2</a>
+						</div>
+						<div class="modal-footer justify-content-center" style="background-color:#E6E6FA;">
+							 <button type="button" class="btn btn-outline-primary btn-rounded btn-md ml-4" data-dismiss="modal">Cerrar</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="modal fade" id="documentacion" role="dialog">
+				<div class="modal-dialog modal-lg">
+					<div class="modal-content">				
+						<div class="modal-body" style="background-color:#EEE8AA;">
+							<a href="content/doc/TW_Practica.pdf">Documentación de la Práctica</a>
+							<a href="content/doc/TW_PEC_SDR.pdf">SDR (Documento de requisitos)</a>
 						</div>
 						<div class="modal-footer justify-content-center" style="background-color:#E6E6FA;">
 							 <button type="button" class="btn btn-outline-primary btn-rounded btn-md ml-4" data-dismiss="modal">Cerrar</button>
