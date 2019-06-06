@@ -1,5 +1,11 @@
 package Market_DO;
 
+/**
+ * Clase para generar items en la lista de la compra y comprados
+ * @author ayecora
+ * @author Silverio
+ *
+ */
 public class CompraItems {
 
 	private int Id; //ID de la compra

@@ -13,6 +13,7 @@ import Market_DO.Producto;
  * @author Silverio Rosales
  * @version 201905291600
  */
+
 public class ProductosBL {
 	
 	/**
@@ -54,6 +55,11 @@ public class ProductosBL {
 			return null;
 		}
 	}
+	/**
+	 * Funcion para devolver una lista de los 4 productos mejor puntuados
+	 * @author ayecora
+	 * @return List<Producto>
+	 */
 	public static List<Producto> bestProduct() {
 		try {
 			//Lista de productos

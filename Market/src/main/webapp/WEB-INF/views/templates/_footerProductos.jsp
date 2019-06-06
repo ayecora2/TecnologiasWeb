@@ -46,20 +46,20 @@
           <div class="col-md-3 mb-md-0 mb-3">
 
             <!-- Links -->
-            <h5 class="text-uppercase">Links</h5>
+  				<h5 class="text-uppercase">Servicios Generales</h5>
 
             <ul class="list-unstyled">
               <li>
-                <a href="#!">Link 1</a>
+                <a href="#!">Venta</a>
               </li>
               <li>
-                <a href="#!">Link 2</a>
+                <a href="#!">Reparación</a>
               </li>
               <li>
-                <a href="#!">Link 3</a>
+                <a href="#!">Servicio Postventa</a>
               </li>
               <li>
-                <a href="#!">Link 4</a>
+                <a href="#!">Reparto a domicilio</a>
               </li>
             </ul>
 

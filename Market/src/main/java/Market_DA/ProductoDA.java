@@ -9,6 +9,7 @@ import Market_DO.Producto;
  * o una lista parcial mediante un filtro. También esta clase se encarga de introducir nuevos
  * productos en la Base de Datos.
  * @author Silverio
+ * @author ayecora
  * @version 201905302123
  */
 public class ProductoDA extends DataAccessCore{

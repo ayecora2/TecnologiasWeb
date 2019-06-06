@@ -13,6 +13,8 @@ import Market_DO.Login;
  * y introducir nuevos usuarios en la Base de Datos.
  * @author silverio
  * @version 201905291515
+ * @author ayecora
+ *
  */
 public class UserDA extends DataAccessCore{
 	

@@ -3,6 +3,7 @@ package Market_DO;
 /**
  * Esta clase almacena el ID de un producto y la puntuación
  * @author silverio
+ * @author Abel
  * @version 201905302021
  */
 public class ProductoPuntuacion {

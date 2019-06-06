@@ -5,6 +5,7 @@ package Market_DO;
  * Almacena un producto en oferta, que se le pasa
  * mediante su constructor.
  * @author silverio
+ * @author Abel
  *
  */
 public class ProductoOferta {

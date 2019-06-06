@@ -1,6 +1,8 @@
 package Market_DO;
 
 /**
+ * 
+ * Clase para generar un objeto de tipo de usuario
  * @author silverio
  * @author Abel
  *

@@ -4,6 +4,7 @@ package Market_DO;
  * La clase Servicio define el tipo de servicio a prestar.
  * Consta de un nombre y un ID único
  * @author silverio
+ * @author Abel
  */
 public class Servicio {
 

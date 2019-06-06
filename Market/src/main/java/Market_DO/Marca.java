@@ -3,6 +3,7 @@ package Market_DO;
 /**
  * Clase destinada a representar una marca.
  * @author silverio
+ * @author Abel
  */
 public class Marca {
 	

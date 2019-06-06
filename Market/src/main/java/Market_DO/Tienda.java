@@ -8,6 +8,7 @@ import java.util.List;
  * Sus propiedades pueden ser dadas en el constructor o a posteriori
  * ser modificadas mediante sus correspondientes setters.
  * @author silverio
+ * @author Abel
  */
 public class Tienda {
 

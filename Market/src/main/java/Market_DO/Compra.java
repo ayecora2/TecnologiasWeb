@@ -2,6 +2,13 @@ package Market_DO;
 
 import java.sql.Date;
 
+/**
+ * 
+ * Clase para generar objetos compra
+ * @author ayecora
+ * @author Silverio
+ *
+ */
 public class Compra {
 
 	private int Id; //Id de la compra

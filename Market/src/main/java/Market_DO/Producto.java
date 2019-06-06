@@ -4,6 +4,7 @@ package Market_DO;
  * La clase producto identifica y describe a un producto
  * en concreto, además de almecenar sus características peculiares.
  * @author silverio
+ * @author Abel
  * @version 201905271605
  */
 public class Producto {

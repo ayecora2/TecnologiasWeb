@@ -10,6 +10,7 @@ import Market_DO.User;
  * La clase tiene la función de leer de la Base de Datos, los datos de usuario, y convertirlos en una lista 
  * de instancias de la clase User con sus campos convertidos adecuadamente.
  * @author silverio
+ * @author ayecora
  * @version 201905291627
  */
 public class UserBL {

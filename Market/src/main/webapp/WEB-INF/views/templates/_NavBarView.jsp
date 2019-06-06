@@ -46,26 +46,28 @@
 			<%
 			}
 		%>		
-				
-			<li class="nav-item dropdown" style="float: right;"><a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
-				role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Usuarios </a>
-				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-					<a class="dropdown-item" data-toggle="modal" data-target="#miLogin">Acceso a mi cuenta</a>
-		<%
+				<%
 			/** Muestra el menú del usuario de compras solo si se está logueado como usuarios
 			**/
 			if ((session.getAttribute("User") != null) && (session.getAttribute("Role").equals("1"))) {				
-		%>	
-
-						<div class="dropdown-divider"></div>
-						<a class="dropdown-item" href="User">Lista Usuarios</a>
-	<%
+		%>			
+			<li class="nav-item dropdown" style="float: right;"><a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+				role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Administracion </a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					<a class="dropdown-item" href="#">Compras</a>
+					<div class="dropdown-divider"></div>
+					<a class="dropdown-item" href="User">Lista Usuarios</a>
+					<div class="dropdown-divider"></div>
+					<a class="dropdown-item" href="#">Añadir ofertas</a>
+					<div class="dropdown-divider"></div>
+					<a class="dropdown-item" href="#">Crear productos</a>
+					<div class="dropdown-divider"></div>
+					<a class="dropdown-item" href="#"><b>¿Salir?</b></a>
+				</div></li>
+					<%
 			}
 		%>	
-
-					<div class="dropdown-divider"></div>
-					<a class="dropdown-item" href="javascript:alert('No sabe lo que hace, siga comprando');"><b>¿Salir?</b></a>
-				</div></li>
+				
 			<%
 			/** Muestra el menú del usuario de compras solo si se está logueado como usuarios
 			**/
@@ -117,12 +119,12 @@
 		<%
 		}
 		%>
-		
+		<!-- Mostrar boton de usuario Implementación futura
 		<button type="button" class="btn btn-sm" data-toggle="modal"
 			data-target="#" title="Mi Cuenta">
 			<img src="content/Icons/glyph/svg/si-glyph-person-people.svg"
 				height="20" width="20" />
-		</button>
+		</button> -->
 		<!-- CARRITO -->
 		<button type="button" class="btn btn-sm" data-toggle="modal" data-target="#miCarrito" title="Mi compra">
 			<img src="content/Icons/glyph/svg/si-glyph-basket.svg" height="20" width="20" />
@@ -131,7 +133,7 @@
 			<img src="content/Icons/glyph/svg/si-glyph-document.svg" height="20" width="20" />
 		</button>
 </nav>		
-				<!-- Modal -->
+				<!-- Modal Implementación futura Mostrará el login con HTML5
 			<div class="modal fade" id="miLogin" tabindex="-1" role="dialog">
 				<div class="modal-dialog modal-lg">
 					<div class="modal-content">				
@@ -146,7 +148,7 @@
 						</div>
 					</div>
 				</div>
-			</div>
+			</div>-->
 			<div class="modal fade" id="miCarrito" role="dialog">
 				<div class="modal-dialog modal-lg">
 					<div class="modal-content">				
@@ -163,8 +165,9 @@
 				<div class="modal-dialog modal-lg">
 					<div class="modal-content">				
 						<div class="modal-body" style="background-color:#EEE8AA;">
-							<a href="content/doc/TW_Practica.pdf">Documentación de la Práctica</a>
-							<a href="content/doc/TW_PEC_SDR.pdf">SDR (Documento de requisitos)</a>
+							<a href="content/doc/TW_Practica.pdf">Documentación de la Práctica</a></br>
+							<a href="content/doc/TW_PEC_SDR.pdf">SDR (Documento de requisitos)</a></br>
+							<a href="content/doc/TW_PEC_Manual.pdf">Manual de usuario</a>
 						</div>
 						<div class="modal-footer justify-content-center" style="background-color:#E6E6FA;">
 							 <button type="button" class="btn btn-outline-primary btn-rounded btn-md ml-4" data-dismiss="modal">Cerrar</button>
