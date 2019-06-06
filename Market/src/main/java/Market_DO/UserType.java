@@ -2,13 +2,14 @@ package Market_DO;
 
 /**
  * @author silverio
+ * @author Abel
  *
  */
 
 public class UserType {
 	
 	private String Name; //ID del usuario
-	private int Id; //ombre del usuario
+	private int Id; //tipo de usuario
 	
 	/**
 	 * Constructor que toma como paramámetros el ID y nombre

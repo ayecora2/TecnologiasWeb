@@ -19,12 +19,12 @@
 <body>
 
 	<jsp:include page="templates/_NavBarView.jsp" />		
-	<form action="j_aecurity_check" method="post">
+	<form action="UserLoginRequest" method="get">
 		<label for="username">Username:</label>
-		<input type="text" name="j_username" id="username"/>
+		<input type="text" name="email" id="email"/>
 		<br />
 		<label for="new">Password:</label>
-		<input type="password" name="j_password" id="password"/>
+		<input type="password" name="pass" id="pass"/>
 		<br />
 		<input type="submit" value="Submit" />
 	</form>

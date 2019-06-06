@@ -32,5 +32,9 @@ public class HomeController {
 		MV.addObject("listProductosPuntuados", listProductosPuntuados);
 //		MV.setViewName();		
 		return MV;
-	}	
+	}
+	@RequestMapping(value = "/Documentacion", method = RequestMethod.GET)
+	public String Doc() {
+		return "Documentacion";
+	}
 }

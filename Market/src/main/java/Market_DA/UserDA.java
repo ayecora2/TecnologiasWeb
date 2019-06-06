@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import Market_BL.ConectarBBDD;
 import Market_DO.User;
-
+import Market_DO.Login;
 /**
  * Clase encargada de obtener una lista de todos los usuarios almacenados en el sistema
  * y introducir nuevos usuarios en la Base de Datos.
@@ -60,5 +60,27 @@ public class UserDA extends DataAccessCore{
 			e.printStackTrace();
 			return "KO";
 			}
+	}
+	public static String[] loginUser(Login login)
+	{
+		/**Comprueba el user y password del login contra la base de datos y devuelve ok si es correcto y
+		 * devuelve un par de string con el numbre del usuario y el tipo para crear la sesion
+		 * **/
+		    String email = login.getEmail();   
+		    String password = login.getPass();
+		    try{			
+				resultSet = statement.executeQuery("select * from users where EMAIL='" + email + "' and PASS='" +password + "'");
+				if (resultSet.next()) {
+					String[] datos = {resultSet.getString("Nombre"),resultSet.getString("USER_TYPE_ID").toString()};
+			        System.out.println("Login Correcto");
+					return datos;
+			    } else {
+			        System.out.println("Invalid password try again");
+			        return null;
+			    }
+			} catch (Exception ex) {
+				ex.printStackTrace();
+				return null;
+			}    
 	}
 }
