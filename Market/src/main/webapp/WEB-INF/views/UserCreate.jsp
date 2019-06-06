@@ -155,9 +155,8 @@
 		<script>
 			//Aviso de que se ha enviado el formulario 
 			function cerrar() {
-				alert('Parece OK1');
-				$("body").html('<div align="center"><img title="Suscripción Realizada" src="content/Images/Varios/muneco-ok.jpg" alt="Formulario enviado" width="400" height="300"></div>');
-	//			alert('Parece OK2');
+				alert('Formulario enviado');
+//Fallo muy aleatorio $("body").html('<div align="center"><img title="Suscripción Realizada" src="content/Images/Varios/muneco-ok.jpg" alt="Formulario enviado" width="400" height="300"></div>');
 			}
 		</script>
 		<script src="bootstrap/js/compiled-4.8.1.min.js"></script>

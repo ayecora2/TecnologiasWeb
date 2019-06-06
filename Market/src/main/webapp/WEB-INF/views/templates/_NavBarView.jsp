@@ -71,7 +71,7 @@
 				<div class="modal-dialog modal-lg">
 					<div class="modal-content">				
 						<div class="modal-body" style="background-color:#EEE8AA;">
-							<a href="AddUser">Test2</a>
+							<b>Mi carrooo, me lo robarón...</b>
 						</div>
 						<div class="modal-footer justify-content-center" style="background-color:#E6E6FA;">
 							 <button type="button" class="btn btn-outline-primary btn-rounded btn-md ml-4" data-dismiss="modal">Cerrar</button>
