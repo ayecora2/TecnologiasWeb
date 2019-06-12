@@ -12,9 +12,10 @@
     if (respuesta!=null) {
         session.setAttribute("User", respuesta[0]);
         session.setAttribute("Role", respuesta[1]);
-        response.sendRedirect("/Market");
+        response.sendRedirect("/web");
     } else {
-        out.println("Invalid password <a href='/login'>try again</a>");
+    	out.println("<script> alert('Usuario y/o contraseña inválido'); </script>");
+        out.println("<a href='/web/UserLogin'><b>Vuelva a intentarlo</b></a>");
     }
 	%>
 	

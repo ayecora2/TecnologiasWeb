@@ -7,7 +7,7 @@
 
 <!-- BARRA LAYOUT -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin-bottom: 15px;">
-	<a class="navbar-brand" href="/Market">Electro S&amp;A</a>
+	<a class="navbar-brand" href="/web/">Electro S&amp;A</a>
 	<button class="navbar-toggler" type="button" data-toggle="collapse"
 		data-target="#navbarSupportedContent"
 		aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -17,7 +17,7 @@
 
 	<div class="collapse navbar-collapse" id="navbarSupportedContent">
 		<ul class="navbar-nav mr-auto">
-			<li class="nav-item"><a class="nav-link" href="/Market">Home<span class="sr-only">(current)</span></a></li>			
+			<li class="nav-item"><a class="nav-link" href="/web/">Home<span class="sr-only">(current)</span></a></li>			
 			<li class="nav-item"><a class="nav-link" href="Producto">Productos</a></li>
 			<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
 				aria-expanded="false"> Servicios </a>
@@ -93,13 +93,13 @@
 			**/
 		if ((session.getAttribute("User") == null) || (session.getAttribute("User") == "")) {				
 		%>
-			No estas logueado &nbsp;&nbsp;|&nbsp;&nbsp;<a href="UserLogin">Login</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="UserCreateBCK">Sing up</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+			No estas logueado &nbsp;&nbsp;|&nbsp;&nbsp;<a href="UserLogin">Iniciar Sesión</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="UserCreateBCK">Sing up</a>&nbsp;&nbsp;|&nbsp;&nbsp;
 		<%
 		} else {
 		%>
 			Bienvenido 
 			<%=session.getAttribute("User")%>&nbsp;&nbsp;|&nbsp;&nbsp;
-			<a href='UserLogout'>Log out</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+			<a href='UserLogout'>Cerrar sesión</a>&nbsp;&nbsp;|&nbsp;&nbsp;
 
 		<%
 			/** Muestra el tipo de usuario
@@ -120,10 +120,8 @@
 		}
 		%>
 		<!-- Mostrar boton de usuario Implementación futura
-		<button type="button" class="btn btn-sm" data-toggle="modal"
-			data-target="#" title="Mi Cuenta">
-			<img src="content/Icons/glyph/svg/si-glyph-person-people.svg"
-				height="20" width="20" />
+		<button type="button" class="btn btn-sm" data-toggle="modal" data-target="#miLogin" title="Mi Cuenta">
+			<img src="content/Icons/glyph/svg/si-glyph-person-people.svg" height="20" width="20" />
 		</button> -->
 		<!-- CARRITO -->
 		<button type="button" class="btn btn-sm" data-toggle="modal" data-target="#miCarrito" title="Mi compra">
@@ -132,14 +130,13 @@
 		<button type="button" class="btn btn-sm" data-toggle="modal" data-target="#documentacion" title="Documentación">
 			<img src="content/Icons/glyph/svg/si-glyph-document.svg" height="20" width="20" />
 		</button>
-</nav>		
+</nav>
 				<!-- Modal Implementación futura Mostrará el login con HTML5
 			<div class="modal fade" id="miLogin" tabindex="-1" role="dialog">
 				<div class="modal-dialog modal-lg">
 					<div class="modal-content">				
 						<div class="modal-body mb-0 p-0" style="background-color:#AFEEEE;">	
-							<div class="embed-responsive embed-responsive-4by3 z-depth-1-half">	
-							  	
+							<div class="embed-responsive embed-responsive-4by3 z-depth-1-half">
 								<iframe class="embed-responsive-item" src="AddUser"></iframe>
 							</div>
 						</div>
@@ -148,7 +145,7 @@
 						</div>
 					</div>
 				</div>
-			</div>-->
+			</div>
 			<div class="modal fade" id="miCarrito" role="dialog">
 				<div class="modal-dialog modal-lg">
 					<div class="modal-content">				

@@ -31,22 +31,30 @@ public final class Login implements Serializable{
 		 * Crea un nuevo login, no requiere parámetros a priori.
 		 * Se configuran a posteriori.
 		 */
-		public Login() {super();	}
+		public Login() {super();}
 
-		public String getEmail() {
-			return Email;
-		}
+		/**
+		 * Devuelve el email
+		 * @return email del usuario
+		 */
+		public String getEmail() {return Email;}
 
-		public void setEmail(String Email) {
-			this.Email = Email;
-		}
+		/**
+		 * Establece el email del usuario
+		 * @param Email del usuario
+		 */
+		public void setEmail(String Email) {this.Email = Email;}
 
-		public String getPass() {
-			return Pass;
-		}
+		/**
+		 * Devuelve la clave del usuario
+		 * @return clave del usuario
+		 */
+		public String getPass() {return Pass;}
 
-		public void setPass(String Pass) {
-			this.Pass = Pass;
-		}
+		/**
+		 * Establece la clave del usuario
+		 * @param Pass clave del usuario
+		 */
+		public void setPass(String Pass) {this.Pass = Pass;}
 	
 }
