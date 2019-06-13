@@ -8,5 +8,5 @@
 <%
 session.setAttribute("userName", null);
 session.invalidate();
-response.sendRedirect("/Market");
+response.sendRedirect("/web");
 %>

@@ -9,7 +9,7 @@
 <head>
 <meta charset="UTF-8">
 
-<title>Formulario Loggin</title>
+<title>Formulario de Acceso</title>
 
 <script src="bootstrap/js/jquery-3.3.1.slim.min.js"></script>
 <script src="bootstrap/js/bootstrap.min.js"></script>
@@ -19,15 +19,17 @@
 <body>
 
 	<jsp:include page="templates/_NavBarView.jsp" />		
+	
 	<form action="UserLoginRequest" method="get">
-		<label for="username">Username:</label>
+		<label for="username">Nombre de usuario/email:</label>
 		<input type="text" name="email" id="email"/>
 		<br />
-		<label for="new">Password:</label>
+		<label for="new">Contraseña:</label>
 		<input type="password" name="pass" id="pass"/>
 		<br />
 		<input type="submit" value="Submit" />
 	</form>
+	
 	<jsp:include page="templates/_Footer.jsp" />
 
 </body>

@@ -50,7 +50,7 @@
 
             <ul class="list-unstyled">
               <li>
-                <a href="#!">Venta</a>
+                <a href="User">Lista Usuarios</a>
               </li>
               <li>
                 <a href="#!">Reparación</a>

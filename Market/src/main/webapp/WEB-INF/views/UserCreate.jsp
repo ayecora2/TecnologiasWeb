@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ page session="false"%>
@@ -17,8 +16,7 @@ body {
 </style>
 <script src="bootstrap/js/jquery-3.3.1.slim.min.js"></script>
 <script src="bootstrap/js/bootstrap.min.js"></script>
-<link rel="stylesheet" type="text/css"
-	href="bootstrap/css/compiled-4.8.1.min.css">
+<link rel="stylesheet" type="text/css" href="bootstrap/css/compiled-4.8.1.min.css">
 <spring:url value="bootstrap/css/bootstrap.min.css" var="MyBootstrap" />
 </head>
 
@@ -67,14 +65,12 @@ body {
 										<!-- Footer -->
 										<div class="d-flex justify-content-between">
 											<!-- Triggering button -->
-											<a class="rotate-btn text-primary" tabindex="-1"
-												data-card="my-card">crear cuenta nueva</a> <a
-												href="javascript:alert('Rasca y sigue buscando');"
-												class="green-text" tabindex="-2">¿clave olvidada?</a>
+											<a class="rotate-btn text-primary" tabindex="-1" data-card="my-card">crear cuenta nueva</a>
+											<!-- Recordar clave -->
+											<a class="green-text" tabindex="-2" href="javascript:alert('Rasca y sigue buscando');">¿clave olvidada?</a>
 										</div>
 										<div class="text-center">
-											<button class="btn primary-color white-text btn-lg"
-												type="submit" value="Submit">Entrar</button>
+											<button type="submit" value="Submit" class="btn primary-color white-text btn-lg">Entrar</button>
 										</div>
 
 									</form>
@@ -116,8 +112,7 @@ body {
 										<div class="md-form">
 											<i class="fas grey-text d-flex"></i> <input type="email"
 												maxlength="30" id="email" name="email" class="form-control"
-												required> <label for="email" class="d-flex">Su
-												email</label>
+												required> <label for="email" class="d-flex">Su email</label>
 										</div>
 										<div class="md-form">
 											<i class="fas grey-text d-flex"></i> <input type="text"
@@ -159,13 +154,10 @@ body {
 										<!-- Footer -->
 										<div class="d-flex justify-content-between">
 											<!-- Triggering button -->
-											<a class="rotate-btn text-primary" tabindex="-3"
-												data-card="my-card">iniciar sesión</a>
+											<a class="rotate-btn text-primary" tabindex="-3" data-card="my-card">iniciar sesión</a>
 										</div>
 										<div class="text-center">
-											<button id="submit" name="submit" onclick="cerrar()"
-												class="btn primary-color white-text btn-lg">Crear
-												cuenta</button>
+											<button id="submit" name="submit" class="btn primary-color white-text btn-lg">Crear cuenta</button>
 										</div>
 									</form>
 									<!-- FIN.Formulario de Registro-->
@@ -182,16 +174,6 @@ body {
 			</div>
 		</div>
 	</div>
-	<script>
-		//Aviso de que se ha enviado el formulario 
-		function cerrar() {
-			alert('Parece OK1');
-			$("body")
-					.html(
-							'<div align="center"><img title="Suscripción Realizada" src="content/Images/Varios/muneco-ok.jpg" alt="Formulario enviado" width="400" height="300"></div>');
-			//			alert('Parece OK2');
-		}
-	</script>
 	<script src="bootstrap/js/compiled-4.8.1.min.js"></script>
 </body>
 </html>
