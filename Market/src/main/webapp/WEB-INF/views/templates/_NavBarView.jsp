@@ -8,10 +8,8 @@
 <!-- BARRA LAYOUT -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin-bottom: 15px;">
 	<a class="navbar-brand" href="/web/">Electro S&amp;A</a>
-	<button class="navbar-toggler" type="button" data-toggle="collapse"
-		data-target="#navbarSupportedContent"
-		aria-controls="navbarSupportedContent" aria-expanded="false"
-		aria-label="Toggle navigation">
+	<button class="navbar-toggler" type="button" data-toggle="collapse"	data-target="#navbarSupportedContent"
+		aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 		<span class="navbar-toggler-icon"></span>
 	</button>
 
@@ -93,7 +91,7 @@
 			**/
 		if ((session.getAttribute("User") == null) || (session.getAttribute("User") == "")) {				
 		%>
-			No estas logueado &nbsp;&nbsp;|&nbsp;&nbsp;<a href="UserLogin">Login</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="UserCreateBCK">Sing up</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+			Acceso/crear Usuarios &nbsp;&nbsp;|&nbsp;&nbsp;<a href="UserLogin">Mi cuenta</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="UserCreateBCK">Nuevo Usuario</a>&nbsp;&nbsp;|&nbsp;&nbsp;
 		<%
 		} else {
 		%>
@@ -102,8 +100,7 @@
 			<a href='UserLogout'>Log out</a>&nbsp;&nbsp;|&nbsp;&nbsp;
 
 		<%
-			/** Muestra el tipo de usuario
-			**/
+			/** Muestra el tipo de usuario **/
 		if ((session.getAttribute("Role").equals("2"))) {				
 		%>
 			Usuario&nbsp;&nbsp;|&nbsp;&nbsp;
@@ -119,12 +116,10 @@
 		<%
 		}
 		%>
-		<!-- Mostrar boton de usuario Implementación futura
-		<button type="button" class="btn btn-sm" data-toggle="modal"
-			data-target="#" title="Mi Cuenta">
-			<img src="content/Icons/glyph/svg/si-glyph-person-people.svg"
-				height="20" width="20" />
-		</button> -->
+		<!-- Mostrar boton de usuario -->
+		<button type="button" class="btn btn-sm" data-toggle="modal" data-target="#miLogin" title="Mi Cuenta">
+			<img src="content/Icons/glyph/svg/si-glyph-person-people.svg" height="20" width="20" />
+		</button> 
 		<!-- CARRITO -->
 		<button type="button" class="btn btn-sm" data-toggle="modal" data-target="#miCarrito" title="Mi compra">
 			<img src="content/Icons/glyph/svg/si-glyph-basket.svg" height="20" width="20" />
@@ -133,13 +128,12 @@
 			<img src="content/Icons/glyph/svg/si-glyph-document.svg" height="20" width="20" />
 		</button>
 </nav>		
-				<!-- Modal Implementación futura Mostrará el login con HTML5
+				<!-- Modal Implementación futura Mostrará el login con HTML5 -->
 			<div class="modal fade" id="miLogin" tabindex="-1" role="dialog">
 				<div class="modal-dialog modal-lg">
 					<div class="modal-content">				
 						<div class="modal-body mb-0 p-0" style="background-color:#AFEEEE;">	
-							<div class="embed-responsive embed-responsive-4by3 z-depth-1-half">	
-							  	
+							<div class="embed-responsive embed-responsive-4by3 z-depth-1-half">							  	
 								<iframe class="embed-responsive-item" src="AddUser"></iframe>
 							</div>
 						</div>
@@ -148,7 +142,7 @@
 						</div>
 					</div>
 				</div>
-			</div>-->
+			</div>
 			<div class="modal fade" id="miCarrito" role="dialog">
 				<div class="modal-dialog modal-lg">
 					<div class="modal-content">				

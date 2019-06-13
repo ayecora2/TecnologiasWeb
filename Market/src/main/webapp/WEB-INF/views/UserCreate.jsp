@@ -65,14 +65,12 @@ body {
 										<!-- Footer -->
 										<div class="d-flex justify-content-between">
 											<!-- Triggering button -->
-											<a class="rotate-btn text-primary" tabindex="-1"
-												data-card="my-card">crear cuenta nueva</a> <a
-												href="javascript:alert('Rasca y sigue buscando');"
-												class="green-text" tabindex="-2">¿clave olvidada?</a>
+											<a class="rotate-btn text-primary" tabindex="-1" data-card="my-card">crear cuenta nueva</a>
+											<!-- Recordar clave -->
+											<a class="green-text" tabindex="-2" href="javascript:alert('Rasca y sigue buscando');">¿clave olvidada?</a>
 										</div>
 										<div class="text-center">
-											<button class="btn primary-color white-text btn-lg"
-												type="submit" value="Submit">Entrar</button>
+											<button type="submit" value="Submit" class="btn primary-color white-text btn-lg">Entrar</button>
 										</div>
 
 									</form>
@@ -159,7 +157,7 @@ body {
 											<a class="rotate-btn text-primary" tabindex="-3" data-card="my-card">iniciar sesión</a>
 										</div>
 										<div class="text-center">
-											<button id="submit" name="submit" onclick="cerrar()" class="btn primary-color white-text btn-lg">Crear cuenta</button>
+											<button id="submit" name="submit" class="btn primary-color white-text btn-lg">Crear cuenta</button>
 										</div>
 									</form>
 									<!-- FIN.Formulario de Registro-->
@@ -176,15 +174,6 @@ body {
 			</div>
 		</div>
 	</div>
-	<script>
-		//Aviso de que se ha enviado el formulario 
-		function cerrar() {
-			document.open();
-			document.write("<div align="center"><h1>El formulario ha sido enviado<h1><\div>');");
-			document.close();
-			alert('Parece OK2');
-		}
-	</script>
 	<script src="bootstrap/js/compiled-4.8.1.min.js"></script>
 </body>
 </html>

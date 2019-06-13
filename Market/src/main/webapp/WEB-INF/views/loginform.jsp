@@ -19,6 +19,7 @@
 <body>
 
 	<jsp:include page="templates/_NavBarView.jsp" />		
+	
 	<form action="UserLoginRequest" method="get">
 		<label for="username">Nombre de usuario/email:</label>
 		<input type="text" name="email" id="email"/>
@@ -28,6 +29,7 @@
 		<br />
 		<input type="submit" value="Submit" />
 	</form>
+	
 	<jsp:include page="templates/_Footer.jsp" />
 
 </body>
