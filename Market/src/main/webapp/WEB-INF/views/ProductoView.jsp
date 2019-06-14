@@ -1,8 +1,8 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags/form"%>
 <%@ page session="false" %>
-
 <!DOCTYPE html>
+<jsp:useBean id="productoBean" class="Market_DO.Producto" scope="request"/>
 <html title="Electro Market">
     <head>
         <title>Electro Market</title>
@@ -14,19 +14,20 @@
     <body>  
 		<jsp:include page="templates/_NavBarView.jsp" />
         <div id="containerProductos" class="container-fluid text-center bg-grey">
-            <h4>Inventario</h4><br>
+            <h4>${productoBean.getNombre()}</h4><br>
             <div class="row text-center container-fluid">
-            <c:forEach var="produc" items="${listProductos}" varStatus="tagStatus">
-			    <div class="col-md-3">
-                <div class="thumbnail">
-                 <a href="productoRequest?id=${produc.getId()}&categoria_Id=${produc.getCategoria_Id()}&tienda_Id=${produc.getTienda_Id()}&marca_Id=${produc.getMarca_Id()}&nombre=${produc.getNombre()}&modelo=${produc.getModelo()}&imagen=${produc.getImagen()}&descripcion=${produc.getDescripcion()}&cantidad=${produc.getCantidad()}&precio=${produc.getPrecio()}&puntos=${produc.getPuntuacion()}">
-                <img id="imagenID" title="${produc.getNombre()}" src="content/Images/Productos/${produc.getImagen()}" alt="Imagen del Producto" width="200" height="150">
-                </a>
-                <p><strong>${produc.getDescripcion()}</strong></p> 
-                <p>${produc.getPrecio()} &#8364;</p>
-                </div>
-            </div>
-			</c:forEach>
+            ${productoBean.getId()}<br>
+            ${productoBean.getCategoria_Id()}<br>
+${productoBean.getTienda_Id()}<br>
+${productoBean.getMarca_Id()}<br>
+${productoBean.getNombre()}<br>
+${productoBean.getModelo()}<br>
+${productoBean.getImagen()}<br>
+${productoBean.getDescripcion()}<br>
+${productoBean.getCantidad()}<br>
+${productoBean.getPrecio()}<br>
+${productoBean.getPuntuacion()}<br>
+ 
             </div><br>
         </div>
 		
