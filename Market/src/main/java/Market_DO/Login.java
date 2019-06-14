@@ -57,4 +57,5 @@ public final class Login implements Serializable{
 		 */
 		public void setPass(String Pass) {this.Pass = Pass;}
 	
+		
 }

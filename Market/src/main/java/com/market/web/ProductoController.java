@@ -54,4 +54,9 @@ public class ProductoController {
 		model.addAttribute("msg", Productos);
 	    return "darProductosView";
 	}
+	@RequestMapping(value = "productoRequest", method = RequestMethod.GET)
+	public String UserLoginRequest() {
+
+		return "productoRequest";
+	}
 }
