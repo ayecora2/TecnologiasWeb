@@ -62,15 +62,13 @@
 					<div class="dropdown-divider"></div>
 					<a class="dropdown-item" href="#"><b>¿Salir?</b></a>
 				</div></li>
-					<%
+		<%
 			}
 		%>	
 				
-			<%
-			/** Muestra el menú del usuario de compras solo si se está logueado como usuarios
-			**/
-			if ((session.getAttribute("User") != null) && (session.getAttribute("User") != "")) {				
-		%>	
+			<%	/** Muestra el menú del usuario de compras solo si se está logueado como usuarios **/
+			if ((session.getAttribute("User") != null) && (session.getAttribute("User") != "")) { 
+			%>	
 			<li class="nav-item dropdown" style="float: right;"><a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
 				role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Mis compras </a>
 				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -80,42 +78,18 @@
 					<div class="dropdown-divider"></div>
 					<a class="dropdown-item" href="#"><b>Promociones</b></a>
 				</div></li>
-			<%
-			}
-		%>	
+			<% } %>	
 		</ul>
 	</div>
-	<%
-			/** muestra el usuario logueado y la opción de desloguear y registrar antidua. Si se arregla lo otro
-			Se cambian los enlaces
-			**/
-		if ((session.getAttribute("User") == null) || (session.getAttribute("User") == "")) {				
-		%>
-			Acceso/crear Usuarios &nbsp;&nbsp;|&nbsp;&nbsp;<a href="UserLogin">Mi cuenta</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="UserCreateBCK">Nuevo Usuario</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-		<%
-		} else {
-		%>
-			Bienvenido 
-			<%=session.getAttribute("User")%>&nbsp;&nbsp;|&nbsp;&nbsp;
-			<a href='UserLogout'>Log out</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-
-		<%
-			/** Muestra el tipo de usuario **/
-		if ((session.getAttribute("Role").equals("2"))) {				
-		%>
-			Usuario&nbsp;&nbsp;|&nbsp;&nbsp;
-		<%
-		}
-		if (session.getAttribute("Role").equals("1")){
-		%>
-			Admin&nbsp;&nbsp;|&nbsp;&nbsp;
-		<%
-		}
-		%>
-
-		<%
-		}
-		%>
+	<%	/** muestra el estado de la sesión (usuario logueado y el tipo). **/
+		if ((session.getAttribute("User") == null) || (session.getAttribute("User") == "")) { %>
+			<b>Sesión no iniciada</b> &nbsp;
+		<% } else if (session.getAttribute("Role").equals("2")){ %>
+			<b>Usuario:&nbsp;</b> <%=session.getAttribute("User")%>&nbsp;&nbsp;
+		<% } else if (session.getAttribute("Role").equals("1")){ %>
+			<b>Admin:&nbsp;</b> <%=session.getAttribute("User")%>&nbsp;&nbsp;
+		<% } %>
+		    
 		<!-- Mostrar boton de usuario -->
 		<button type="button" class="btn btn-sm" data-toggle="modal" data-target="#miLogin" title="Mi Cuenta">
 			<img src="content/Icons/glyph/svg/si-glyph-person-people.svg" height="20" width="20" />
@@ -133,12 +107,26 @@
 				<div class="modal-dialog modal-lg">
 					<div class="modal-content">				
 						<div class="modal-body mb-0 p-0" style="background-color:#AFEEEE;">	
-							<div class="embed-responsive embed-responsive-4by3 z-depth-1-half">							  	
-								<iframe class="embed-responsive-item" src="AddUser"></iframe>
-							</div>
+									
+							<%
+								if((session.getAttribute("User") == null) || (session.getAttribute("User") == "")){
+							%>
+								<div class="embed-responsive embed-responsive-4by3 z-depth-1-half">					  	
+									<iframe class="embed-responsive-item" src="AddUser"></iframe>
+								</div>
+							<% } else { %>
+								<div class="modal-body justify-content-center">
+									<h3><b>Sesión de Usuario:</b></h3><br>
+									 <%=session.getAttribute("User")%><br>
+								</div>
+							<%	} %>	
+							
 						</div>
 						<div class="modal-footer justify-content-center" style="background-color:#EEE8AA;">
-							<button type="button" class="btn btn-outline-primary btn-rounded btn-md ml-4" data-dismiss="modal">Cerrar</button>							
+							<button type="button" class="btn btn-outline-primary btn-rounded btn-md ml-4" data-dismiss="modal">Cerrar Ventana</button>
+							 <% if((session.getAttribute("User") != null) || (session.getAttribute("User") != "")){ %>				
+								 <a href="UserLogout" class="btn btn-outline-primary btn-rounded btn-md ml-4">Cerrar Sesión</a>	
+							<% } %>				
 						</div>
 					</div>
 				</div>
@@ -150,7 +138,7 @@
 							<a href="AddUser">Test2</a>
 						</div>
 						<div class="modal-footer justify-content-center" style="background-color:#E6E6FA;">
-							 <button type="button" class="btn btn-outline-primary btn-rounded btn-md ml-4" data-dismiss="modal">Cerrar</button>
+							 <button type="button" class="btn btn-outline-primary btn-rounded btn-md ml-4" data-dismiss="modal">Cerrar Ventana</button>
 						</div>
 					</div>
 				</div>

@@ -39,9 +39,7 @@ body {
 									<!-- Header -->
 									<div class="form-header primary-color">
 										<h3 class="font-weight-500 my-2 py-1">
-											<i class="fas"> <img
-												src="content/Icons/glyph/svg/si-glyph-person-people.svg"
-												height="40" width="40" />
+											<i class="fas"> <img src="content/Icons/glyph/svg/si-glyph-person-people.svg" height="40" width="40" />
 											</i> Iniciar sesión
 										</h3>
 									</div>
@@ -87,9 +85,7 @@ body {
 									<!-- Header -->
 									<div class="form-header primary-color">
 										<h3 class="font-weight-500 my-2 py-1">
-											<i class="fas"> <img
-												src="content/Icons/glyph/svg/si-glyph-baby.svg" height="40"
-												width="40" />
+											<i class="fas"> <img src="content/Icons/glyph/svg/si-glyph-baby.svg" height="40" width="40" />
 											</i> Crear Nueva Cuenta
 										</h3>
 									</div>
