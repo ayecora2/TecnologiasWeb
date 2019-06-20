@@ -1,10 +1,9 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags/form"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
-<!DOCTYPE html><html lang="es"> <meta charset="UTF-8">
+<!DOCTYPE html><html lang="es"><meta charset="UTF-8">
 
 <link rel="stylesheet" href="bootstrap/css/compiled-4.8.1.min.css"><style></style>
-
 <!-- BARRA LAYOUT -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin-bottom: 15px;">
 	<a class="navbar-brand" href="/web/">Electro S&amp;A</a>
@@ -27,9 +26,8 @@
 					<div class="dropdown-divider"></div>
 					<a class="dropdown-item" href="mailto:areaclientes@electromarket.es?Subject=Solicitud%20de%20contacto"><b>Contactar con nosotros</b></a>
 				</div></li>
-				<%
-			/** Muestra el menú del usuario de compras solo si se está logueado como usuarios
-			**/
+		<%
+			/** Muestra el menú del usuario de compras solo si se está logueado como usuarios	**/
 			if ((session.getAttribute("User") != null) && (session.getAttribute("Role").equals("1"))) {				
 		%>	
 			<li class="nav-item dropdown" style="float: right;"><a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
@@ -41,12 +39,9 @@
 					<div class="dropdown-divider"></div>
 					<a class="dropdown-item" href="#"><b>Anulación de ventas</b></a>
 				</div></li>
-			<%
-			}
-		%>		
-				<%
-			/** Muestra el menú del usuario de compras solo si se está logueado como usuarios
-			**/
+		<% } %>		
+		<%
+			/** Muestra el menú del usuario de compras solo si se está logueado como usuarios	**/
 			if ((session.getAttribute("User") != null) && (session.getAttribute("Role").equals("1"))) {				
 		%>			
 			<li class="nav-item dropdown" style="float: right;"><a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
@@ -62,9 +57,7 @@
 					<div class="dropdown-divider"></div>
 					<a class="dropdown-item" href="#"><b>¿Salir?</b></a>
 				</div></li>
-		<%
-			}
-		%>	
+		<% } %>	
 				
 			<%	/** Muestra el menú del usuario de compras solo si se está logueado como usuarios **/
 			if ((session.getAttribute("User") != null) && (session.getAttribute("User") != "")) { 
@@ -90,66 +83,63 @@
 			<b>Admin:&nbsp;</b> <%=session.getAttribute("User")%>&nbsp;&nbsp;
 		<% } %>
 		    
-		<!-- Mostrar boton de usuario -->
-		<button type="button" class="btn btn-sm" data-toggle="modal" data-target="#miLogin" title="Mi Cuenta">
+		<!-- Botón Usuario -->
+		<a class="btn btn-sm" data-toggle="modal" data-target="#miLogin" title="Mi Cuenta/Nuevo Usuario">
 			<img src="content/Icons/glyph/svg/si-glyph-person-people.svg" height="20" width="20" />
-		</button> 
-		<!-- CARRITO -->
-		<button type="button" class="btn btn-sm" data-toggle="modal" data-target="#miCarrito" title="Mi compra">
+		</a> 
+		<!-- Botón Carrito -->
+		<a type="button" class="btn btn-sm" data-toggle="modal" data-target="#miCarrito" title="Mi compra">
 			<img src="content/Icons/glyph/svg/si-glyph-basket.svg" height="20" width="20" />
-		</button>
-		<button type="button" class="btn btn-sm" data-toggle="modal" data-target="#documentacion" title="Documentación">
+		</a>
+		<!-- Botón Documentación -->
+		<a class="btn btn-sm" data-toggle="modal" data-target="#documentacion" title="Documentación">
 			<img src="content/Icons/glyph/svg/si-glyph-document.svg" height="20" width="20" />
-		</button>
+		</a>
 </nav>		
-				<!-- Modal Implementación futura Mostrará el login con HTML5 -->
+			<!-- Modal login -->
 			<div class="modal fade" id="miLogin" tabindex="-1" role="dialog">
 				<div class="modal-dialog modal-lg">
 					<div class="modal-content">				
-						<div class="modal-body mb-0 p-0" style="background-color:#AFEEEE;">	
-									
-							<%
-								if((session.getAttribute("User") == null) || (session.getAttribute("User") == "")){
-							%>
-								<div class="embed-responsive embed-responsive-4by3 z-depth-1-half">					  	
-									<iframe class="embed-responsive-item" src="AddUser"></iframe>
+						<div class="modal-body mb-0 p-0"  style="background-color:#AFEEEE;">									
+							<% if((session.getAttribute("User") == null) || (session.getAttribute("User") == "")){ %>
+								<div class="embed-responsive embed-responsive-4by3">					  	
+									<object type="text/html" width="auto" height="auto" class="embed-responsive-item" data="AddUser"></object> 							
+								</div>
+								<div class="modal-footer justify-content-center" style="background-color:#EEE8AA;">
+									<button type="button" onclick="location.reload()" class="btn btn-outline-primary btn-rounded btn-md ml-4" data-dismiss="modal">Cerrar Ventana</button>
 								</div>
 							<% } else { %>
 								<div class="modal-body justify-content-center">
 									<h3><b>Sesión de Usuario:</b></h3><br>
 									 <%=session.getAttribute("User")%><br>
 								</div>
-							<%	} %>	
-							
-						</div>
-						<div class="modal-footer justify-content-center" style="background-color:#EEE8AA;">
-							<button type="button" class="btn btn-outline-primary btn-rounded btn-md ml-4" data-dismiss="modal">Cerrar Ventana</button>
-							 <% if((session.getAttribute("User") != null) || (session.getAttribute("User") != "")){ %>				
-								 <a href="UserLogout" class="btn btn-outline-primary btn-rounded btn-md ml-4">Cerrar Sesión</a>	
-							<% } %>				
+								<div class="modal-footer justify-content-center" style="background-color:#EEE8AA;">
+									<button type="button" class="btn btn-outline-primary btn-rounded btn-md ml-4" data-dismiss="modal">Cerrar Ventana</button>
+									<a href="UserLogout" class="btn btn-outline-primary btn-rounded btn-md ml-4"><b>Cerrar Sesión</b></a>
+								</div>
+							<%	} %>								
 						</div>
 					</div>
 				</div>
 			</div>
+			<!-- Modal Carrito -->
 			<div class="modal fade" id="miCarrito" role="dialog">
-				<div class="modal-dialog modal-lg">
-					<div class="modal-content">				
-						<div class="modal-body" style="background-color:#EEE8AA;">
-							<a href="AddUser">Test2</a>
-						</div>
-						<div class="modal-footer justify-content-center" style="background-color:#E6E6FA;">
-							 <button type="button" class="btn btn-outline-primary btn-rounded btn-md ml-4" data-dismiss="modal">Cerrar Ventana</button>
-						</div>
+				<div class="modal-dialog modal-md">
+					<div class="modal-content">	
+						<a>Mi carroooo me lo robarón...</a>
+						<button type="button" class="btn btn-outline-primary btn-rounded btn-md ml-4" data-dismiss="modal">Cerrar</button>
 					</div>
 				</div>
 			</div>
+			<!-- Modal Documentación -->	
 			<div class="modal fade" id="documentacion" role="dialog">
-				<div class="modal-dialog modal-lg">
+				<div class="modal-dialog modal-md">
 					<div class="modal-content">				
-						<div class="modal-body" style="background-color:#EEE8AA;">
-							<a href="content/doc/TW_Practica.pdf">Documentación de la Práctica</a></br>
-							<a href="content/doc/TW_PEC_SDR.pdf">SDR (Documento de requisitos)</a></br>
-							<a href="content/doc/TW_PEC_Manual.pdf">Manual de usuario</a>
+						<div class="modal-body" style="background-color:#F0FFFF;">
+							<a href="content/doc/TW_Practica.pdf">Documentación de la Práctica</a><br>
+							<a href="content/doc/TW_PEC_SDR.pdf">SDR (Documento de requisitos)</a><br>
+							<a href="content/doc/TW_PEC_Manual.pdf">Manual de usuario</a><br>
+							<a href="content/doc/TW_PEC_JavaDoc.html">Documentación JavaDoc</a>
 						</div>
 						<div class="modal-footer justify-content-center" style="background-color:#E6E6FA;">
 							 <button type="button" class="btn btn-outline-primary btn-rounded btn-md ml-4" data-dismiss="modal">Cerrar</button>
@@ -157,3 +147,4 @@
 					</div>
 				</div>
 			</div>
+

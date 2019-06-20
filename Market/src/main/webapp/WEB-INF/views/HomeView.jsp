@@ -14,28 +14,26 @@
 </head>
 <body>
 	<jsp:include page="templates/_NavBarView.jsp" />
-	
+
 	<div id="containerProductos" class="container-fluid text-center bg-grey">
 		<h4>Nuestros Productos Destacados</h4>
 		<br>
             <div class="row text-center container-fluid">
-            <c:forEach var="produc" items="${listProductosPuntuados}" varStatus="tagStatus">
-			    <div class="col-md-3">
-                <div class="thumbnail">
+        	    <c:forEach var="produc" items="${listProductosPuntuados}" varStatus="tagStatus">
+				    <div class="col-md-3">
+                		<div class="thumbnail">      						
+			                <p><strong>${produc.getNombre()}</strong></p>
+			                <a href="javascript:alert('Sin enlace colega');"><img title="${produc.getNombre()}" 
+			               		src="content/Images/Productos/${produc.getImagen()}" alt="Imagen del producto" width="200" height="150"></a>
+			                <p>"${produc.getDescripcion()}"</p> 
+			                <p>¡Oferta ${produc.getPrecio()} &#8364;!</p>
+			                <p>${produc.getPuntuacion()} &#9733;</p>
                 
-						
-                <p><strong>${produc.getNombre()}</strong></p>
-               <a href="javascript:alert('Sin enlace colega');"><img title="${produc.getNombre()}" src="content/Images/Productos/${produc.getImagen()}"
-               		 alt="Imagen del producto" width="200" height="150"></a>
-                <p>"${produc.getDescripcion()}"</p> 
-                <p>¡Oferta ${produc.getPrecio()} &#8364;!</p>
-                <p>${produc.getPuntuacion()} &#9733;</p>
-                
-                </div>
-            </div>
-			</c:forEach>
+                		</div>
+            		</div>
+				</c:forEach>
             </div><br>
-        </div>
+      </div>
 
 </body>
 <footer>

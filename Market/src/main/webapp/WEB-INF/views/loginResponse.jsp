@@ -12,12 +12,18 @@
         session.setAttribute("User", respuesta[0]);
         session.setAttribute("Role", respuesta[1]);
         out.println("<script> alert('Bienvenido/a " + respuesta[0] + " '); </script>");
-        //response.sendRedirect("/web");
-        
+        out.println("<div align=" + "center" + ">");
+        out.println("<h2><b>Ha iniciado sesión correctamente.</b></h2><br><br>");
+        out.println("<img src=" + "content/Images/Varios/acceso-ok.png" + " style=" + "width:auto;height:auto;" + ">");
+        out.println("</div>");     
     } else {
     	out.println("<script> alert('Usuario y/o contraseña inválido'); </script>");
-    	response.reset();
+    	session.setAttribute("userName", null);
     	session.invalidate();
+    	out.println("<div align=" + "center" + ">");
+        out.println("<h2><b>Usuario o clave erronea, intentelo de nuevo.</b></h2><br><br>");
+    	out.println("<img src=" + "content/Images/Varios/user-no-encontrado.jpg" + " style=" + "width:auto;height:auto;" + ">");
+        out.println("</div>");     
     }
 	%>
 	
