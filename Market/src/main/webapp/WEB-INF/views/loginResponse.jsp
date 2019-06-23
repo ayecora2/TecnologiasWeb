@@ -4,8 +4,7 @@
 <?xml version "1.0"?>
 
 <!-- File: loginResponse.jsp -->
-<jsp:useBean id="loginBean" class="Market_DO.Login" scope="request"/>
-    
+<jsp:useBean id="loginBean" class="Market_DO.Login" scope="request"/>   
     <%
 		String[] respuesta = UserDA.loginUser(loginBean);
     if (respuesta!=null) {
@@ -13,9 +12,9 @@
         session.setAttribute("Role", respuesta[1]);
         out.println("<script> alert('Bienvenido/a " + respuesta[0] + " '); </script>");
         out.println("<div align=" + "center" + ">");
-        out.println("<h2><b>Ha iniciado sesión correctamente.</b></h2><br><br>");
-        out.println("<img src=" + "content/Images/Varios/acceso-ok.png" + " style=" + "width:auto;height:auto;" + ">");
-        out.println("</div>");     
+        out.println("<h3><b>Ha iniciado sesión correctamente.</b></h3>");
+        out.println("<img src=" + "content/Images/Varios/acceso-ok.png" + " style=" + "width:80%;height:80%;" + ">");
+        out.println("</div>");
     } else {
     	out.println("<script> alert('Usuario y/o contraseña inválido'); </script>");
     	session.setAttribute("userName", null);
@@ -26,4 +25,3 @@
         out.println("</div>");     
     }
 	%>
-	

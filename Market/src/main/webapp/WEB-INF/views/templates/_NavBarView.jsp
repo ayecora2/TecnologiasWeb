@@ -7,8 +7,7 @@
 <!-- BARRA LAYOUT -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin-bottom: 15px;">
 	<a class="navbar-brand" href="/web/">Electro S&amp;A</a>
-	<button class="navbar-toggler" type="button" data-toggle="collapse"	data-target="#navbarSupportedContent"
-		aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+	<button class="navbar-toggler" type="button" data-toggle="collapse"	data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 		<span class="navbar-toggler-icon"></span>
 	</button>
 
@@ -45,7 +44,7 @@
 			if ((session.getAttribute("User") != null) && (session.getAttribute("Role").equals("1"))) {				
 		%>			
 			<li class="nav-item dropdown" style="float: right;"><a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
-				role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Administracion </a>
+				role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Administración </a>
 				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 					<a class="dropdown-item" href="#">Compras</a>
 					<div class="dropdown-divider"></div>
@@ -98,26 +97,28 @@
 </nav>		
 			<!-- Modal login -->
 			<div class="modal fade" id="miLogin" tabindex="-1" role="dialog">
-				<div class="modal-dialog modal-lg">
-					<div class="modal-content">				
-						<div class="modal-body mb-0 p-0"  style="background-color:#AFEEEE;">									
+				<div class="modal-dialog modal-md">
+					<div class="modal-content">
+						<div class="modal-body mb-0 p-0"  style="background-color:#AFEEEE;">
 							<% if((session.getAttribute("User") == null) || (session.getAttribute("User") == "")){ %>
-								<div class="embed-responsive embed-responsive-4by3">					  	
-									<object type="text/html" width="auto" height="auto" class="embed-responsive-item" data="AddUser"></object> 							
+								<div class="embed-responsive embed-responsive-4by3">
+									<object type="text/html" width="auto" height="auto" class="embed-responsive-item" data="AddUser"></object>	
 								</div>
 								<div class="modal-footer justify-content-center" style="background-color:#EEE8AA;">
 									<button type="button" onclick="location.reload()" class="btn btn-outline-primary btn-rounded btn-md ml-4" data-dismiss="modal">Cerrar Ventana</button>
 								</div>
 							<% } else { %>
 								<div class="modal-body justify-content-center">
-									<h3><b>Sesión de Usuario:</b></h3><br>
-									 <%=session.getAttribute("User")%><br>
+									 <h4><b>Ficha Usuario: </b><%=session.getAttribute("User")%></h4>
+									 <div class="embed-responsive embed-responsive-4by3">
+										 <iframe width="auto" height="auto" class="embed-responsive-item" src="views/templates/FichaUsuario.jsp"></iframe> 							
+									</div>
 								</div>
 								<div class="modal-footer justify-content-center" style="background-color:#EEE8AA;">
 									<button type="button" class="btn btn-outline-primary btn-rounded btn-md ml-4" data-dismiss="modal">Cerrar Ventana</button>
 									<a href="UserLogout" class="btn btn-outline-primary btn-rounded btn-md ml-4"><b>Cerrar Sesión</b></a>
 								</div>
-							<%	} %>								
+							<%	} %>
 						</div>
 					</div>
 				</div>
@@ -139,7 +140,7 @@
 							<a href="content/doc/TW_Practica.pdf">Documentación de la Práctica</a><br>
 							<a href="content/doc/TW_PEC_SDR.pdf">SDR (Documento de requisitos)</a><br>
 							<a href="content/doc/TW_PEC_Manual.pdf">Manual de usuario</a><br>
-							<a href="content/doc/TW_PEC_JavaDoc.html">Documentación JavaDoc</a>
+							<a href="content/doc/javadoc/index.html">Documentación JavaDoc</a>
 						</div>
 						<div class="modal-footer justify-content-center" style="background-color:#E6E6FA;">
 							 <button type="button" class="btn btn-outline-primary btn-rounded btn-md ml-4" data-dismiss="modal">Cerrar</button>

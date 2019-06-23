@@ -7,13 +7,12 @@
         <title>Electro Market</title>
         <script src="bootstrap/js/jquery-3.3.1.slim.min.js" ></script>
         <script src="bootstrap/js/bootstrap.min.js"></script>
-        <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">	
+        <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
         <spring:url value="bootstrap/css/bootstrap.min.css" var="MyBootstrap" />
     </head>
     <body>      
 		<jsp:include page="templates/_NavBarView.jsp" /> 
-
-   
+  
             <h4>Lista de todos los usuarios</h4><br>
             <table class="table table-striped table-responsive-md btn-table">
             	<thead>

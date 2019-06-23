@@ -57,7 +57,6 @@ public class ProductosBL {
 	}
 	/**
 	 * Funcion para devolver una lista de los 4 productos mejor puntuados
-	 * @author ayecora
 	 * @return List<Producto>
 	 */
 	public static List<Producto> bestProduct() {
@@ -92,8 +91,8 @@ public class ProductosBL {
 	
 	/**
 	 * Comprueba la existenacia de un producto en la base de datos. Para ello, se le pasa el ID del producto.
-	 * @param Resault rs resultados de una búsqueda en la base de datos.
-	 * @param ID del producto a buscar, si el ID es negativo indica que la búsqueda será por campo (String).
+	 * @param rs resultados de una búsqueda en la base de datos.
+	 * @param id del producto a buscar, si el ID es negativo indica que la búsqueda será por campo (String).
 	 * @param campo es el parámetro a buscar que no sea el ID (nombre, modelo, imagen, descripción)
 	 * @return true en caso de que exista.
 	 * @return false en caso de que no exista el producto en la base de datos.
