@@ -22,7 +22,7 @@
 					<th>Nombre</th>
 					<th>Apellido</th>
 					<th><img class="fas mr-2 blue-text" aria-hidden="true" src="content/Icons/glyph/svg/si-glyph-mail.svg" height="20" width="20" />Email</th>
-					<th><img class="fas mr-2 blue-text" aria-hidden="true" src="content/Icons/glyph/svg/si-glyph-phone-number.svg" height="20" width="20" />Telefono</th>
+					<th><img class="fas mr-2 blue-text" aria-hidden="true" src="content/Icons/glyph/svg/si-glyph-phone-number.svg" height="20" width="20" />Teléfono</th>
 				</tr>
 			</thead>
 			<c:forEach var="user" items="${listUsuarios}" varStatus="tagStatus">

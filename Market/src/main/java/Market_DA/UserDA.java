@@ -1,11 +1,9 @@
 package Market_DA;
 
-import java.sql.DriverManager;
 import java.sql.ResultSet;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import Market_BL.ConectarBBDD;
 import Market_DO.User;
 import Market_DO.Login;
 /**

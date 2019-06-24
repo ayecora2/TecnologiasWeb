@@ -31,11 +31,11 @@
 							<div class="face front">
 								<div class="card-body">
 							<!-- Header -->
-									<div class="form-header primary-color">
-										<h3 class="font-weight-500 my-2 py-1">
-											<i class="fas"> <img src="content/Icons/glyph/svg/si-glyph-person-people.svg" height="40" width="40" />
+									<div class="form-header primary-color">								
+										<h4 class="font-weight-500 my-0 py-0">
+											<i class="fas"> <img src="content/Icons/glyph/svg/si-glyph-person-people.svg" height="30" width="30" />
 											Iniciar sesión</i>
-										</h3>
+										</h4>
 									</div>
 								<!-- Formulario de Login -->
 									<form action="UserLoginRequest" method="get">
@@ -69,10 +69,10 @@
 								<div class="card-body">
 							<!-- Header -->
 									<div class="form-header primary-color">
-										<h3 class="font-weight-500 my-2 py-1">
-											<i class="fas"> <img src="content/Icons/glyph/svg/si-glyph-baby.svg" height="40" width="40" />
-											</i> Crear Nueva Cuenta
-										</h3>
+										<h4 class="font-weight-500 my-0 py-0">
+											<i class="fas"> <img src="content/Icons/glyph/svg/si-glyph-baby.svg" height="30" width="30" />
+											Crear Nueva Cuenta</i>
+										</h4>
 									</div>
 								<!-- Formulario de Registro-->
 									<form class="form-horizontal" action="UserCreateRequest" method="get">
