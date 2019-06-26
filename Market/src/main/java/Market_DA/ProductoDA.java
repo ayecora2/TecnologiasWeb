@@ -41,7 +41,7 @@ public class ProductoDA extends DataAccessCore{
 			//Esta sentencia pone límite a la búsqueda en 4 productos ordenados de mayor a menor en orden de puntuación
 			return statement.executeQuery("SELECT A.*,AVG(B.PUNTUACION) FROM PRODUCTOS A, PRODUCTOS_PUNTUACION B WHERE A.id=B.PRODUCTO GROUP BY (A.ID) ORDER BY AVG(B.PUNTUACION) DESC LIMIT 4");
 		} catch (Exception ex) {
-			ex.printStackTrace();
+			System.out.println(">>> Error, no se puede acceder a la BBDD. Revise conexión.");
 			return null; //en caso de excepción devuelve NULL.
 		}
 	}

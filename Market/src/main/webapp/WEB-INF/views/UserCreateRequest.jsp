@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
     <!-- File: UserCreateRequest.jsp -->
 <jsp:useBean id="userBean" class="Market_DO.User" scope="request"/>
 

@@ -56,37 +56,37 @@ public class ProductosBL {
 		}
 	}
 	/**
-	 * Funcion para devolver una lista de los 4 productos mejor puntuados
-	 * @return List<Producto>
+	 * Funcion para devolver una lista de los 4 productos mejor puntuados.
+	 * @return List<Producto> lista de hasta los 4 mejores productos de la base de datos.
+	 * @return null en caso de que no se haya podido conectar con la base de datos o no existan productos.
 	 */
 	public static List<Producto> bestProduct() {
+		//Lista de productos
+		List<Producto> listProductos = new ArrayList<Producto>();
+		ResultSet resultSet = null;
 		try {
-			//Lista de productos
-			List<Producto> listProductos = new ArrayList<Producto>();			
 			//Ejecuta la búsqueda de los 5 productos con más puntuacion
-			ResultSet resultSet = Market_DA.ProductoDA.bestProduct() ;			
-			//Bucle para añadir a una lista instancias de los productos seleccionados	
-			while (resultSet.next()) {
-				// Añade el item a la lista de productos	
-				listProductos.add(new Producto(
-						resultSet.getInt("Id"),
-						resultSet.getInt("Categoria_Id"),
-						resultSet.getInt("Tienda_Id"),
-						resultSet.getInt("Marca_Id"),
-						resultSet.getString("Nombre"),
-						resultSet.getString("Modelo"),
-						resultSet.getString("Imagen"),
-						resultSet.getString("Descripcion"),
-						resultSet.getInt("Cantidad"),
-						resultSet.getFloat("Precio"),
-						resultSet.getFloat("C11"))); //¿Qué es C11? cambiar nomenclatura o describirla. Debe ser Double
+			resultSet = Market_DA.ProductoDA.bestProduct() ;
+			if(resultSet != null) {
+				//Bucle para añadir a una lista instancias de los productos seleccionados	
+				while (resultSet.next()) {
+					// Añade el item a la lista de productos	
+					listProductos.add(new Producto(
+							resultSet.getInt("Id"),
+							resultSet.getInt("Categoria_Id"),
+							resultSet.getInt("Tienda_Id"),
+							resultSet.getInt("Marca_Id"),
+							resultSet.getString("Nombre"),
+							resultSet.getString("Modelo"),
+							resultSet.getString("Imagen"),
+							resultSet.getString("Descripcion"),
+							resultSet.getInt("Cantidad"),
+							resultSet.getFloat("Precio"),
+							resultSet.getFloat("C11"))); //Resultado de la puntuación media.
+				}
 			}
-			//Devuelve la lista de productos
-			return listProductos;
-		} catch (Exception ex) {
-			ex.printStackTrace();
-			return null; //Devuelve null en otro caso.
-		}
+		} catch (Exception ex) {ex.printStackTrace();}
+		return listProductos; //Devuelve la lista de productos
 	}
 	
 	/**
