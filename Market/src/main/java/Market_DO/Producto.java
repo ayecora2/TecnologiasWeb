@@ -59,7 +59,6 @@ public class Producto {
 	public Producto() {	
 		super();
 		this.puntuacion = 0.0F;
-		
 	}
 	
 	/**

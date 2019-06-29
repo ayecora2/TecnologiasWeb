@@ -5,7 +5,6 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-//import Market_DO.User;
 
 /**
  * Clase para la interacción con la base de datos en memoria.
@@ -18,8 +17,13 @@ import java.sql.Statement;
  */
 public class DataAccessCore {
 
-	private static Connection connection = null;
+	
+	/**
+	 * Instancia de la clase ResulSet donde se almacenará las respuestas
+	 * de las consultas. incializada a null.
+	 */
 	public static ResultSet resultSet = null;
+	private static Connection connection = null;
 	protected static Statement statement = null;
 
 	/**
@@ -49,8 +53,8 @@ public class DataAccessCore {
 	 * Este método comprueba mediante un query que existe la tabla tiendas, la cual es la base
 	 * de todos los datos de usuario, productos, etc. Sino existe realiza una conexión a la 
 	 * Base de datos. Para ello hace uso de las excepciones al realizar un Query.
-	 * @return true si la base de datos esta conectada e inicializada
-	 * @return false en caso de que la base de datos no este inicializada o conectada.
+	 * @return true si la base de datos esta conectada e inicializada, 
+	 * false en caso de que la base de datos no este inicializada o conectada.
 	 */
 	private static boolean comprobarBBDD(){
 		//Comprobación del estado de la BBDD mediante un query.

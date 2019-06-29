@@ -8,22 +8,18 @@ import Market_DO.Producto;
  * Esta clase herda de DataAccessCore, y es la encargada de obtener la lista de productos
  * o una lista parcial mediante un filtro. También esta clase se encarga de introducir nuevos
  * productos en la Base de Datos.
- * @author Silverio
+ * @author Silverio Manuel Rosales Santana
  * @author ayecora
  * @version 201905302123
  */
 public class ProductoDA extends DataAccessCore{
-	
-	
+		
 	/**
 	 * Método que devuelve todos los productos que esten en la Base de datos.
-	 * @return lista de productos de la base de datos
-	 * @return null en otro caso
+	 * @return lista de productos de la base de datos, null en otro caso.
 	 */
 	public static ResultSet darProductos(){
-		try{	
-			resultSet = statement.executeQuery("SELECT * FROM PRODUCTOS");  
-			return resultSet;
+		try{ return statement.executeQuery("SELECT * FROM PRODUCTOS");  
 		} catch (Exception ex) {
 			ex.printStackTrace();
 			return null; //en caso de excepción devuelve NULL.
@@ -31,10 +27,9 @@ public class ProductoDA extends DataAccessCore{
 	}
 	
 	/**
-	 * Método que devuelve todos los productos que esten en la Base de datos.
+	 * Método que devuelve un número determinado de productos que esten en la Base de datos.
 	 * La lista creada resultante tiene en orden los 4 mejores productos puntuados de mayor a menor puntuación.
-	 * @return lista de 4 productos de la base de datos con mejor puntuación
-	 * @return null en otro caso
+	 * @return lista de 4 productos de la base de datos con mejor puntuación, null en otro caso
 	 */
 	public static ResultSet bestProduct(){
 		try{
@@ -50,8 +45,7 @@ public class ProductoDA extends DataAccessCore{
 	 * Realiza una consulta a la Base de Datos utilizando un filtro para
 	 * obtener una lista parcial que cumpla la condición dada por el filtro.
 	 * @param filterProducto es el filtro a aplicar en la búsqueda parcial.
-	 * @return devuelve la lista de productos que cumplen con el filtro
-	 * @return null en otro caso.
+	 * @return devuelve la lista de productos que cumplen con el filtro, null en otro caso.
 	 */
 	public static ResultSet darProductos(String filterProducto){
 		//Realiza la operación de consulta a la base de datos con el filtro dado.
@@ -64,7 +58,6 @@ public class ProductoDA extends DataAccessCore{
 					+ "WHERE C.NOMBRE LIKE '%" + filterProducto + "%'  + OR " 
 					+ "WHERE P.NOMBRE LIKE '%" + filterProducto + "%'  + ");  		
 			return resultSet;
-			
 		} catch (Exception ex) { //Impresión de la excepción y devolución de null.
 			ex.printStackTrace();
 			return null;

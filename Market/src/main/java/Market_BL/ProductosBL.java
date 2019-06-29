@@ -57,8 +57,8 @@ public class ProductosBL {
 	}
 	/**
 	 * Funcion para devolver una lista de los 4 productos mejor puntuados.
-	 * @return List<Producto> lista de hasta los 4 mejores productos de la base de datos.
-	 * @return null en caso de que no se haya podido conectar con la base de datos o no existan productos.
+	 * @return lista de hasta los 4 mejores productos de la base de datos.
+	 *  null en caso de que no se haya podido conectar con la base de datos o no existan productos.
 	 */
 	public static List<Producto> bestProduct() {
 		//Lista de productos
@@ -94,8 +94,7 @@ public class ProductosBL {
 	 * @param rs resultados de una búsqueda en la base de datos.
 	 * @param id del producto a buscar, si el ID es negativo indica que la búsqueda será por campo (String).
 	 * @param campo es el parámetro a buscar que no sea el ID (nombre, modelo, imagen, descripción)
-	 * @return true en caso de que exista.
-	 * @return false en caso de que no exista el producto en la base de datos.
+	 * @return true en caso de que exista, false en caso de que no exista el producto en la base de datos.
 	 */
 	public static boolean existeProducto(ResultSet rs, int id, String campo) {
 		try { //realiza búsqueda entre los resultados.

@@ -13,9 +13,10 @@ public class CompraItems {
 	private int Cantidad; //Cantidad de items
 	
 	/**
-	 * @param id
-	 * @param producto_Id
-	 * @param cantidad
+	 * El constructor de la clase recibe por parámetro los campos que lo componen.
+	 * @param id de la compra
+	 * @param producto_Id id del producto.
+	 * @param cantidad de items del producto
 	 */
 	public CompraItems(int id, int producto_Id, int cantidad) {
 		super();
@@ -26,9 +27,8 @@ public class CompraItems {
 	/**
 	 * Constructor para crear el objeto y a posteriori ser inicializado mediante los sets.
 	 */
-	public CompraItems() {
-		super();
-	}
+	public CompraItems() {super();}
+	
 	/**
 	 * @return the id
 	 */

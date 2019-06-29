@@ -19,8 +19,7 @@ public class UserBL {
 	 * retorna la lista de usuarios extraida de la base de datos
 	 * en formato texto, convertida en una lista de instancias de la clase User. En caso de error o de 
 	 * excepción se devuelve NULL
-	 * @return listUser lista de instancias de User
-	 * @return null en otro caso
+	 * @return listUser lista de instancias de User, null en otro caso
 	 */
 	public static List<User> darUsuarios()
 	{

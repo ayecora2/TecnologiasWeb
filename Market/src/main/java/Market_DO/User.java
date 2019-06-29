@@ -150,7 +150,7 @@ public final class User implements Serializable{
 	public void setApellido(String apellido) {this.apellido = apellido;}
 
 	/**
-	 * @return the direccion
+	 * @return la dirección
 	 */
 	public String getDireccion() {return direccion;}
 
@@ -160,7 +160,15 @@ public final class User implements Serializable{
 	 */
 	public void setDireccion(String direccion) {this.direccion = direccion;}
 
+	/**
+	 * Devuelve el tipo de usuario.
+	 * @return el tipo de usuario.
+	 */
 	public int getUserType_Id() {return userType_Id;}
 
+	/**
+	 * Establece el tipo de usuario.
+	 * @param userType_Id el tipo de usuario a establecer.
+	 */
 	public void setUserType_Id(int userType_Id) {this.userType_Id = userType_Id;}
 }
